@@ -2,7 +2,7 @@ import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import styleAsString from './button.styles.scss';
 
-const StyledButton = styled('div')`
+const StyledButton = styled.div`
     ${styleAsString}
 `;
 
