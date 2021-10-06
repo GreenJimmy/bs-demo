@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 import './styles/index.scss';
 
 const CustomButton = (props) => {
-    const { children, className, ...accProps } = props;
-    const classNames = className ? `${className} с-btn` : 'с-btn';
+    const { children, className, isSelected, ...accProps } = props;
+    const classNames = `c-btn${isSelected ? ' c-btn-selected' : ''}${
+        className ? ` ${className}` : ''
+    }`;
 
     return (
         <Button className={classNames} {...accProps}>
@@ -17,8 +19,9 @@ const CustomButton = (props) => {
 CustomButton.propTypes = {
     className: PropTypes.string,
     disabled: PropTypes.bool,
-    variant: PropTypes.oneOf(['primary', 'secondary', 'link']),
+    variant: PropTypes.oneOf(['primary', 'secondary', 'link', 'light']),
     size: PropTypes.oneOf(['lg', 'sm']),
+    isSelected: PropTypes.bool,
     onClick: PropTypes.func,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
@@ -27,7 +30,8 @@ CustomButton.defaultProps = {
     className: undefined,
     disabled: false,
     variant: 'primary',
-    size: 'lg',
+    size: 'sm',
+    isSelected: false,
     children: undefined,
     onClick: undefined,
 };
