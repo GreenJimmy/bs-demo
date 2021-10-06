@@ -1,10 +1,18 @@
 $primary: rgba(0, 112, 168, 1);
-$primary-hover: rgba(0, 40, 85, 1);
-$primary-disabled: rgba(176, 184, 191, 1);
+$primary-medium: rgba(0, 88, 133, 1);
+$primary-dark: rgba(0, 40, 85, 1);
+
 $secondary: rgba(209, 216, 224, 1);
-$secondary-hover: rgba(176, 184, 191, 1);
-$secondary-disabled: rgba(231, 238, 245, 1);
-$secondary-disabled-text: rgba(176, 184, 191, 1);
+$secondary-light: rgba(231, 238, 245, 1);
+$secondary-medium: rgba(209, 216, 224, 1);
+$secondary-dark: rgba(176, 184, 191, 1);
+
+$light: rgba(255, 255, 255, 0);
+$light-medium: rgba(230, 241, 246, 1);
+$light-medium-dark: rgba(204, 226, 238, 1);
+$light-dark: rgba(179, 212, 229, 1);
+
+$white: rgba(255, 255, 255, 1);
 
 $theme-colors: (
   primary: $primary,
@@ -26,8 +34,8 @@ $btn-border-radius: 8px;
 $btn-border-width: 0;
 
 $btn-link-color: $primary;
-$btn-link-hover-color: $primary-hover;
-$btn-link-disabled-color: $primary-disabled;
+$btn-link-hover-color: $primary-dark;
+$btn-link-disabled-color: $secondary-dark;
 $link-decoration: none;
 $link-hover-decoration: underline;
 
