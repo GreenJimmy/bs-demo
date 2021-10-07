@@ -11,11 +11,13 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
+                resourceQuery: { not: [/raw/] },
                 use: ['babel-loader'],
             },
             {
                 test: /\.s[ac]ss$/i,
                 exclude: [/\.styles.scss$/, /node_modules/],
+                resourceQuery: { not: [/raw/] },
                 use: [
                     // Creates `style` nodes from JS strings
                     'style-loader',
@@ -28,17 +30,17 @@ module.exports = {
             {
                 test: /\.styles.scss$/,
                 exclude: /node_modules/,
+                resourceQuery: { not: [/raw/] },
                 use: [
                     'sass-to-string',
                     {
                         loader: 'sass-loader',
-                        options: {
-                            sassOptions: {
-                                outputStyle: 'compressed',
-                            },
-                        },
                     },
                 ],
+            },
+            {
+                resourceQuery: /raw/,
+                type: 'asset/source',
             },
         ],
     },
