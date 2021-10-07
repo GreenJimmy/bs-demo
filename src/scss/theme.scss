@@ -1,1 +1,52 @@
-$btn-font-weight: bold;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+$font-family-sans-serif: 'Noto Sans', Helvetica, sans-serif;
+$font-size-root: '16px';
+$font-size-base: 1.125rem !default;
+
+$body-color: map.get($cool-grays, 'cool-gray-1');
+$body-bg: #fff;
+$border-radius: 0.5rem;
+$border-color: map.get($cool-grays, 'cool-gray-3');
+$box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+$box-shadow-inset: inset $box-shadow;
+
+$grid-gutter-width: 2rem;
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+);
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+);
+
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: math.div($spacer, 4),
+    2: math.div($spacer, 2),
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 2.5,
+    6: $spacer * 3,
+    7: $spacer * 4,
+    8: $spacer * 5,
+    9: $spacer * 6.5,
+    10: $spacer * 10.5,
+);
+
+// Typography
+$line-height-base: 1.5 !default;
+$line-height-sm: 1.25 !default;
+$line-height-lg: 2 !default;
+$h1-font-size: 2.5rem;
+$h2-font-size: 1.75rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.125rem;
+$h6-font-size: 0.88rem;
+$headings-margin-bottom: 1rem;
+$headings-line-height: 1.5 !default;
