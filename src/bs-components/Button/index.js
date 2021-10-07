@@ -9,7 +9,7 @@ const StyledButton = styled('div')`
 export default (props) => {
     return (
         <StyledButton>
-            <Button {...props}>Click me</Button>
+            <Button {...props}>{props.children}</Button>
         </StyledButton>
     );
 };
