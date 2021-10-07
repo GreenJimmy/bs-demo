@@ -14,7 +14,8 @@
     "build": "webpack --mode production",
     "package": "webpack --config webpack.config.pkg.js --mode production",
     "lint": "eslint ./src --cache && echo \"No linting errors\"",
-    "lint:fix": "eslint ./src --fix"
+    "lint:fix": "eslint ./src --fix",
+    "bs-css": "node src/tools/bs-css.js"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -35,6 +36,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-webpack-plugin": "^2.3.0",
+    "fibers": "^5.0.0",
     "html-webpack-plugin": "^5.0.0-alpha.14",
     "prettier": "^2.1.2",
     "sass": "^1.42.1",
@@ -54,6 +56,8 @@
     "react-bootstrap": "^1.6.4",
     "react-dom": "^17.0.1",
     "react-hot-loader": "^4.13.0",
+    "react-is": "^17.0.2",
     "styled-components": "^5.3.1"
-  }
+  },
+  "packageManager": "yarn@3.0.2"
 }
