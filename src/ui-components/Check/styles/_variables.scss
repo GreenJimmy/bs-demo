@@ -1,0 +1,25 @@
+/* colors variables */
+$primary: rgba(0, 112, 168, 1);
+$secondary: rgba(209, 216, 224, 1);
+$secondary-middle: rgba(231, 238, 245, 1);
+$secondary-light: rgba(244, 248, 252, 1);
+$secondary-dark: rgba(176, 184, 191, 1);
+$black: rgba(0, 0, 0, 1);
+
+/* sizes variables */
+$checkbox-size-lg: 20px;
+$font-size-label-lg: 14px;
+$line-height-label-lg: 20px;
+$checkbox-size-sm: 16px;
+$font-size-label-sm: 12px;
+$line-height-label-sm: 16px;
+
+/* bootstarp variables */
+$form-check-input-border: 1px solid $secondary;
+$form-check-input-focus-border: $secondary;
+$form-check-input-focus-box-shadow: 0 0 0 4px $secondary-middle;
+$form-check-input-disabled-opacity: 1;
+$form-check-label-color: $black;
+$form-check-label-cursor: pointer;
+$form-check-input-focus-border: $secondary;
+$form-check-input-focus-box-shadow: none;

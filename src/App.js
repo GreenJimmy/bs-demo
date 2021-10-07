@@ -1,20 +1,24 @@
-import Button from './ui-components/Button';
+import { useState } from 'react';
+import Check from './ui-components/Check';
 
-const Tester = () => {
+const App = () => {
+    const [checked, setChecked] = useState(false);
+
+    const handleChange = (event) => {
+        setChecked(event.target.checked);
+    };
+
     return (
-        <div className="jt" data-id="ly">
-            HELLLLLO
+        <div style={{ padding: '50px' }}>
+            <Check
+                checked={checked}
+                onChange={handleChange}
+                size="lg"
+                id="test"
+                label="Test text"
+            />
         </div>
     );
 };
-
-const App = () => (
-    <div style={{ padding: '50px' }}>
-        <Button variant="primary">primary</Button>
-        <Button variant="secondary">secondary</Button>
-        <Button variant="link">link</Button>
-        <Button variant="light">light</Button>
-    </div>
-);
 
 export default App;
