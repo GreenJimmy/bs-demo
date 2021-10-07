@@ -6,10 +6,10 @@ const StyledButton = styled('div')`
     ${styleAsString}
 `;
 
-export default (props) => {
+export default ({ children, ...props }) => {
     return (
         <StyledButton>
-            <Button {...props}>{props.children}</Button>
+            <Button {...props}>{children}</Button>
         </StyledButton>
     );
 };
