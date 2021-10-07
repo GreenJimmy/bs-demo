@@ -1,16 +1,18 @@
 import { Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import './styles/index.scss';
 
 const CustomButton = (props) => {
     const { children, className, isSelected, ...accProps } = props;
-    const classNames = `c-btn${isSelected ? ' c-btn-selected' : ''}${
-        className ? ` ${className}` : ''
-    }`;
+    const buttonClassNames = classNames('c-btn', {
+        'c-btn-selected': isSelected,
+        [className]: className,
+    });
 
     return (
-        <Button className={classNames} {...accProps}>
+        <Button className={buttonClassNames} {...accProps}>
             {children}
         </Button>
     );
