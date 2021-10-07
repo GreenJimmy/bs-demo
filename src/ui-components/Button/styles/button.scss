@@ -1,0 +1,119 @@
+@import '_mixins';
+
+.c-btn.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  /* primary */
+  &.btn-primary:disabled,
+  &.btn-primary.disabled {
+    @include bg-color($secondary-dark);
+  }
+
+  &.btn-primary:active:hover,
+  &.btn-primary.active:hover,
+  &.btn-primary:focus:hover,
+  &.btn-primary.focus:hover,
+  &.btn-primary.c-btn-selected:hover,
+  &.btn-primary:hover {
+    @include bg-color($primary-dark);
+  }
+
+  &.btn-primary:active,
+  &.btn-primary.active,
+  &.btn-primary:focus,
+  &.btn-primary.focus,
+  &.btn-primary.c-btn-selected {
+    @include bg-color($primary-medium);
+  }
+
+  /* secondary */
+  &.btn-secondary:hover {
+    @include bg-color($secondary-dark);
+  }
+
+  &.btn-secondary:disabled,
+  &.btn-secondary.disabled {
+    @include bg-color($secondary-light);
+    color: $white;
+  }
+
+  &.btn-secondary:active,
+  &.btn-secondary.active,
+  &.btn-secondary:focus,
+  &.btn-secondary.focus,
+  &.btn-secondary.c-btn-selected {
+    @include bg-color($secondary-dark);
+    color: $white;
+  }
+
+  &.btn-secondary:active:hover,
+  &.btn-secondary.active:hover,
+  &.btn-secondary:focus:hover,
+  &.btn-secondary.focus:hover,
+  &.btn-secondary.c-btn-selected:hover {
+    @include bg-color($secondary-medium);
+    color: $white;
+  }
+
+  /* link */
+  &.btn-link {
+    font-weight: $btn-font-weight;
+  }
+
+  /* light */
+  &.btn-light {
+    @include bg-color($light);
+    color: $primary;
+  }
+
+  &.btn-light:disabled,
+  &.btn-light.disabled {
+    @include bg-color($light);
+    color: $secondary-dark;
+  }
+
+  &.btn-light:hover,
+  &.btn-light.hover {
+    @include bg-color($light-medium);
+    color: $primary-dark;
+  }
+
+  &.btn-light:active,
+  &.btn-light.active,
+  &.btn-light:focus,
+  &.btn-light.focus,
+  &.btn-light.c-btn-selected {
+    @include bg-color($light-dark);
+    color: $white;
+  }
+
+  &.btn-light:active:hover,
+  &.btn-light.active:hover,
+  &.btn-light:focus:hover,
+  &.btn-light.focus:hover,
+  &.btn-light.c-btn-selected:hover {
+    @include bg-color($light-medium-dark);
+    color: $white;
+  }
+
+  /* only icon child */
+  & svg,
+  &.btn-lg svg {
+    @include icon-size(14px);
+  }
+
+  &.btn-sm svg {
+    @include icon-size(12px);
+  }
+
+  & svg:only-child {
+    margin: 2px 0;
+  }
+
+  & svg:only-child,
+  &.btn-lg svg:only-child {
+    @include icon-size(16px);
+  }
+}

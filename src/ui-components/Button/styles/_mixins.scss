@@ -1,0 +1,9 @@
+@mixin bg-color($bg-color) {
+    background-color: $bg-color;
+    border-color: $bg-color;
+}
+
+@mixin icon-size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}

@@ -1,22 +1,20 @@
-import { Container, Row, Col } from 'react-bootstrap';
-import Theme from './bs-components/Theme';
-import Button from './bs-components/Button';
+import Button from './ui-components/Button';
 
 const Tester = () => {
-    return <div className="jt" data-id="ly">HELLLLLO</div>;
+    return (
+        <div className="jt" data-id="ly">
+            HELLLLLO
+        </div>
+    );
 };
 
 const App = () => (
-    <Theme>
-        <Tester />
-        <Container>
-            <Row>
-                <Col>
-                    <Button>hello world</Button>
-                </Col>
-            </Row>
-        </Container>
-    </Theme>
+    <div style={{ padding: '50px' }}>
+        <Button variant="primary">primary</Button>
+        <Button variant="secondary">secondary</Button>
+        <Button variant="link">link</Button>
+        <Button variant="light">light</Button>
+    </div>
 );
 
 export default App;
