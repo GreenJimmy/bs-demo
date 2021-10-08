@@ -53,7 +53,7 @@
   &.btn-secondary:focus:hover,
   &.btn-secondary.focus:hover,
   &.btn-secondary.c-btn-selected:hover {
-    @include bg-color($secondary-medium);
+    @include bg-color($secondary);
     color: $white;
   }
 
