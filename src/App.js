@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Switch from './ui-components/Switch';
+import Check from './ui-components/Check';
 import Button from './bs-components/Button';
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
         <div style={{ padding: '50px' }}>
             <Button>Clickable</Button>
             <br />
-            <Switch checked={checked} onChange={handleChange} id="test" />
+            <Check checked={checked} onChange={handleChange} id="test" indeterminate />
         </div>
     );
 };
