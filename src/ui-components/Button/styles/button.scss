@@ -3,7 +3,7 @@
 .c-btn.btn {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.25rem;
 
   /* primary */
   &.btn-primary:disabled,
@@ -98,22 +98,22 @@
     color: $white;
   }
 
-  /* only icon child */
   & svg,
   &.btn-lg svg {
-    @include icon-size(14px);
+    @include icon-size($btn-icon-size-lg);
   }
 
   &.btn-sm svg {
-    @include icon-size(12px);
+    @include icon-size($btn-icon-size-sm);
   }
 
+  /* only icon child */
   & svg:only-child {
-    margin: 2px 0;
+    margin: 0.125rem 0;
   }
 
   & svg:only-child,
   &.btn-lg svg:only-child {
-    @include icon-size(16px);
+    @include icon-size($btn-icon-size-only-icon-lg);
   }
 }

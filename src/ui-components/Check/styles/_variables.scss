@@ -7,17 +7,17 @@ $secondary-dark: rgba(176, 184, 191, 1);
 $black: rgba(0, 0, 0, 1);
 
 /* sizes variables */
-$checkbox-size-lg: 20px;
-$font-size-label-lg: 14px;
-$line-height-label-lg: 20px;
-$checkbox-size-sm: 16px;
-$font-size-label-sm: 12px;
-$line-height-label-sm: 16px;
+$checkbox-size-lg: 1.25rem;
+$font-size-label-lg: 0.875rem;
+$line-height-label-lg: 1.25rem;
+$checkbox-size-sm: 1rem;
+$font-size-label-sm: 0.75rem;
+$line-height-label-sm: 1rem;
 
 /* bootstarp variables */
 $form-check-input-border: 1px solid $secondary;
 $form-check-input-focus-border: $secondary;
-$form-check-input-focus-box-shadow: 0 0 0 4px $secondary-middle;
+$form-check-input-focus-box-shadow: 0 0 0 0.25rem $secondary-middle;
 $form-check-input-disabled-opacity: 1;
 $form-check-label-color: $black;
 $form-check-label-cursor: pointer;
