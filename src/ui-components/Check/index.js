@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -6,17 +7,21 @@ import './styles/index.scss';
 
 const Check = (props) => {
     const { id, className, checked, disabled, indeterminate, size, label, type, onChange } = props;
+    const checkboxRef = useRef();
     const formGroupClassNames = classNames('с-check', `c-check--size-${size}`, {
         [className]: className,
     });
-    const checkboxClassNames = classNames({ indeterminate: type !== 'ratio' && indeterminate });
+
+    useEffect(() => {
+        checkboxRef.current.indeterminate = indeterminate;
+    }, [indeterminate]);
 
     return (
         <Form.Group controlId={id} className={formGroupClassNames}>
             <Form.Check.Input
+                ref={checkboxRef}
                 type={type}
                 id={id}
-                className={checkboxClassNames}
                 disabled={disabled}
                 checked={checked}
                 onChange={onChange}

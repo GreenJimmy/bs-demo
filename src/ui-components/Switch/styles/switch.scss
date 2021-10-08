@@ -1,0 +1,10 @@
+.c-switch {
+  .form-check-input:hover {
+    background-color: $primary-dark;
+    cursor: pointer;
+  }
+
+  .form-check-input:disabled {
+    background-color: $secondary;
+  }
+}

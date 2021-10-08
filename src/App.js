@@ -13,13 +13,7 @@ const App = () => {
         <div style={{ padding: '50px' }}>
             <Button>Clickable</Button>
             <br />
-            <Check
-                checked={checked}
-                onChange={handleChange}
-                size="lg"
-                id="test"
-                label="Test text"
-            />
+            <Check checked={checked} onChange={handleChange} id="test" indeterminate />
         </div>
     );
 };
