@@ -1,0 +1,82 @@
+@import '_mixins';
+
+.c-dropdown > .btn {
+  position: relative;
+
+  /* primary */
+  &.btn-primary:disabled,
+  &.btn-primary.disabled {
+    @include bg-color($secondary-dark);
+  }
+
+  &.btn-primary.focus:hover,
+  &.btn-primary.c-btn-selected:hover,
+  &.btn-primary:hover {
+    @include bg-color($primary-dark);
+  }
+
+  &.btn-primary.c-btn-selected {
+    @include bg-color($primary-medium);
+  }
+
+  /* secondary */
+  &.btn-secondary:hover {
+    @include bg-color($primary-dark);
+    color: $white;
+  }
+
+  &.btn-secondary:disabled,
+  &.btn-secondary.disabled {
+    @include bg-color($secondary-light);
+    color: $secondary-dark;
+  }
+
+  /* link */
+  &.btn-link {
+    font-weight: $btn-font-weight;
+  }
+
+  &.btn-lg.btn-link {
+    @include btn-link-before-size($btn-padding-x-lg, $btn-padding-y-lg);
+  }
+
+  &.btn-sm.btn-link {
+    @include btn-link-before-size($btn-padding-x-sm, $btn-padding-y-sm);
+  }
+
+  &.btn-link:hover,
+  &.btn-link.hover {
+    color: $primary-dark;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      border-bottom: 1px solid $primary-dark;
+    }
+  }
+
+  /* icon-link */
+  &.btn-icon-link {
+    color: $primary;
+  }
+
+  &.btn-icon-link:hover,
+  &.btn-icon-link.hover {
+    @include bg-color($secondary-light);
+    color: $primary-dark;
+  }
+
+  &.btn-icon-link:disabled,
+  &.btn-icon-link.disabled {
+    color: $secondary-dark;
+  }
+
+  &.btn-lg {
+    @include btn-size($btn-height-lg);
+  }
+
+  &.btn-sm {
+    @include btn-size($btn-height-sm);
+  }
+}
