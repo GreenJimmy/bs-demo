@@ -14,6 +14,7 @@ const CustomButton = (props) => {
     return (
         <Button className={buttonClassNames} {...accProps}>
             {children}
+            {accProps.variant === 'link' && <span className="c-btn__decorator" />}
         </Button>
     );
 };
@@ -21,7 +22,7 @@ const CustomButton = (props) => {
 CustomButton.propTypes = {
     className: PropTypes.string,
     disabled: PropTypes.bool,
-    variant: PropTypes.oneOf(['primary', 'secondary', 'link', 'light']),
+    variant: PropTypes.oneOf(['primary', 'secondary', 'link', 'icon-link']),
     size: PropTypes.oneOf(['lg', 'sm']),
     isSelected: PropTypes.bool,
     onClick: PropTypes.func,

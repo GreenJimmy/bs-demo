@@ -3,7 +3,12 @@
 .c-btn.btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  position: relative;
+  gap: $btn-size-gap;
+
+  .c-btn__decorator {
+    display: none;
+  }
 
   /* primary */
   &.btn-primary:disabled,
@@ -11,50 +16,26 @@
     @include bg-color($secondary-dark);
   }
 
-  &.btn-primary:active:hover,
-  &.btn-primary.active:hover,
-  &.btn-primary:focus:hover,
   &.btn-primary.focus:hover,
   &.btn-primary.c-btn-selected:hover,
   &.btn-primary:hover {
     @include bg-color($primary-dark);
   }
 
-  &.btn-primary:active,
-  &.btn-primary.active,
-  &.btn-primary:focus,
-  &.btn-primary.focus,
   &.btn-primary.c-btn-selected {
     @include bg-color($primary-medium);
   }
 
   /* secondary */
   &.btn-secondary:hover {
-    @include bg-color($secondary-dark);
+    @include bg-color($primary-dark);
+    color: $white;
   }
 
   &.btn-secondary:disabled,
   &.btn-secondary.disabled {
     @include bg-color($secondary-light);
-    color: $white;
-  }
-
-  &.btn-secondary:active,
-  &.btn-secondary.active,
-  &.btn-secondary:focus,
-  &.btn-secondary.focus,
-  &.btn-secondary.c-btn-selected {
-    @include bg-color($secondary-dark);
-    color: $white;
-  }
-
-  &.btn-secondary:active:hover,
-  &.btn-secondary.active:hover,
-  &.btn-secondary:focus:hover,
-  &.btn-secondary.focus:hover,
-  &.btn-secondary.c-btn-selected:hover {
-    @include bg-color($secondary);
-    color: $white;
+    color: $secondary-dark;
   }
 
   /* link */
@@ -62,40 +43,47 @@
     font-weight: $btn-font-weight;
   }
 
-  /* light */
-  &.btn-light {
-    @include bg-color($light);
+  &.btn-link:hover,
+  &.btn-link.hover {
+    color: $primary-dark;
+
+    & > .c-btn__decorator {
+      display: block;
+      position: absolute;
+      border-bottom: 1px solid $primary-dark;
+    }
+  }
+
+  &.btn-lg.btn-link {
+    @include btn-link-decorator-size($btn-padding-x-lg, $btn-padding-y-lg, $btn-icon-size-lg, $btn-size-gap);
+  }
+
+  &.btn-sm.btn-link {
+    @include btn-link-decorator-size($btn-padding-x-sm, $btn-padding-y-sm, $btn-icon-size-sm, $btn-size-gap);
+  }
+
+  /* icon-link */
+  &.btn-icon-link {
     color: $primary;
   }
 
-  &.btn-light:disabled,
-  &.btn-light.disabled {
-    @include bg-color($light);
-    color: $secondary-dark;
-  }
-
-  &.btn-light:hover,
-  &.btn-light.hover {
-    @include bg-color($light-medium);
+  &.btn-icon-link:hover,
+  &.btn-icon-link.hover {
+    @include bg-color($secondary-light);
     color: $primary-dark;
   }
 
-  &.btn-light:active,
-  &.btn-light.active,
-  &.btn-light:focus,
-  &.btn-light.focus,
-  &.btn-light.c-btn-selected {
-    @include bg-color($light-dark);
-    color: $white;
+  &.btn-icon-link:disabled,
+  &.btn-icon-link.disabled {
+    color: $secondary-dark;
   }
 
-  &.btn-light:active:hover,
-  &.btn-light.active:hover,
-  &.btn-light:focus:hover,
-  &.btn-light.focus:hover,
-  &.btn-light.c-btn-selected:hover {
-    @include bg-color($light-medium-dark);
-    color: $white;
+  &.btn-lg {
+    @include btn-size($btn-height-lg);
+  }
+
+  &.btn-sm {
+    @include btn-size($btn-height-sm);
   }
 
   & svg,
@@ -110,10 +98,5 @@
   /* only icon child */
   & svg:only-child {
     margin: 0.125rem 0;
-  }
-
-  & svg:only-child,
-  &.btn-lg svg:only-child {
-    @include icon-size($btn-icon-size-only-icon-lg);
   }
 }
