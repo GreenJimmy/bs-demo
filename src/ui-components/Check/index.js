@@ -3,8 +3,6 @@ import { Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import './styles/index.scss';
-
 const Check = (props) => {
     const { id, className, checked, disabled, indeterminate, size, label, type, onChange } = props;
     const checkboxRef = useRef();

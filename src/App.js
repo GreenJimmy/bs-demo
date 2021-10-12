@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Button from './bs-components/Button';
-import CustomButton from './ui-components/Button';
-import Check from './ui-components/Check';
+// import Button from './bs-components/Button';
+
+import { Button as CustomButton, Check } from './ui-components/index';
 
 const App = () => {
     const [checked, setCheck] = useState(false);
@@ -12,7 +12,7 @@ const App = () => {
 
     return (
         <div style={{ padding: '50px' }}>
-            <Button>Clickable</Button>
+            {/* <Button>Clickable</Button> */}
             <br />
             <div>UI components</div>
             <div>
