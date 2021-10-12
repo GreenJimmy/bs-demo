@@ -20,6 +20,7 @@ export default ({ children, ...props }) => {
     console.log($('class'));
     ast.value.map((value) => {
         if (value.type === 'rule') {
+            // eslint-disable-next-line array-callback-return
             value.value.map((subvalue) => {
                 if (subvalue.type === 'selector') {
                     console.log(subvalue);

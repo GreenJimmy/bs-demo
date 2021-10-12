@@ -1,19 +1,23 @@
-import { useState } from 'react';
-import Check from './ui-components/Check';
+import Dropdown from './ui-components/Dropdown';
 import Button from './bs-components/Button';
 
 const App = () => {
-    const [checked, setChecked] = useState(false);
-
-    const handleChange = (event) => {
-        setChecked(event.target.checked);
-    };
-
+    const dropdownItems = [
+        { title: 'Action', eventKey: '1' },
+        { title: 'Another action', eventKey: '2', disabled: true, hasDividerAfter: true },
+        { title: 'Active Item', eventKey: '3' },
+    ];
     return (
         <div style={{ padding: '50px' }}>
             <Button>Clickable</Button>
             <br />
-            <Check checked={checked} onChange={handleChange} id="test" indeterminate />
+            <Dropdown
+                id="custom-dropdown-id"
+                variant="primary"
+                items={dropdownItems}
+                className="my-custom-dropdown"
+                title="Dropdown button"
+            />
         </div>
     );
 };

@@ -1,0 +1,22 @@
+@mixin bg-color($bg-color) {
+    background-color: $bg-color;
+    border-color: $bg-color;
+}
+
+@mixin icon-size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin btn-size($width, $height: $width) {
+    min-width: $width;
+    height: $height;
+};
+
+@mixin btn-link-before-size($padding-left, $padding-bottom) {
+    &::before {
+        width: calc(92% - #{$padding-left} * 2);
+        bottom: $padding-bottom;
+        left: $padding-left;
+    }
+}

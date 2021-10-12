@@ -1,14 +1,7 @@
 @import '_mixins';
 
-.c-btn.btn {
-  display: inline-flex;
-  align-items: center;
+.c-dropdown > .btn {
   position: relative;
-  gap: $btn-size-gap;
-
-  .c-btn__decorator {
-    display: none;
-  }
 
   /* primary */
   &.btn-primary:disabled,
@@ -43,23 +36,24 @@
     font-weight: $btn-font-weight;
   }
 
+  &.btn-lg.btn-link {
+    @include btn-link-before-size($btn-padding-x-lg, $btn-padding-y-lg);
+  }
+
+  &.btn-sm.btn-link {
+    @include btn-link-before-size($btn-padding-x-sm, $btn-padding-y-sm);
+  }
+
   &.btn-link:hover,
   &.btn-link.hover {
     color: $primary-dark;
 
-    & > .c-btn__decorator {
+    &::before {
+      content: '';
       display: block;
       position: absolute;
       border-bottom: 1px solid $primary-dark;
     }
-  }
-
-  &.btn-lg.btn-link {
-    @include btn-link-decorator-size($btn-padding-x-lg, $btn-padding-y-lg, $btn-icon-size-lg, $btn-size-gap);
-  }
-
-  &.btn-sm.btn-link {
-    @include btn-link-decorator-size($btn-padding-x-sm, $btn-padding-y-sm, $btn-icon-size-sm, $btn-size-gap);
   }
 
   /* icon-link */
@@ -84,19 +78,5 @@
 
   &.btn-sm {
     @include btn-size($btn-height-sm);
-  }
-
-  & svg,
-  &.btn-lg svg {
-    @include icon-size($btn-icon-size-lg);
-  }
-
-  &.btn-sm svg {
-    @include icon-size($btn-icon-size-sm);
-  }
-
-  /* only icon child */
-  & svg:only-child {
-    margin: 0.125rem 0;
   }
 }
