@@ -1,4 +1,4 @@
-import Dropdown from './ui-components/Dropdown';
+import { Dropdown, Switch } from './ui-components';
 import Button from './bs-components/Button';
 
 const App = () => {
@@ -18,6 +18,8 @@ const App = () => {
                 className="my-custom-dropdown"
                 title="Dropdown button"
             />
+            <br />
+            <Switch id="custom-switch" />
         </div>
     );
 };

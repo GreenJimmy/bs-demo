@@ -1,0 +1,13 @@
+/* components variables */
+@import 'Button/styles/variables';
+@import 'Check/styles/variables';
+@import 'Dropdown/styles/variables';
+@import 'Switch/styles/variables';
+
+@import '~bootstrap/scss/bootstrap';
+
+/* components styles */
+@import 'Button/styles/button';
+@import 'Check/styles/check';
+@import 'Dropdown/styles/dropdown';
+@import 'Switch/styles/switch';

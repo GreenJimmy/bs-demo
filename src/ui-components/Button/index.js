@@ -2,8 +2,6 @@ import { Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import './styles/index.scss';
-
 const CustomButton = (props) => {
     const { children, className, isSelected, ...accProps } = props;
     const buttonClassNames = classNames('c-btn', {
