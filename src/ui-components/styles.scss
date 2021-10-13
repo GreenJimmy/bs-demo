@@ -3,6 +3,7 @@
 @import 'Check/styles/variables';
 @import 'Dropdown/styles/variables';
 @import 'Switch/styles/variables';
+@import 'Toggle/components/ToggleButton/styles/variables';
 
 @import '~bootstrap/scss/bootstrap';
 
@@ -11,3 +12,4 @@
 @import 'Check/styles/check';
 @import 'Dropdown/styles/dropdown';
 @import 'Switch/styles/switch';
+@import 'Toggle/components/ToggleButton/styles/toggleButton';
