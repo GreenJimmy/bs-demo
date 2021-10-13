@@ -2,8 +2,6 @@ import { Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import './styles/index.scss';
-
 const CustomSwitch = (props) => {
     const { className, disabled, checked, label, id, onChange } = props;
     const switchClassNames = classNames('c-switch', {

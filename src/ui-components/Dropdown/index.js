@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 
-import './styles/index.scss';
-
 const CustomDropdown = (props) => {
     const { className, disabled, id, title, items, variant, size, onClick } = props;
     const buttonClassNames = classNames('c-dropdown', {
