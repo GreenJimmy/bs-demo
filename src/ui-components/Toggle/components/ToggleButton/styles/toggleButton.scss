@@ -3,11 +3,19 @@
 .btn-group.btn-group-sm .c-toggle-btn.btn,
 .c-toggle-btn.btn.btn-sm {
   @include button-size($toggle-padding-y-sm, $toggle-padding-x-sm, $toggle-size-sm, $toggle-border-radius-sm, $toggle-font-size-sm, $toggle-line-height-sm);
+
+  & svg {
+    @include icon-size($toggle-font-size-sm);
+  }
 }
 
 .btn-group.btn-group-lg .c-toggle-btn.btn,
 .c-toggle-btn.btn.btn-lg {
   @include button-size($toggle-padding-y-lg, $toggle-padding-x-lg, $toggle-size-lg, $toggle-border-radius-lg, $toggle-font-size-lg, $toggle-line-height-lg);
+
+  & svg {
+    @include icon-size($toggle-font-size-lg);
+  }
 }
 
 .btn-group.btn-group-sm .c-toggle-btn-wrapper {
@@ -23,26 +31,40 @@
 }
 
 .btn-group .c-toggle-btn-wrapper {
-  padding: 2px 1px;
+  padding: 1px;
   border-top: 1px solid $toggle-border-color;
   border-bottom: 1px solid $toggle-border-color;
 
   &:first-child {
     border-left: 1px solid $toggle-border-color;
-    padding-left: 2px;
+    padding-left: 1px;
   }
 
   &:last-child {
     border-right: 1px solid $toggle-border-color;
-    padding-right: 2px;
+    padding-right: 1px;
   }
 }
 
-.btn-group.c-toggle-btn-group--button .c-toggle-btn-wrapper {
-  padding: 2px;
+.btn-group.c-toggle-btn-group--button {
+  .c-toggle-btn-wrapper {
+    padding: 1px;
 
-  &:not(:first-child) {
-    border-left: 1px solid $toggle-border-color;
+    &:not(:first-child) {
+      border-left: 1px solid $toggle-border-color;
+    }
+  }
+
+  &.btn-group-lg {
+    .c-toggle-btn {
+      padding: $toggle-padding-btn-lg;
+    }
+  }
+
+  &.btn-group-sm {
+    .c-toggle-btn {
+      padding: $toggle-padding-btn-sm;
+    }
   }
 }
 

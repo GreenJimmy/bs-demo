@@ -16,6 +16,7 @@ const CustomToggleButton = (props) => {
                 value={value}
                 disabled={disabled}
                 name={name}
+                variant="toggle"
                 {...accProps}
             >
                 {children}

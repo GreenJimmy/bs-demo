@@ -8,6 +8,7 @@ const Check = (props) => {
     const checkboxRef = useRef();
     const formGroupClassNames = classNames('с-check', `c-check--size-${size}`, {
         [className]: className,
+        disabled,
     });
 
     useEffect(() => {

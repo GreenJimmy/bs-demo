@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ToggleButtonGroup, ToggleButton } from './ui-components';
+import { ToggleButtonGroup, ToggleButton, Check, Switch } from './ui-components';
 import Button from './bs-components/Button';
 
 const IconComponent = () => (
@@ -17,10 +17,8 @@ const IconComponent = () => (
 
 const App = () => {
     const [value, setValue] = useState(null);
-
-    const handleChange = (val) => {
-        setValue(val);
-    };
+    const [checked, setChecked] = useState(false);
+    const [switched, setSwitched] = useState(false);
 
     return (
         <div style={{ padding: '50px' }}>
@@ -28,10 +26,10 @@ const App = () => {
             <br />
             <ToggleButtonGroup
                 value={value}
-                onChange={handleChange}
+                onChange={(val) => setValue(val)}
                 name="custom-group-button"
                 type="radio"
-                size="lg"
+                size="sm"
                 variant="button"
             >
                 <ToggleButton id="tbg-btn-1" value={1} name="tbg-btn-1">
@@ -45,6 +43,20 @@ const App = () => {
                 </ToggleButton>
             </ToggleButtonGroup>
             <br />
+            <br />
+            <Check
+                id="custom-check"
+                checked={checked}
+                size="lg"
+                onChange={(event) => setChecked(event.target.checked)}
+            />
+            <br />
+            <br />
+            <Switch
+                id="custom-switch"
+                checked={switched}
+                onChange={(event) => setSwitched(event.target.checked)}
+            />
         </div>
     );
 };

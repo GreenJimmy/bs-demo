@@ -5,10 +5,18 @@
   align-items: center;
   gap: 0.5rem;
 
-  &:hover {
-    box-shadow: 0 0 0 0.25rem $secondary-middle;
-    background-color: $secondary-middle;
+  &:not(.disabled):hover {
+    box-shadow: 0 0 0 0.25rem $primary-dark;
+    background-color: $primary-dark;
     border-radius: 0.125rem;
+
+    & > .form-check-label {
+      color: $white;
+    }
+  }
+
+  &.disabled > .form-check-label {
+    pointer-events: none;
   }
 
   &.c-check--size-lg:hover {
@@ -37,7 +45,7 @@
   }
 
   .form-check-input:disabled {
-    background-color: $secondary-light;
+    background-color: transparent;
   }
 
   &.c-check--size-lg {

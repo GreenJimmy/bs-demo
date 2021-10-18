@@ -5,13 +5,13 @@ $secondary: rgba(209, 216, 224, 1);
 $secondary-dark: rgba(176, 184, 191, 1);
 $white: rgba(255, 255, 255, 1);
 
-$form-check-input-bg: $secondary-dark;
-$form-check-input-border: none;
-$form-check-input-width: 1.25rem;
-$form-check-padding-start: $form-check-input-width + .5rem;
-$form-check-input-focus-border: $secondary-dark;
-$form-check-input-focus-box-shadow: none;
+$form-switch-input-bg: $secondary-dark;
+$form-switch-input-border: none;
+$form-switch-height: 1.25rem;
+$form-switch-focus-border: $secondary-dark;
+$form-switch-focus-box-shadow: none;
 
+/* Bootstrap variables */
 $form-switch-color: $white;
 $form-switch-width: 2.25rem;
 $form-switch-padding-start: $form-switch-width + .5rem;
