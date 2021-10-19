@@ -40,14 +40,17 @@ const TextField = (props) => {
         _setValue(value);
     }, [value]);
 
+    const changeValue = (val) => {
+        _setValue(val);
+        onChange?.(val);
+    };
+
     const handleClear = () => {
-        onChange('');
-        _setValue('');
+        changeValue('');
     };
 
     const onHandleChange = (event) => {
-        onChange(event.target.value);
-        _setValue(event.target.value);
+        changeValue(event.target.value);
     };
 
     return (
@@ -111,7 +114,7 @@ TextField.defaultProps = {
     className: undefined,
     label: undefined,
     errorMessage: undefined,
-    value: undefined,
+    value: '',
     placeholder: undefined,
     size: 'sm',
     controlId: undefined,
