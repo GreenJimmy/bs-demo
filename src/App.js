@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ToggleButtonGroup, ToggleButton, Check, Switch } from './ui-components';
+import { ToggleButtonGroup, ToggleButton, Check, Switch, TextField } from './ui-components';
 import Button from './bs-components/Button';
 
 const IconComponent = () => (
@@ -19,6 +19,7 @@ const App = () => {
     const [value, setValue] = useState(null);
     const [checked, setChecked] = useState(false);
     const [switched, setSwitched] = useState(false);
+    const [inputValue, setInputValue] = useState();
 
     return (
         <div style={{ padding: '50px' }}>
@@ -48,6 +49,8 @@ const App = () => {
                 id="custom-check"
                 checked={checked}
                 size="lg"
+                indeterminate
+                label="Checkbox text"
                 onChange={(event) => setChecked(event.target.checked)}
             />
             <br />
@@ -56,6 +59,17 @@ const App = () => {
                 id="custom-switch"
                 checked={switched}
                 onChange={(event) => setSwitched(event.target.checked)}
+            />
+            <br />
+            <br />
+            <TextField
+                label="Label"
+                placeholder="Placeholder"
+                size="lg"
+                value={inputValue}
+                showIcon
+                onChange={(_value) => setInputValue(_value)}
+                showClearBtn
             />
         </div>
     );
