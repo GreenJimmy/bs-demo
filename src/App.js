@@ -50,6 +50,7 @@ const App = () => {
                 checked={checked}
                 size="lg"
                 indeterminate
+                label="Checkbox text"
                 onChange={(event) => setChecked(event.target.checked)}
             />
             <br />
