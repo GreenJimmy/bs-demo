@@ -5,7 +5,8 @@ import Switch from './Switch';
 import ToggleButton from './Toggle/components/ToggleButton';
 import ToggleButtonGroup from './Toggle/components/ToggleButtonGroup';
 import TextField from './TextField';
+import TextArea from './TextArea';
 
 import './styles.scss';
 
-export { Button, Check, Dropdown, Switch, ToggleButton, ToggleButtonGroup, TextField };
+export { Button, Check, Dropdown, Switch, ToggleButton, ToggleButtonGroup, TextField, TextArea };

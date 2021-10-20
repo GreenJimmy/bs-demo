@@ -1,5 +1,12 @@
 import { useState } from 'react';
-import { ToggleButtonGroup, ToggleButton, Check, Switch, TextField } from './ui-components';
+import {
+    ToggleButtonGroup,
+    ToggleButton,
+    Check,
+    Switch,
+    TextField,
+    TextArea,
+} from './ui-components';
 import Button from './bs-components/Button';
 
 const IconComponent = () => (
@@ -70,6 +77,15 @@ const App = () => {
                 showIcon
                 onChange={(_value) => setInputValue(_value)}
                 showClearBtn
+            />
+            <br />
+            <TextArea
+                label="Label"
+                placeholder="Placeholder"
+                size="sm"
+                helpText="Help text"
+                maxNumLength="30"
+                rows={5}
             />
         </div>
     );
