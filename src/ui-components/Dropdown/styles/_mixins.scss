@@ -8,9 +8,10 @@
     height: $height;
 }
 
-@mixin btn-size($width, $height: $width) {
+@mixin btn-size($line-height, $width, $height: $width) {
     min-width: $width;
     height: $height;
+    line-height: $line-height;
 };
 
 @mixin btn-link-before-size($padding-left, $padding-bottom) {
@@ -19,4 +20,12 @@
         bottom: $padding-bottom;
         left: $padding-left;
     }
+}
+
+@mixin dropdown-menu($border-radius, $font-size, $line-height, $padding-x, $padding-y, $min-width) {
+    border-radius: $border-radius;
+    font-size: $font-size;
+    line-height: $line-height;
+    padding: $padding-y $padding-x;
+    min-width: $min-width;
 }

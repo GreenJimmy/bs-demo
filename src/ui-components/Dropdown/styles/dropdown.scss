@@ -1,78 +1,134 @@
 @import '_mixins';
 
-.c-dropdown > .btn {
-  position: relative;
+.c-dropdown {
+  & > .btn {
+    position: relative;
 
-  /* primary */
-  &.btn-primary:disabled,
-  &.btn-primary.disabled {
-    @include bg-color($btn-primary-disabled-bg-color);
-  }
+    /* primary */
+    &.btn-primary:disabled,
+    &.btn-primary.disabled {
+      @include bg-color($btn-primary-disabled-bg-color);
+    }
 
-  &.btn-primary.focus:hover,
-  &.btn-primary.c-btn-selected:hover,
-  &.btn-primary:hover {
-    @include bg-color($btn-primary-hover-bg-color);
-  }
+    &.btn-primary.focus:hover,
+    &.btn-primary.c-btn-selected:hover,
+    &.btn-primary:hover, {
+      @include bg-color($btn-primary-hover-bg-color);
+    }
 
-  /* secondary */
-  &.btn-secondary:hover {
-    @include bg-color($btn-secondary-hover-bg-color);
-    color: $btn-secondary-hover-text-color;
-  }
+    /* secondary */
+    &.btn-secondary:hover {
+      @include bg-color($btn-secondary-hover-bg-color);
+      color: $btn-secondary-hover-text-color;
+    }
 
-  &.btn-secondary:disabled,
-  &.btn-secondary.disabled {
-    @include bg-color($btn-secondary-disabled-bg-color);
-    color: $btn-secondary-disabled-text-color;
-  }
+    &.btn-secondary:disabled,
+    &.btn-secondary.disabled {
+      @include bg-color($btn-secondary-disabled-bg-color);
+      color: $btn-secondary-disabled-text-color;
+    }
 
-  /* link */
-  &.btn-link {
-    font-weight: $btn-font-weight;
-  }
+    /* link */
+    &.btn-link {
+      font-weight: $btn-font-weight;
+    }
 
-  &.btn-lg.btn-link {
-    @include btn-link-before-size($btn-padding-x-lg, $btn-padding-y-lg);
-  }
+    &.btn-lg.btn-link {
+      @include btn-link-before-size($btn-padding-x-lg, $btn-padding-y-lg);
+    }
 
-  &.btn-sm.btn-link {
-    @include btn-link-before-size($btn-padding-x-sm, $btn-padding-y-sm);
-  }
+    &.btn-sm.btn-link {
+      @include btn-link-before-size($btn-padding-x-sm, $btn-padding-y-sm);
+    }
 
-  &.btn-link:hover,
-  &.btn-link.hover {
-    color: $btn-link-hover-text-color;
+    &.btn-link:hover,
+    &.btn-link.hover {
+      color: $btn-link-hover-text-color;
 
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      border-bottom: 1px solid $btn-link-hover-text-color;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        border-bottom: 1px solid $btn-link-hover-text-color;
+      }
+    }
+
+    /* icon-link */
+    &.btn-icon-link {
+      color: $btn-icon-link-text-color;
+    }
+
+    &.btn-icon-link:hover,
+    &.btn-icon-link.hover {
+      @include bg-color($btn-icon-link-hover-bg-color);
+      color: $btn-icon-link-hover-text-color;
+    }
+
+    &.btn-icon-link:disabled,
+    &.btn-icon-link.disabled {
+      color: $btn-icon-link-disabled-text-color;
+    }
+
+    &.btn-lg {
+      @include btn-size($btn-line-height-lg, $btn-height-lg);
+    }
+
+    &.btn-sm {
+      @include btn-size($btn-line-height-sm, $btn-height-sm);
     }
   }
 
-  /* icon-link */
-  &.btn-icon-link {
-    color: $btn-icon-link-text-color;
+  &.show > .dropdown-toggle {
+    &::after {
+      transform: rotateX(-180deg);
+      transition: transform ease-in-out 0.15s;
+    }
+
+    &.btn-primary {
+      @include bg-color($primary);
+
+      &:hover{
+        @include bg-color($primary-dark);
+      }
+    }
+
+    &.btn-secondary {
+      @include bg-color($secondary);
+
+      &:hover{
+        @include bg-color($primary-dark);
+        color: $white;
+      }
+    }
   }
 
-  &.btn-icon-link:hover,
-  &.btn-icon-link.hover {
-    @include bg-color($btn-icon-link-hover-bg-color);
-    color: $btn-icon-link-hover-text-color;
+  .dropdown-menu {
+    border-color: $secondary;
   }
 
-  &.btn-icon-link:disabled,
-  &.btn-icon-link.disabled {
-    color: $btn-icon-link-disabled-text-color;
+  .dropdown-item {
+    color: $primary-dark;
+
+    &:hover {
+      background-color: $secondary-light;
+    }
   }
 
-  &.btn-lg {
-    @include btn-size($btn-height-lg);
+  .btn-lg ~ .dropdown-menu {
+    @include dropdown-menu($btn-border-radius-lg, $btn-font-size-lg, $btn-line-height-lg, $menu-padding-x-lg, $menu-padding-y-lg, $menu-min-width-lg);
+
+    .dropdown-item {
+      padding: $menu-item-padding-y-lg $menu-item-padding-x-lg;
+      border-radius: $btn-border-radius-lg;
+    }
   }
 
-  &.btn-sm {
-    @include btn-size($btn-height-sm);
+  .btn-sm ~ .dropdown-menu {
+    @include dropdown-menu($btn-border-radius-sm, $btn-font-size-sm, $btn-line-height-sm, $menu-padding-x-sm, $menu-padding-y-sm, $menu-min-width-sm);
+
+    .dropdown-item {
+      padding: $menu-item-padding-y-sm $menu-item-padding-x-sm;
+      border-radius: $btn-border-radius-sm;
+    }
   }
 }

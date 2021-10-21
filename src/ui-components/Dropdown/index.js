@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 
 const CustomDropdown = (props) => {
-    const { className, disabled, id, title, items, variant, size, onClick } = props;
+    const { className, disabled, id, title, items, variant, size, onSelect } = props;
     const buttonClassNames = classNames('c-dropdown', {
         [className]: className,
     });
@@ -16,10 +16,10 @@ const CustomDropdown = (props) => {
             disabled={disabled}
             variant={variant}
             size={size}
-            onClick={onClick}
+            onSelect={onSelect}
         >
             {!!items?.length &&
-                items.map((item, i) => {
+                items.map((item) => {
                     const {
                         title: itemTitle,
                         href,
@@ -28,12 +28,11 @@ const CustomDropdown = (props) => {
                         disabled: itemDisabled,
                         eventKey,
                     } = item;
-                    const key = `${itemTitle}-${i}`;
 
                     return (
                         <>
                             <Dropdown.Item
-                                key={key}
+                                key={eventKey}
                                 href={href}
                                 active={active}
                                 eventKey={eventKey}
@@ -52,7 +51,11 @@ const CustomDropdown = (props) => {
 CustomDropdown.propTypes = {
     id: PropTypes.string.isRequired,
     className: PropTypes.string,
-    title: PropTypes.string,
+    title: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node,
+        PropTypes.string,
+    ]),
     variant: PropTypes.oneOf(['primary', 'secondary', 'link', 'icon-link']),
     size: PropTypes.oneOf(['lg', 'sm']),
     disabled: PropTypes.bool,
@@ -66,7 +69,7 @@ CustomDropdown.propTypes = {
             href: PropTypes.string,
         }),
     ),
-    onClick: PropTypes.func,
+    onSelect: PropTypes.func,
 };
 
 CustomDropdown.defaultProps = {
@@ -76,7 +79,7 @@ CustomDropdown.defaultProps = {
     items: null,
     variant: 'primary',
     size: 'sm',
-    onClick: undefined,
+    onSelect: undefined,
 };
 
 export default CustomDropdown;
