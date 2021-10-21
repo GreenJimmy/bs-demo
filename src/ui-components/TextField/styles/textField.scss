@@ -91,6 +91,8 @@
 
   /* error text */
   &__error {
+    min-width: 1rem;
+    min-height: $fl-line-height;
     display: inline-block;
     line-height: $fl-line-height;
     padding-left: 1.25rem;
@@ -121,13 +123,6 @@
      }
    }
 
-   &:disabled,
-   &.disabled {
-     &::placeholder {
-       color: $tf-gray-400;
-     }
-   }
-
    &:invalid,
    &.is-invalid {
      border-color: $tf-red;
@@ -135,6 +130,20 @@
 
      &:focus {
        box-shadow: none;
+     }
+   }
+
+   &:disabled,
+   &.disabled,
+   &:disabled.is-invalid,
+   &.disabled.is-invalid,
+   &:disabled:invalid,
+   &.disabled:invalid, {
+     border-color: $tf-gray-200;
+     background-color: transparent;
+
+     &::placeholder {
+       color: $tf-gray-400;
      }
    }
 

@@ -36,10 +36,6 @@ const TextField = (props) => {
 
     const [_value, _setValue] = useState(value);
 
-    useEffect(() => {
-        _setValue(value);
-    }, [value]);
-
     const changeValue = (val) => {
         _setValue(val);
         onChange?.(val);
@@ -52,6 +48,10 @@ const TextField = (props) => {
     const onHandleChange = (event) => {
         changeValue(event.target.value);
     };
+
+    useEffect(() => {
+        _setValue(value);
+    }, [value]);
 
     return (
         <Form.Group className={inputClassNames} controlId={controlId}>
@@ -86,7 +86,9 @@ const TextField = (props) => {
                     </button>
                 )}
             </div>
-            {errorMessage && <Form.Text className="c-text-field__error">{errorMessage}</Form.Text>}
+            {isInvalid && !disabled && (
+                <Form.Text className="c-text-field__error">{errorMessage}</Form.Text>
+            )}
         </Form.Group>
     );
 };
