@@ -6,24 +6,24 @@
   /* primary */
   &.btn-primary:disabled,
   &.btn-primary.disabled {
-    @include bg-color($btn-primary-disabled-background-color);
+    @include bg-color($btn-primary-disabled-bg-color);
   }
 
   &.btn-primary.focus:hover,
   &.btn-primary.c-btn-selected:hover,
   &.btn-primary:hover {
-    @include bg-color($btn-primary-hover-background-color);
+    @include bg-color($btn-primary-hover-bg-color);
   }
 
   /* secondary */
   &.btn-secondary:hover {
-    @include bg-color($btn-secondary-hover-background-color);
+    @include bg-color($btn-secondary-hover-bg-color);
     color: $btn-secondary-hover-text-color;
   }
 
   &.btn-secondary:disabled,
   &.btn-secondary.disabled {
-    @include bg-color($btn-secondary-disabled-background-color);
+    @include bg-color($btn-secondary-disabled-bg-color);
     color: $btn-secondary-disabled-text-color;
   }
 
@@ -59,7 +59,7 @@
 
   &.btn-icon-link:hover,
   &.btn-icon-link.hover {
-    @include bg-color($btn-icon-link-hover-background-color);
+    @include bg-color($btn-icon-link-hover-bg-color);
     color: $btn-icon-link-hover-text-color;
   }
 
