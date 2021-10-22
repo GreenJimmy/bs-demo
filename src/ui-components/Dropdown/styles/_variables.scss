@@ -10,6 +10,21 @@ $secondary-dark: rgba(176, 184, 191, 1);
 $btn-height-lg: 2.5rem;
 $btn-height-sm: 1.75rem;
 
+$btn-primary-disabled-background-color: $secondary-dark;
+$btn-primary-hover-background-color: $primary-dark;
+
+$btn-secondary-hover-background-color: $primary-dark;
+$btn-secondary-hover-text-color: $white;
+$btn-secondary-disabled-background-color: $secondary-light;
+$btn-secondary-disabled-text-color: $secondary-dark;
+
+$btn-link-hover-text-color: $primary-dark;
+
+$btn-icon-link-text-color: $primary;
+$btn-icon-link-hover-background-color: $secondary-light;
+$btn-icon-link-hover-text-color: $primary-dark;
+$btn-icon-link-disabled-text-color: $secondary-dark;
+
 // bootstrap variables
 $theme-colors: (
   primary: $primary,

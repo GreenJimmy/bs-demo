@@ -6,29 +6,25 @@
   /* primary */
   &.btn-primary:disabled,
   &.btn-primary.disabled {
-    @include bg-color($secondary-dark);
+    @include bg-color($btn-primary-disabled-background-color);
   }
 
   &.btn-primary.focus:hover,
   &.btn-primary.c-btn-selected:hover,
   &.btn-primary:hover {
-    @include bg-color($primary-dark);
-  }
-
-  &.btn-primary.c-btn-selected {
-    @include bg-color($primary-medium);
+    @include bg-color($btn-primary-hover-background-color);
   }
 
   /* secondary */
   &.btn-secondary:hover {
-    @include bg-color($primary-dark);
-    color: $white;
+    @include bg-color($btn-secondary-hover-background-color);
+    color: $btn-secondary-hover-text-color;
   }
 
   &.btn-secondary:disabled,
   &.btn-secondary.disabled {
-    @include bg-color($secondary-light);
-    color: $secondary-dark;
+    @include bg-color($btn-secondary-disabled-background-color);
+    color: $btn-secondary-disabled-text-color;
   }
 
   /* link */
@@ -46,30 +42,30 @@
 
   &.btn-link:hover,
   &.btn-link.hover {
-    color: $primary-dark;
+    color: $btn-link-hover-text-color;
 
     &::before {
       content: '';
       display: block;
       position: absolute;
-      border-bottom: 1px solid $primary-dark;
+      border-bottom: 1px solid $btn-link-hover-text-color;
     }
   }
 
   /* icon-link */
   &.btn-icon-link {
-    color: $primary;
+    color: $btn-icon-link-text-color;
   }
 
   &.btn-icon-link:hover,
   &.btn-icon-link.hover {
-    @include bg-color($secondary-light);
-    color: $primary-dark;
+    @include bg-color($btn-icon-link-hover-background-color);
+    color: $btn-icon-link-hover-text-color;
   }
 
   &.btn-icon-link:disabled,
   &.btn-icon-link.disabled {
-    color: $secondary-dark;
+    color: $btn-icon-link-disabled-text-color;
   }
 
   &.btn-lg {
