@@ -14,21 +14,21 @@
     cursor: pointer;
 
     &:not(:checked) {
-      background-color: $white;
+      background-color: $check-input-background-color;
     }
   }
 
   &:not(.disabled):hover {
-    box-shadow: 0 0 0 0.25rem $secondary-300;
-    background-color: $secondary-300;
+    box-shadow: 0 0 0 0.25rem $check-hover-shadow-color;
+    background-color: $check-hover-background-color;
     border-radius: 0.125rem;
 
     & > .form-check-input {
-      border-color: $primary-500;
-      background-color: $white;
+      border-color: $check-input-hover-border-color;
+      background-color: $check-input-hover-background-color;
 
       &:checked {
-        background-color: $primary-500;
+        background-color: $check-input-checked-background-color;
       }
 
       &:indeterminate {
@@ -37,7 +37,7 @@
     }
 
     & > .form-check-label {
-      color: $primary-500;
+      color: $check-label-text-color;
     }
   }
 
@@ -50,7 +50,7 @@
   }
 
   .form-check-input:disabled + .form-check-label {
-    color: $secondary-500;
+    color: $check-label-disabled-text-color;
   }
 
   .form-check-input:checked:disabled,
@@ -58,11 +58,11 @@
     pointer-events: none;
     filter: none;
     opacity: 1;
-    border-color: $secondary;
+    border-color: $check-input-disabled-border-color;
   }
 
   .form-check-input:checked:disabled {
-    background-color: $secondary;
+    background-color: $check-input-disabled-background-color;
   }
 
   .form-check-input:disabled {
