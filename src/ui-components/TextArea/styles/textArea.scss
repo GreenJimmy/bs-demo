@@ -1,67 +1,68 @@
 .c-text-area {
-  max-width: $ta-max-width;
+  font-family: $text-area-font-family;
+  max-width: $text-area-max-width;
 
   .form-control {
-    color: $black;
-    background-color: $white;
-    border-color: $ta-gray-200;
-    max-width: $ta-max-width;
-    min-height: $ta-height;
+    color: $text-area-text-color;
+    background-color: $text-area-bg-color;
+    border-color: $text-area-border-color;
+    max-width: $text-area-max-width;
+    min-height: $text-area-height;
     resize: none;
 
     &--sm {
-      font-size: $ta-font-size-sm;
-      line-height: $ta-line-height-sm;
-      border-radius: $ta-border-radius-sm;
+      font-size: $text-area-font-size-sm;
+      line-height: $text-area-line-height-sm;
+      border-radius: $text-area-border-radius-sm;
     }
 
     &--lg {
-      font-size: $ta-font-size-lg;
-      line-height: $ta-line-height-lg;
-      border-radius: $ta-border-radius-lg;
+      font-size: $text-area-font-size-lg;
+      line-height: $text-area-line-height-lg;
+      border-radius: $text-area-border-radius-lg;
     }
 
     &:hover:not(:focus):not(:disabled) {
-      border-color: $ta-blue-700;
+      border-color: $text-area-hover-border-color;
     }
 
     &:focus {
-      border-color: $ta-blue-300;
+      border-color: $text-area-focus-border-color;
       outline: 0;
       box-shadow: none;
     }
 
     &.is-invalid, &:invalid {
       background-image: none;
-      border-color: $ta-red;
+      border-color: $text-area-invalid-border-color;
     }
 
     &:disabled,
     &.disabled {
       background-color: transparent;
-      border-color: $ta-gray-200;
+      border-color: $text-area-disabled-border-color;
 
       &::placeholder {
-        color: $tf-gray-400;
+        color: $text-area-disabled-text-color;
       }
 
       & + .c-text-area__footer > .c-text-area__nums {
-        color: $ta-gray-400;
+        color: $text-area-disabled-text-color;
       }
     }
   }
 
   &__help {
     padding-left: 0.25rem;
-    line-height: $fl-line-height;
+    line-height: $text-area-label-line-height;
   }
 
   &__error {
     min-width: 1rem;
     display: inline-block;
-    line-height: $fl-line-height;
+    line-height: $text-area-label-line-height;
     padding-left: 1.25rem;
-    background-image: escape-svg($em-background-image);
+    background-image: escape-svg($error-message-background-image);
     background-repeat: no-repeat;
     background-position: left 0.25rem center;
   }
@@ -70,18 +71,18 @@
     display: flex;
     align-items: stretch;
     justify-content: space-between;
-    max-width: $ta-max-width;
+    max-width: $text-area-max-width;
     margin-top: 0.25rem;
   }
 
   &__nums {
     padding-right: 0.25rem;
     font-size: $form-text-font-size;
-    line-height: $fl-line-height;
-    color: $ta-gray-600;
+    line-height: $text-area-label-line-height;
+    color: $text-area-num-text-color;
 
     &--err {
-      color: $ta-red;
+      color: $text-area-err-text-color;
     }
   }
 

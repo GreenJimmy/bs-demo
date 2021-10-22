@@ -1,19 +1,3 @@
-// color variables
-$primary: rgba(0, 112, 168, 1);
-$primary-medium: rgba(0, 88, 133, 1);
-$primary-dark: rgba(0, 40, 85, 1);
-
-$secondary: rgba(209, 216, 224, 1);
-$secondary-light: rgba(231, 238, 245, 1);
-$secondary-dark: rgba(176, 184, 191, 1);
-
-$light: rgba(255, 255, 255, 0);
-$light-medium: rgba(230, 241, 246, 1);
-$light-medium-dark: rgba(204, 226, 238, 1);
-$light-dark: rgba(179, 212, 229, 1);
-
-$white: rgba(255, 255, 255, 1);
-
 // size variables
 $btn-icon-size-lg: 0.875rem;
 $btn-icon-size-sm: 0.75rem;
@@ -23,23 +7,23 @@ $btn-height-sm: 1.75rem;
 $btn-size-gap: 0.25rem;
 
 // primary variables
-$btn-primary-disabled-bg-color: $secondary-dark;
-$btn-primary-hover-bg-color: $primary-dark;
+$btn-primary-disabled-bg-color: $secondary-500;
+$btn-primary-hover-bg-color: $primary-700;
 
 // secondary variables
-$btn-secondary-hover-bg-color: $primary-dark;
+$btn-secondary-hover-bg-color: $primary-700;
 $btn-secondary-hover-text-color: $white;
-$btn-secondary-disabled-bg-color: $secondary-light;
-$btn-secondary-disabled-text-color: $secondary-dark;
+$btn-secondary-disabled-bg-color: $secondary-200;
+$btn-secondary-disabled-text-color: $secondary-500;
 
 // link variables
-$btn-link-hover-text-color: $primary-dark;
+$btn-link-hover-text-color: $primary-700;
 
 // icon-link variables
 $btn-icon-link-text-color: $primary;
-$btn-icon-link-hover-bg-color: $secondary-light;
-$btn-icon-link-hover-text-color: $primary-dark;
-$btn-icon-link-disabled-text-color: $secondary-dark;
+$btn-icon-link-hover-bg-color: $secondary-200;
+$btn-icon-link-hover-text-color: $primary-700;
+$btn-icon-link-disabled-text-color: $secondary-500;
 
 // bootstrap variables
 $theme-colors: (
@@ -62,8 +46,8 @@ $btn-border-radius: 0.5rem;
 $btn-border-width: 0;
 
 $btn-link-color: $primary;
-$btn-link-hover-color: $primary-dark;
-$btn-link-disabled-color: $secondary-dark;
+$btn-link-hover-color: $primary-700;
+$btn-link-disabled-color: $secondary-500;
 $link-decoration: none;
 $link-hover-decoration: none;
 

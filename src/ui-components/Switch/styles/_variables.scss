@@ -1,17 +1,10 @@
-// color variables
-$primary: rgba(0, 112, 168, 1);
-$primary-dark: rgba(0, 40, 85, 1);
-$secondary: rgba(209, 216, 224, 1);
-$secondary-dark: rgba(176, 184, 191, 1);
-$white: rgba(255, 255, 255, 1);
-
-$form-switch-input-bg: $secondary-dark;
+$form-switch-input-bg: $secondary-500;
 $form-switch-input-border: none;
 $form-switch-height: 1.25rem;
-$form-switch-focus-border: $secondary-dark;
+$form-switch-focus-border: $secondary-500;
 $form-switch-focus-box-shadow: none;
 
-$switch-check-input-hover-bg-color: $primary-dark;
+$switch-check-input-hover-bg-color: $primary-700;
 $switch-check-input-disabled-bg-color: $secondary;
 
 /* Bootstrap variables */

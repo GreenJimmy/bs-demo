@@ -18,7 +18,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: $tf-gray-600;
+    color: $tf-icon-color;
   }
 
   &--lg &__icon {
@@ -34,7 +34,7 @@
   }
 
   &--disabled &__icon {
-    color: $tf-gray-400;
+    color: $tf-icon-disabled-color;
   }
 
   &--has-icon {
@@ -56,7 +56,7 @@
     align-items: center;
     top: 50%;
     transform: translateY(-50%);
-    color: $tf-gray-600;
+    color: $tf-icon-color;
     background: none;
     border: none;
     padding: 0;
@@ -67,7 +67,7 @@
 
     &:disabled,
     &.disabled {
-      color: $tf-gray-400;
+      color: $tf-icon-disabled-color;
     }
   }
 
@@ -125,7 +125,7 @@
 
    &:invalid,
    &.is-invalid {
-     border-color: $tf-red;
+     border-color: $tf-invalid-border-color;
      background-image: none;
 
      &:focus {
@@ -139,17 +139,17 @@
    &.disabled.is-invalid,
    &:disabled:invalid,
    &.disabled:invalid, {
-     border-color: $tf-gray-200;
+     border-color: $tf-disabled-border-color;
      background-color: transparent;
 
      &::placeholder {
-       color: $tf-gray-400;
+       color: $tf-disabled-placeholder-text-color;
      }
    }
 
    &:focus ~ .c-text-field__icon,
    &:focus ~ .c-text-field__clear-btn {
-     color: $tf-blue-300;
+     color: $tf-focus-text-color;
    }
  }
 }
