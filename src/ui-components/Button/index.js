@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const CustomButton = (props) => {
-    const { children, className, isSelected, ...accProps } = props;
+    const { children, className, ...accProps } = props;
     const buttonClassNames = classNames('c-btn', {
-        'c-btn-selected': isSelected,
         [className]: className,
     });
 
@@ -22,7 +21,6 @@ CustomButton.propTypes = {
     disabled: PropTypes.bool,
     variant: PropTypes.oneOf(['primary', 'secondary', 'link', 'icon-link']),
     size: PropTypes.oneOf(['lg', 'sm']),
-    isSelected: PropTypes.bool,
     onClick: PropTypes.func,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
@@ -32,7 +30,6 @@ CustomButton.defaultProps = {
     disabled: false,
     variant: 'primary',
     size: 'sm',
-    isSelected: false,
     children: undefined,
     onClick: undefined,
 };

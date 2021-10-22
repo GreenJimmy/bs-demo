@@ -22,6 +22,25 @@ $btn-height-lg: 2.5rem;
 $btn-height-sm: 1.75rem;
 $btn-size-gap: 0.25rem;
 
+// primary variables
+$btn-primary-disabled-color: $secondary-dark;
+$btn-primary-hover-color: $primary-dark;
+
+// secondary variables
+$btn-secondary-hover-color: $primary-dark;
+$btn-secondary-hover-text-color: $white;
+$btn-secondary-disabled-color: $secondary-light;
+$btn-secondary-disabled-text-color: $secondary-dark;
+
+// link variables
+$btn-link-hover-color: $primary-dark;
+
+// icon-link variables
+$btn-icon-link-text-color: $primary;
+$btn-icon-link-hover-color: $secondary-light;
+$btn-icon-link-hover-text-color: $primary-dark;
+$btn-icon-link-disabled-color: $secondary-dark;
+
 // bootstrap variables
 $theme-colors: (
   primary: $primary,
