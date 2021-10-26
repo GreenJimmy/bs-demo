@@ -3,8 +3,9 @@ import classNames from 'classnames';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 
 const CustomDropdown = (props) => {
-    const { className, disabled, id, title, items, variant, size, onSelect } = props;
-    const buttonClassNames = classNames('c-dropdown', {
+    const { className, disabled, id, title, items, variant, size, buttonStyle, align, onSelect } =
+        props;
+    const buttonClassNames = classNames('c-dropdown', `c-dropdown--${buttonStyle}`, {
         [className]: className,
     });
 
@@ -16,6 +17,7 @@ const CustomDropdown = (props) => {
             disabled={disabled}
             variant={variant}
             size={size}
+            align={align}
             onSelect={onSelect}
         >
             {!!items?.length &&
@@ -57,6 +59,8 @@ CustomDropdown.propTypes = {
         PropTypes.string,
     ]),
     variant: PropTypes.oneOf(['primary', 'secondary', 'link', 'icon-link']),
+    align: PropTypes.oneOf(['start', 'end']),
+    buttonStyle: PropTypes.oneOf(['text', 'icon']),
     size: PropTypes.oneOf(['lg', 'sm']),
     disabled: PropTypes.bool,
     items: PropTypes.arrayOf(
@@ -80,6 +84,8 @@ CustomDropdown.defaultProps = {
     variant: 'primary',
     size: 'sm',
     onSelect: undefined,
+    align: 'start',
+    buttonStyle: 'text',
 };
 
 export default CustomDropdown;

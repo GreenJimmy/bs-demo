@@ -57,12 +57,16 @@ const App = () => {
                 onChangeInitial={(_value) => setInlineInitialEditText(_value)}
             />
             <br />
-            <Dropdown
-                id="custom-dropdown-btn"
-                title={<IconComponent />}
-                items={items}
-                variant="primary"
-            />
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Dropdown
+                    id="custom-dropdown-btn"
+                    title={<IconComponent />}
+                    items={items}
+                    variant="primary"
+                    align="end"
+                    buttonStyle="icon"
+                />
+            </div>
 
             <br />
         </div>
