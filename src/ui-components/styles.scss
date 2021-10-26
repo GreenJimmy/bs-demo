@@ -6,6 +6,7 @@
 @import 'Toggle/components/ToggleButton/styles/variables';
 @import 'TextField/styles/variables';
 @import 'TextArea/styles/variables';
+@import 'InlineEditText/styles/variables';
 
 @import '~bootstrap/scss/bootstrap';
 
@@ -17,3 +18,4 @@
 @import 'Toggle/components/ToggleButton/styles/toggleButton';
 @import 'TextField/styles/textField';
 @import 'TextArea/styles/textArea';
+@import 'InlineEditText/styles/inlineEditText.scss';

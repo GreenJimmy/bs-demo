@@ -6,6 +6,7 @@ import {
     Switch,
     TextField,
     TextArea,
+    InlineEditText
 } from './ui-components';
 import Button from './bs-components/Button';
 
@@ -26,7 +27,9 @@ const App = () => {
     const [value, setValue] = useState(null);
     const [checked, setChecked] = useState(false);
     const [switched, setSwitched] = useState(false);
-    const [inputValue, setInputValue] = useState();
+    const [inputValue, setInputValue] = useState('');
+    const [inlineEditText, setInlineEditText] = useState('Some Text');
+    const [inlineInitialEditText, setInlineInitialEditText] = useState('Some Text');
 
     return (
         <div style={{ padding: '50px' }}>
@@ -86,6 +89,16 @@ const App = () => {
                 helpText="Help text"
                 maxNumLength="30"
                 rows={5}
+            />
+            <br />
+            <InlineEditText
+                abel="Label"
+                placeholder="Placeholder"
+                size="lg"
+                value={inlineEditText}
+                initialValue={inlineInitialEditText}
+                onChange={(_value) => setInlineEditText(_value)}
+                onChangeInitial={(_value) => setInlineInitialEditText(_value)}
             />
         </div>
     );
