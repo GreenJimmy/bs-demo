@@ -1,0 +1,50 @@
+.c-edit-text {
+    position: relative;
+    &__icon {
+        display: none;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1.83%;
+    }
+    &__input {
+        border: none;
+        &:hover {
+            background-color: $edit-text-light-blue;
+        }
+        &:hover + .c-edit-text__icon{
+            display: inline-flex;
+        }
+        &__active {
+            border-color: $edit-text-blue;
+        }
+    }
+}
+
+.status-icons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4px;
+    &__complete {
+        width: 28px;
+        height: 28px;
+        background-color: $edit-text-blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        margin-right: 5px;
+    }
+    &__cancel {
+        width: 28px;
+        height: 28px;
+        background-color: $edit-text-cancel;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+    }
+}
