@@ -17,7 +17,6 @@ const TextField = (props) => {
         disabled,
         value,
         onChange,
-        isValid,
         isInvalid,
         required,
         Icon,
@@ -62,7 +61,6 @@ const TextField = (props) => {
                     placeholder={placeholder}
                     size={size}
                     disabled={disabled}
-                    isValid={isValid}
                     isInvalid={isInvalid}
                     readOnly={readOnly}
                     required={required}
@@ -103,7 +101,6 @@ TextField.propTypes = {
     controlId: PropTypes.string,
     readOnly: PropTypes.bool,
     disabled: PropTypes.bool,
-    isValid: PropTypes.bool,
     isInvalid: PropTypes.bool,
     required: PropTypes.bool,
     Icon: PropTypes.elementType,
@@ -122,7 +119,6 @@ TextField.defaultProps = {
     controlId: undefined,
     readOnly: false,
     disabled: false,
-    isValid: false,
     isInvalid: false,
     required: false,
     showClearBtn: false,

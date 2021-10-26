@@ -1,13 +1,5 @@
 import { useState } from 'react';
-import {
-    ToggleButtonGroup,
-    ToggleButton,
-    Check,
-    Switch,
-    TextField,
-    TextArea,
-    InlineEditText
-} from './ui-components';
+import { TextArea, InlineEditText, Dropdown } from './ui-components';
 import Button from './bs-components/Button';
 
 const IconComponent = () => (
@@ -23,11 +15,22 @@ const IconComponent = () => (
     </svg>
 );
 
+const items = [
+    {
+        title: 'First item',
+        eventKet: '1',
+    },
+    {
+        title: 'Second item',
+        eventKet: '2',
+    },
+    {
+        title: 'Third item',
+        eventKet: '3',
+    },
+];
+
 const App = () => {
-    const [value, setValue] = useState(null);
-    const [checked, setChecked] = useState(false);
-    const [switched, setSwitched] = useState(false);
-    const [inputValue, setInputValue] = useState('');
     const [inlineEditText, setInlineEditText] = useState('Some Text');
     const [inlineInitialEditText, setInlineInitialEditText] = useState('Some Text');
 
@@ -35,59 +38,12 @@ const App = () => {
         <div style={{ padding: '50px' }}>
             <Button>Clickable</Button>
             <br />
-            <ToggleButtonGroup
-                value={value}
-                onChange={(val) => setValue(val)}
-                name="custom-group-button"
-                type="radio"
-                size="sm"
-                variant="button"
-            >
-                <ToggleButton id="tbg-btn-1" value={1} name="tbg-btn-1">
-                    <IconComponent />
-                </ToggleButton>
-                <ToggleButton id="tbg-btn-2" value={2} name="tbg-btn-2">
-                    <IconComponent />
-                </ToggleButton>
-                <ToggleButton id="tbg-btn-3" value={3} name="tbg-btn-3" disabled>
-                    <IconComponent />
-                </ToggleButton>
-            </ToggleButtonGroup>
-            <br />
-            <br />
-            <Check
-                id="custom-check"
-                checked={checked}
-                size="lg"
-                indeterminate
-                label="Checkbox text"
-                onChange={(event) => setChecked(event.target.checked)}
-            />
-            <br />
-            <br />
-            <Switch
-                id="custom-switch"
-                checked={switched}
-                onChange={(event) => setSwitched(event.target.checked)}
-            />
-            <br />
-            <br />
-            <TextField
-                label="Label"
-                placeholder="Placeholder"
-                size="lg"
-                value={inputValue}
-                showIcon
-                onChange={(_value) => setInputValue(_value)}
-                showClearBtn
-            />
-            <br />
             <TextArea
                 label="Label"
                 placeholder="Placeholder"
                 size="sm"
                 helpText="Help text"
-                maxNumLength="30"
+                maxNumLength={30}
                 rows={5}
             />
             <br />
@@ -100,6 +56,19 @@ const App = () => {
                 onChange={(_value) => setInlineEditText(_value)}
                 onChangeInitial={(_value) => setInlineInitialEditText(_value)}
             />
+            <br />
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Dropdown
+                    id="custom-dropdown-btn"
+                    title={<IconComponent />}
+                    items={items}
+                    variant="primary"
+                    align="end"
+                    buttonStyle="icon"
+                />
+            </div>
+
+            <br />
         </div>
     );
 };

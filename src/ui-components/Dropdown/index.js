@@ -3,8 +3,9 @@ import classNames from 'classnames';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 
 const CustomDropdown = (props) => {
-    const { className, disabled, id, title, items, variant, size, onClick } = props;
-    const buttonClassNames = classNames('c-dropdown', {
+    const { className, disabled, id, title, items, variant, size, buttonStyle, align, onSelect } =
+        props;
+    const buttonClassNames = classNames('c-dropdown', `c-dropdown--${buttonStyle}`, {
         [className]: className,
     });
 
@@ -16,10 +17,11 @@ const CustomDropdown = (props) => {
             disabled={disabled}
             variant={variant}
             size={size}
-            onClick={onClick}
+            align={align}
+            onSelect={onSelect}
         >
             {!!items?.length &&
-                items.map((item, i) => {
+                items.map((item) => {
                     const {
                         title: itemTitle,
                         href,
@@ -28,12 +30,11 @@ const CustomDropdown = (props) => {
                         disabled: itemDisabled,
                         eventKey,
                     } = item;
-                    const key = `${itemTitle}-${i}`;
 
                     return (
                         <>
                             <Dropdown.Item
-                                key={key}
+                                key={eventKey}
                                 href={href}
                                 active={active}
                                 eventKey={eventKey}
@@ -52,8 +53,14 @@ const CustomDropdown = (props) => {
 CustomDropdown.propTypes = {
     id: PropTypes.string.isRequired,
     className: PropTypes.string,
-    title: PropTypes.string,
+    title: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node,
+        PropTypes.string,
+    ]),
     variant: PropTypes.oneOf(['primary', 'secondary', 'link', 'icon-link']),
+    align: PropTypes.oneOf(['start', 'end']),
+    buttonStyle: PropTypes.oneOf(['text', 'icon']),
     size: PropTypes.oneOf(['lg', 'sm']),
     disabled: PropTypes.bool,
     items: PropTypes.arrayOf(
@@ -66,7 +73,7 @@ CustomDropdown.propTypes = {
             href: PropTypes.string,
         }),
     ),
-    onClick: PropTypes.func,
+    onSelect: PropTypes.func,
 };
 
 CustomDropdown.defaultProps = {
@@ -76,7 +83,9 @@ CustomDropdown.defaultProps = {
     items: null,
     variant: 'primary',
     size: 'sm',
-    onClick: undefined,
+    onSelect: undefined,
+    align: 'start',
+    buttonStyle: 'text',
 };
 
 export default CustomDropdown;
