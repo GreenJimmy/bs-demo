@@ -1,10 +1,10 @@
-$toggle-main: rgba(255, 255, 255, 0);
-$toggle-text-color: rgba(0, 40, 85, 1);
-$toggle-hover-color: rgba(230, 241, 246, 1);
-$toggle-active-color: rgba(179, 212, 229, 1);
-$toggle-hover-active-color: rgba(204, 226, 238, 1);
-$toggle-disabled-color: rgba(176, 184, 191, 1);
-$toggle-border-color: rgba(209, 216, 224, 1);
+$toggle-main: $transparent;
+$toggle-text-color: $primary-700;
+$toggle-hover-color: $secondary-300;
+$toggle-active-color: $tertiary;
+$toggle-hover-active-color: $tertiary-100;
+$toggle-disabled-color: $secondary-500;
+$toggle-border-color: $secondary;
 
 $toggle-size-lg: 2.25rem;
 $toggle-size-sm: 1.5rem;

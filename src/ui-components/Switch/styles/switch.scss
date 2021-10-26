@@ -12,11 +12,11 @@
   }
 
   .form-check-input:hover {
-    background-color: $primary-dark;
+    background-color: $switch-check-input-hover-bg-color;
     cursor: pointer;
   }
 
   .form-check-input:disabled {
-    background-color: $secondary;
+    background-color: $switch-check-input-disabled-bg-color;
   }
 }
