@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
 import classNames from 'classnames';
 import PenEditIcon from '../../icons/PenEdit';
 import CheckIcon from '../../icons/CheckIcon';
+import CustomButton from '../Button';
 import XIcon from '../../icons/XIcon';
-import PropTypes from 'prop-types';
 
 const InlineEditText = (props) => {
-
     const {
         className,
         label,
@@ -19,21 +19,18 @@ const InlineEditText = (props) => {
         disabled,
         value,
         onChange,
-        onChangeInitial,
         isInvalid,
-        isValid,
         required,
-        initialValue
     } = props;
 
     const inputClassNames = classNames('c-text-field', {
         [className]: className,
         'c-text-field--lg': size === 'lg',
         'c-text-field--sm': size === 'sm',
-        'c-text-field--disabled': disabled
+        'c-text-field--disabled': disabled,
     });
 
-    const [_value, setValue] = useState(initialValue);
+    const [_value, setValue] = useState(value);
     const [isAcive, setIsActive] = useState(false);
     const [_status, setStatus] = useState('done');
 
@@ -45,25 +42,23 @@ const InlineEditText = (props) => {
         setIsActive(true);
     };
     const onBlur = (e) => {
-        if(_status !== 'changing') {
-            setIsActive(false)
+        if (_status !== 'changing') {
+            setIsActive(false);
         }
     };
     const handleComplete = () => {
         setStatus('done');
         setIsActive(false);
         onChange?.(_value);
-        onChangeInitial(_value);
     };
     const handleCancel = () => {
         setStatus('cancel');
         setIsActive(false);
-        setValue(initialValue);
-        onChange?.(initialValue);
+        setValue(value);
+        onChange?.(value);
     };
     const changeValue = (val) => {
         setValue(val);
-        onChange?.(val);
         setStatus('changing');
     };
 
@@ -71,47 +66,54 @@ const InlineEditText = (props) => {
         changeValue(event.target.value);
     };
 
-
     return (
-        <Form.Group 
+        <Form.Group
             className={inputClassNames}
             controlId={controlId}
-            onFocus={onFocus} 
+            onFocus={onFocus}
             onBlur={onBlur}
         >
             {label && size === 'lg' && <Form.Label>{label}</Form.Label>}
-            <div className='c-edit-text'>
+            <div className="c-edit-text">
                 <Form.Control
                     type="text"
                     placeholder={placeholder}
                     size={size}
                     disabled={disabled}
-                    isValid={isValid}
                     isInvalid={isInvalid}
                     readOnly={readOnly}
                     required={required}
                     value={_value}
                     onChange={onHandleChange}
-                    className={classNames('',{
+                    className={classNames('', {
                         'c-edit-text__input': !isAcive,
                         'c-edit-text__input__active': isAcive,
                     })}
                 />
-                {!isAcive &&
-                <div className="c-edit-text__icon">
-                    <PenEditIcon />
-                </div>}
+                {!isAcive && (
+                    <div className="c-edit-text__icon">
+                        <PenEditIcon />
+                    </div>
+                )}
             </div>
-            { isAcive && !isInvalid &&
-                <div className='status-icons'>
-                    <div className='status-icons__complete' onClick={handleComplete}>
+            {isAcive && !isInvalid && (
+                <div className="status-buttons">
+                    <CustomButton
+                        className="status-buttons__complete"
+                        variant="primary"
+                        onClick={handleComplete}
+                    >
                         <CheckIcon />
-                    </div>
-                    <div className='status-icons__cancel' onClick={handleCancel}>
+                    </CustomButton>
+                    <CustomButton
+                        className="status-buttons__cancel"
+                        variant="secondary"
+                        onClick={handleCancel}
+                    >
                         <XIcon />
-                    </div>
+                    </CustomButton>
                 </div>
-            }
+            )}
             {isInvalid && !disabled && (
                 <Form.Text className="c-text-field__error">{errorMessage}</Form.Text>
             )}
@@ -119,5 +121,34 @@ const InlineEditText = (props) => {
     );
 };
 
+InlineEditText.propTypes = {
+    className: PropTypes.string,
+    label: PropTypes.string,
+    errorMessage: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    placeholder: PropTypes.string,
+    size: PropTypes.oneOf(['lg', 'sm']),
+    controlId: PropTypes.string,
+    readOnly: PropTypes.bool,
+    disabled: PropTypes.bool,
+    isInvalid: PropTypes.bool,
+    required: PropTypes.bool,
+    onChange: PropTypes.func,
+};
+
+InlineEditText.defaultProps = {
+    className: undefined,
+    label: undefined,
+    errorMessage: undefined,
+    value: '',
+    placeholder: undefined,
+    size: 'sm',
+    controlId: undefined,
+    readOnly: false,
+    disabled: false,
+    isInvalid: false,
+    required: false,
+    onChange: undefined,
+};
 
 export default InlineEditText;
