@@ -22,14 +22,18 @@
     }
 }
 
-.status-icons {
+.status-buttons {
     display: flex;
     justify-content: flex-end;
     margin-top: 4px;
     &__complete {
         margin-right: 5px;
+        padding: 0.375rem;
+        justify-content: center;
     }
     &__cancel {
+        padding: 0.375rem;
+        justify-content: center;
         &:hover svg {
             fill: $btn-secondary-hover-text-color;
         }

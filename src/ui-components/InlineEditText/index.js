@@ -97,16 +97,16 @@ const InlineEditText = (props) => {
                 )}
             </div>
             {isAcive && !isInvalid && (
-                <div className="status-icons">
+                <div className="status-buttons">
                     <CustomButton
-                        className="status-icons__complete"
+                        className="status-buttons__complete"
                         variant="primary"
                         onClick={handleComplete}
                     >
                         <CheckIcon />
                     </CustomButton>
                     <CustomButton
-                        className="status-icons__cancel"
+                        className="status-buttons__cancel"
                         variant="secondary"
                         onClick={handleCancel}
                     >
