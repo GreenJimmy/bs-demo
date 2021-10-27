@@ -1,9 +1,9 @@
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Check = (props) => {
+const Check = React.forwardRef((props, ref) => {
     const { id, className, checked, disabled, indeterminate, size, label, type, onChange } = props;
     const checkboxRef = useRef();
     const formGroupClassNames = classNames('с-check', `c-check--size-${size}`, {
@@ -16,7 +16,7 @@ const Check = (props) => {
     }, [indeterminate]);
 
     return (
-        <Form.Group controlId={id} className={formGroupClassNames}>
+        <Form.Group controlId={id} className={formGroupClassNames} ref={ref}>
             <Form.Check.Input
                 ref={checkboxRef}
                 type={type}
@@ -28,7 +28,7 @@ const Check = (props) => {
             {label && <Form.Check.Label>{label}</Form.Check.Label>}
         </Form.Group>
     );
-};
+});
 
 Check.propTypes = {
     className: PropTypes.string,

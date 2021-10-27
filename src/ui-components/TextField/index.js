@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import CircleCloseIcon from '../../icons/CircleCloseIcon';
 import SearchIcon from '../../icons/SearchIcon';
 
-const TextField = (props) => {
+const TextField = React.forwardRef((props, ref) => {
     const {
         className,
         label,
@@ -57,6 +57,7 @@ const TextField = (props) => {
             {label && size === 'lg' && <Form.Label>{label}</Form.Label>}
             <div className="c-text-field__input">
                 <Form.Control
+                    ref={ref}
                     type="text"
                     placeholder={placeholder}
                     size={size}
@@ -89,7 +90,7 @@ const TextField = (props) => {
             )}
         </Form.Group>
     );
-};
+});
 
 TextField.propTypes = {
     className: PropTypes.string,
