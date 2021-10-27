@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextArea, InlineEditText, Dropdown } from './ui-components';
+import { TextArea, InlineEditText, Dropdown, Tooltip } from './ui-components';
 import Button from './bs-components/Button';
 
 const IconComponent = () => (
@@ -67,8 +67,10 @@ const App = () => {
                     buttonStyle="icon"
                 />
             </div>
-
             <br />
+            <Tooltip id="custom-tooltip">
+                <Button>Test tooltip</Button>
+            </Tooltip>
         </div>
     );
 };
