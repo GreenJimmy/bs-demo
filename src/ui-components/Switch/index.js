@@ -1,26 +1,26 @@
+import React from 'react';
 import { Form } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const CustomSwitch = (props) => {
+const CustomSwitch = React.forwardRef((props, ref) => {
     const { className, disabled, checked, label, id, onChange } = props;
     const switchClassNames = classNames('c-switch', {
         [className]: className,
     });
 
     return (
-        <>
-            <Form.Switch
-                className={switchClassNames}
-                disabled={disabled}
-                checked={checked}
-                label={label}
-                id={id}
-                onChange={onChange}
-            />
-        </>
+        <Form.Switch
+            ref={ref}
+            className={switchClassNames}
+            disabled={disabled}
+            checked={checked}
+            label={label}
+            id={id}
+            onChange={onChange}
+        />
     );
-};
+});
 
 CustomSwitch.propTypes = {
     className: PropTypes.string,
