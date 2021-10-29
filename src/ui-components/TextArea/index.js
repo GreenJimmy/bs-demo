@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Form } from 'react-bootstrap';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const TextArea = (props) => {
+const TextArea = React.forwardRef((props, ref) => {
     const {
         className,
         label,
@@ -68,6 +68,7 @@ const TextArea = (props) => {
         <Form.Group className={inputClassNames} controlId={controlId}>
             {label && size === 'lg' && <Form.Label>{label}</Form.Label>}
             <Form.Control
+                ref={ref}
                 as="textarea"
                 placeholder={placeholder}
                 size={size}
@@ -99,7 +100,7 @@ const TextArea = (props) => {
             </div>
         </Form.Group>
     );
-};
+});
 
 TextArea.propTypes = {
     className: PropTypes.string,

@@ -1,8 +1,9 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 
-const CustomDropdown = (props) => {
+const CustomDropdown = React.forwardRef((props, ref) => {
     const { className, disabled, id, title, items, variant, size, buttonStyle, align, onSelect } =
         props;
     const buttonClassNames = classNames('c-dropdown', `c-dropdown--${buttonStyle}`, {
@@ -11,6 +12,7 @@ const CustomDropdown = (props) => {
 
     return (
         <DropdownButton
+            ref={ref}
             className={buttonClassNames}
             id={id}
             title={title}
@@ -48,7 +50,7 @@ const CustomDropdown = (props) => {
                 })}
         </DropdownButton>
     );
-};
+});
 
 CustomDropdown.propTypes = {
     id: PropTypes.string.isRequired,

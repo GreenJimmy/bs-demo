@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
 import classNames from 'classnames';
@@ -7,7 +7,7 @@ import CheckIcon from '../../icons/CheckIcon';
 import CustomButton from '../Button';
 import XIcon from '../../icons/XIcon';
 
-const InlineEditText = (props) => {
+const InlineEditText = React.forwardRef((props, ref) => {
     const {
         className,
         label,
@@ -31,17 +31,17 @@ const InlineEditText = (props) => {
     });
 
     const [_value, setValue] = useState(value);
-    const [isAcive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(false);
     const [_status, setStatus] = useState('done');
 
     useEffect(() => {
         setValue(value);
     }, [value]);
 
-    const onFocus = (e) => {
+    const onFocus = () => {
         setIsActive(true);
     };
-    const onBlur = (e) => {
+    const onBlur = () => {
         if (_status !== 'changing') {
             setIsActive(false);
         }
@@ -68,6 +68,7 @@ const InlineEditText = (props) => {
 
     return (
         <Form.Group
+            ref={ref}
             className={inputClassNames}
             controlId={controlId}
             onFocus={onFocus}
@@ -85,18 +86,18 @@ const InlineEditText = (props) => {
                     required={required}
                     value={_value}
                     onChange={onHandleChange}
-                    className={classNames('', {
-                        'c-edit-text__input': !isAcive,
-                        'c-edit-text__input__active': isAcive,
+                    className={classNames({
+                        'c-edit-text__input': !isActive,
+                        'c-edit-text__input__active': isActive,
                     })}
                 />
-                {!isAcive && (
+                {!isActive && (
                     <div className="c-edit-text__icon">
                         <PenEditIcon />
                     </div>
                 )}
             </div>
-            {isAcive && !isInvalid && (
+            {isActive && !isInvalid && (
                 <div className="status-buttons">
                     <CustomButton
                         className="status-buttons__complete"
@@ -119,7 +120,7 @@ const InlineEditText = (props) => {
             )}
         </Form.Group>
     );
-};
+});
 
 InlineEditText.propTypes = {
     className: PropTypes.string,

@@ -9,6 +9,7 @@
 @import 'TextField/styles/variables';
 @import 'TextArea/styles/variables';
 @import 'InlineEditText/styles/variables';
+@import 'Tooltip/styles/variables';
 
 @import '~bootstrap/scss/bootstrap';
 
@@ -22,3 +23,5 @@
 @import 'TextArea/styles/textArea';
 @import 'InlineEditText/styles/inlineEditText.scss';
 @import 'Tag/styles/tag.scss';
+@import 'Tooltip/styles/tooltip';
+

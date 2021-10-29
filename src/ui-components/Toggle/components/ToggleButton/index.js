@@ -1,8 +1,9 @@
+import React from 'react';
 import { ToggleButton } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const CustomToggleButton = (props) => {
+const CustomToggleButton = React.forwardRef((props, ref) => {
     const { children, className, disabled, value, id, name, ...accProps } = props;
     const buttonClassNames = classNames('c-toggle-btn', {
         [className]: className,
@@ -12,6 +13,7 @@ const CustomToggleButton = (props) => {
         <div className="c-toggle-btn-wrapper">
             <ToggleButton
                 id={id}
+                ref={ref}
                 className={buttonClassNames}
                 value={value}
                 disabled={disabled}
@@ -23,7 +25,7 @@ const CustomToggleButton = (props) => {
             </ToggleButton>
         </div>
     );
-};
+});
 
 CustomToggleButton.propTypes = {
     id: PropTypes.string.isRequired,
