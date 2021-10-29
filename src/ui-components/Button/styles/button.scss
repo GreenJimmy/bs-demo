@@ -5,7 +5,6 @@
   align-items: center;
   position: relative;
   gap: $btn-size-gap;
-
   .c-btn__decorator {
     display: none;
   }
@@ -81,17 +80,17 @@
     @include btn-size($btn-height-sm);
   }
 
-  & svg,
-  &.btn-lg svg {
-    @include icon-size($btn-icon-size-lg);
-  }
+  // & svg,
+  // &.btn-lg svg {
+  //   @include icon-size($btn-icon-size-lg);
+  // }
 
-  &.btn-sm svg {
-    @include icon-size($btn-icon-size-sm);
-  }
+  // &.btn-sm svg {
+  //   @include icon-size($btn-icon-size-sm);
+  // }
 
-  /* only icon child */
-  & svg:only-child {
-    margin: 0.125rem 0;
-  }
+  // /* only icon child */
+  // & svg:only-child {
+  //   margin: 0.125rem 0;
+  // }
 }

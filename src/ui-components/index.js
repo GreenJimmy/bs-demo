@@ -7,7 +7,8 @@ import ToggleButtonGroup from './Toggle/components/ToggleButtonGroup';
 import TextField from './TextField';
 import TextArea from './TextArea';
 import InlineEditText from './InlineEditText';
+import Tag from './Tag';
 
 import './styles.scss';
 
-export { Button, Check, Dropdown, Switch, ToggleButton, ToggleButtonGroup, TextField, TextArea, InlineEditText };
+export { Button, Check, Dropdown, Switch, ToggleButton, ToggleButtonGroup, TextField, TextArea, InlineEditText, Tag };
