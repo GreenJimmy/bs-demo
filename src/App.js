@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextArea, InlineEditText, Dropdown, Tooltip } from './ui-components';
+import { TextArea, InlineEditText, Dropdown, Tooltip, Tag } from './ui-components';
 import Button from './bs-components/Button';
 
 const IconComponent = () => (
@@ -33,6 +33,8 @@ const items = [
 const App = () => {
     const [inlineEditText, setInlineEditText] = useState('Some Text');
     const [inlineInitialEditText, setInlineInitialEditText] = useState('Some Text');
+    const [selectedTags, setSelectedTag] = useState({});
+    const [removedTag, setRemovedTag] = useState();
 
     return (
         <div style={{ padding: '50px' }}>
@@ -67,6 +69,18 @@ const App = () => {
                     buttonStyle="icon"
                 />
             </div>
+            <br />
+            <Tag
+                text="Tag Component"
+                icon={<IconComponent />}
+                isRemovable
+                variant="default"
+                size="lg"
+                controllId="0"
+                onSelect={(selectedTag) => setSelectedTag(selectedTag)}
+                onRemove={(removed) => setRemovedTag(removed)}
+                // path="https://stackoverflow.com/questions/47828199/5-px-border-added-to-button-button-size-increases-box-sizing-not-working"
+            />
             <br />
             <Tooltip id="custom-tooltip">
                 <Button>Test tooltip</Button>

@@ -1,0 +1,63 @@
+.c-tag {
+  box-sizing: border-box;
+  padding: 4px, 6px, 4px, 4px;
+  display: flex;
+  align-items: center;
+  background-color: $secondary-200;
+  border: none;
+  &:hover {
+    background-color: $primary-700;
+    color: white;
+  }
+  &--lg{
+    height: 28px;
+  }
+  &--sm{
+    height: 24px;
+  }
+  &--default {
+    border-radius: 6px;
+  }
+  &--rounded {
+    border-radius: 28px;
+  }
+  &__close {
+    height: 7px;
+    width: 7px;
+    margin-left: 7px;
+  }
+  &__img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+  }
+  &:hover .c-tag__close {
+    fill: $btn-secondary-hover-text-color;
+  }
+}
+
+.c-tag--selected {
+  border: 1px solid $primary;
+  &:hover {
+    background-color: $secondary-200;
+    color: black;
+  }
+  &:hover .c-tag__close {
+    fill: black;
+  }
+}
+
+.c-tag--link {
+  &:hover {
+    background-color: $secondary-200;
+    color: $primary;
+  }
+  &:hover .c-tag__close {
+    fill: black;
+  }
+  &:hover a {
+    text-decoration: underline;
+  }
+}

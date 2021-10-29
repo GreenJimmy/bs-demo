@@ -8,6 +8,7 @@ import TextField from './TextField';
 import TextArea from './TextArea';
 import InlineEditText from './InlineEditText';
 import Tooltip from './Tooltip';
+import Tag from './Tag';
 
 import './styles.scss';
 
@@ -22,4 +23,5 @@ export {
     TextArea,
     InlineEditText,
     Tooltip,
+    Tag,
 };
