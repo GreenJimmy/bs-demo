@@ -9,6 +9,7 @@ import TextArea from './TextArea';
 import InlineEditText from './InlineEditText';
 import Tooltip from './Tooltip';
 import Tag from './Tag';
+import Badge from './Bagde';
 
 import './styles.scss';
 
@@ -23,5 +24,6 @@ export {
     TextArea,
     InlineEditText,
     Tooltip,
+    Badge,
     Tag,
 };
