@@ -66,6 +66,9 @@ Tag.defaultProps = {
     size: 'lg',
     className: undefined,
     controllId: '',
+    path: undefined,
+    onSelect: undefined,
+    onRemove: undefined,
 };
 
 export default Tag;
