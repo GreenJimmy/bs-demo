@@ -14,7 +14,11 @@ const Lozenge = (props) => {
         },
     );
 
-    return <div className={lozengeClassNames}>{type === 'icon' ? icon : text}</div>;
+    return (
+        <div className={lozengeClassNames}>
+            {variant === 'icon' ? <span className="c-lozenge__icon">{icon}</span> : text}
+        </div>
+    );
 };
 
 Lozenge.propTypes = {
