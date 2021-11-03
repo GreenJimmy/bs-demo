@@ -12,6 +12,7 @@ import Tag from './Tag';
 import Badge from './Bagde';
 import MenuItem from './MenuItem';
 import Lozenge from './Lozenge';
+import Navigation from './Navigation';
 
 import './styles.scss';
 
@@ -30,4 +31,5 @@ export {
     Tag,
     MenuItem,
     Lozenge,
+    Navigation,
 };

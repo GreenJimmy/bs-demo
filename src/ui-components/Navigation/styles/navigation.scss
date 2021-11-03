@@ -1,0 +1,15 @@
+@import '../components/styles/index';
+@import '../components/NavItem/styles/navItem';
+@import '../components/NavItemDropdown/styles/navItemDropdown';
+
+.c-nav {
+  border-bottom: none;
+
+  &__item, &__item-dropdown {
+    padding-left: $c-nev-item-padding-left;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}

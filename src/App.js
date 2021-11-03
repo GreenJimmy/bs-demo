@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextArea, InlineEditText, Tooltip, Badge, Lozenge, MenuItem } from './ui-components';
+import { TextArea, InlineEditText, Tooltip, Badge, Lozenge, MenuItem, Navigation } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
 
@@ -48,6 +48,15 @@ const App = () => {
             <Badge title="100" size="lg" type="primary" icon={<ExclamationFillIcon />} />
             <br />
             <br />
+            <Lozenge text="Default" type="success" variant="bold" icon={<ExclamationFillIcon />} />
+            <br />
+            <br />
+            <Navigation
+                items={[
+                    { eventKey: 'one', title: 'item one' },
+                    { eventKey: 'two', title: 'item two' },
+                ]}
+            />
         </div>
     );
 };

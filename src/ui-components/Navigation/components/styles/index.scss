@@ -1,0 +1,24 @@
+.c-nav__item, .c-nav__item-dropdown {
+  .nav-link {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: $c-nav-item-underline-height;
+      border-radius: $c-nav-item-underline-height-border-radius;
+    }
+
+    &:hover::before {
+      content: '';
+      background-color: $c-nav-item-hover-text-color;
+    }
+
+    &.active::before {
+      content: '';
+      background-color: $c-nav-item-active-text-color;
+    }
+  }
+}
