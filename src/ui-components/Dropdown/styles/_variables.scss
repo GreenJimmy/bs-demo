@@ -3,21 +3,34 @@ $btn-height-lg: 2.5rem;
 $btn-line-height-lg: 1.25rem;
 $btn-icon-type-padding-lg: 0.75rem;
 $btn-icon-type-icon-size-lg: 0.875rem;
+
+$btn-height-sm: 1.75rem;
+$btn-line-height-sm: 1rem;
+$btn-icon-type-padding-sm: 0.5rem;
+$btn-icon-type-icon-size-sm: 0.75rem;
+
+$menu-border-radius-lg: 0.5rem;
+$menu-font-size-lg: 0.875rem;
+$menu-line-height-lg: 1.25rem;
 $menu-padding-x-lg: 0.625rem;
 $menu-padding-y-lg: 0.75rem;
 $menu-min-width-lg: 10rem;
 $menu-item-padding-x-lg: 0.625rem;
 $menu-item-padding-y-lg: 0.375rem;
 
-$btn-height-sm: 1.75rem;
-$btn-line-height-sm: 1rem;
-$btn-icon-type-padding-sm: 0.5rem;
-$btn-icon-type-icon-size-sm: 0.75rem;
+$menu-font-size-sm: 0.75rem;
+$menu-border-radius-sm: 0.375rem;
+$menu-line-height-sm: 1rem;
 $menu-padding-x-sm: 0.375rem;
 $menu-padding-y-sm: 0.625rem;
 $menu-min-width-sm: 8rem;
 $menu-item-padding-x-sm: 0.375rem;
 $menu-item-padding-y-sm: 0.25rem;
+
+$menu-item-text-color: $black;
+$menu-dropdown-border-color: $secondary;
+$menu-dropdown-disabled-text-color: $secondary-500;
+$menu-dropdown-hover-bg-color: $secondary-200;
 
 $btn-primary-bg-color: $primary;
 $btn-primary-disabled-bg-color: $secondary-500;
@@ -29,7 +42,9 @@ $btn-secondary-hover-text-color: $white;
 $btn-secondary-disabled-bg-color: $secondary-200;
 $btn-secondary-disabled-text-color: $secondary-500;
 
+$btn-link-text-color: $primary;
 $btn-link-hover-text-color: $primary-700;
+$btn-link-disabled-text-color: $secondary-500;
 
 $btn-icon-link-text-color: $primary;
 $btn-icon-link-hover-bg-color: $secondary-200;
@@ -39,6 +54,9 @@ $btn-icon-link-disabled-text-color: $secondary-500;
 $btn-dropdown-border-color: $secondary;
 $btn-dropdown-text-color: $primary-700;
 $btn-dropdown-hover-color: $secondary-200;
+
+$c-dropdown-link-active-color: $primary;
+$c-dropdown-link-active-bg-color: $transparent;
 
 // bootstrap variables
 $theme-colors: (
@@ -60,9 +78,9 @@ $btn-active-box-shadow: none;
 $btn-border-radius: 0.5rem;
 $btn-border-width: 0;
 
-$btn-link-color: $primary;
-$btn-link-hover-color: $primary-700;
-$btn-link-disabled-color: $secondary-500;
+$btn-link-color: $btn-link-text-color;
+$btn-link-hover-color: $btn-link-hover-text-color;
+$btn-link-disabled-color: $btn-link-disabled-text-color;
 $link-decoration: none;
 $link-hover-decoration: none;
 
@@ -77,3 +95,23 @@ $btn-padding-y-lg: 0.625rem;
 $btn-padding-x-lg: 0.75rem;
 $btn-font-size-lg: 0.875rem;
 $btn-border-radius-lg: 0.5rem;
+
+$dropdown-min-width: $menu-min-width-sm;
+$dropdown-padding-x: $menu-padding-x-sm;
+$dropdown-padding-y: $menu-padding-y-sm;
+$dropdown-font-size: $menu-font-size-sm;
+$dropdown-color: $menu-item-text-color;
+$dropdown-border-color: $menu-dropdown-border-color;
+$dropdown-border-radius: $menu-border-radius-sm;
+
+$dropdown-link-color: $menu-item-text-color;
+$dropdown-link-hover-color: $menu-item-text-color;
+$dropdown-link-hover-bg: $menu-dropdown-hover-bg-color;
+
+$dropdown-link-active-color: $c-dropdown-link-active-color;
+$dropdown-link-active-bg: $c-dropdown-link-active-bg-color;
+
+$dropdown-link-disabled-color: $menu-dropdown-disabled-text-color;
+
+$dropdown-item-padding-y: $menu-item-padding-x-sm;
+$dropdown-item-padding-x: $menu-item-padding-x-sm;
