@@ -19,6 +19,12 @@
         &__active {
             border-color: $edit-text-blue;
         }
+        &__disabled {
+            &:hover + .c-edit-text__icon{
+                display: none;
+            }
+            color: $secondary-500;
+        }
     }
 }
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextArea, InlineEditText, Dropdown, Tooltip, Badge, Tag } from './ui-components';
+import { TextArea, InlineEditText, Dropdown, Tooltip, Badge, Tag, MenuItem } from './ui-components';
 import Button from './bs-components/Button';
 
 const IconComponent = () => (
@@ -35,9 +35,10 @@ const App = () => {
     const [inlineInitialEditText, setInlineInitialEditText] = useState('Some Text');
     const [selectedTags, setSelectedTag] = useState({});
     const [removedTag, setRemovedTag] = useState();
+    const [selectedMenuItems, setSelectedMenuItems] = useState();
 
     return (
-        <div style={{ padding: '50px' }}>
+        <div style={{ padding: '50px', backgroundColor: '#E5E5E5' }}>
             <Button>Clickable</Button>
             <br />
             <TextArea
@@ -76,7 +77,7 @@ const App = () => {
                 isRemovable
                 variant="default"
                 size="lg"
-                controllId="0"
+                controlId="0"
                 onSelect={(selectedTag) => setSelectedTag(selectedTag)}
                 onRemove={(removed) => setRemovedTag(removed)}
                 // path="https://stackoverflow.com/questions/47828199/5-px-border-added-to-button-button-size-increases-box-sizing-not-working"
@@ -88,6 +89,15 @@ const App = () => {
             <br />
             <br />
             <Badge title="100" size="lg" type="primary" icon={<IconComponent />} />
+            <br />
+            <br />
+            <MenuItem
+                text="Menu item"
+                leadingIcon={<IconComponent />}
+                onSelect={(selectedMenuItem) => setSelectedMenuItems(selectedMenuItem)}
+                controlId="1"
+                path=""
+            />
         </div>
     );
 };

@@ -10,6 +10,7 @@ import InlineEditText from './InlineEditText';
 import Tooltip from './Tooltip';
 import Tag from './Tag';
 import Badge from './Bagde';
+import MenuItem from './MenuItem';
 
 import './styles.scss';
 
@@ -26,4 +27,5 @@ export {
     Tooltip,
     Badge,
     Tag,
+    MenuItem,
 };

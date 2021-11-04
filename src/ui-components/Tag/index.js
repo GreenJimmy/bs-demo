@@ -14,7 +14,7 @@ const Tag = ({
     path,
     onSelect,
     onRemove,
-    controllId,
+    controlId,
 }) => {
     const [selected, setSelected] = useState(false);
     const tagClassNames = classNames('c-tag', {
@@ -29,17 +29,23 @@ const Tag = ({
 
     const handleSelect = () => {
         setSelected((prev) => !prev);
-        onSelect({ [controllId]: !selected });
+        onSelect({ [controlId]: !selected });
     };
+
+    const handleRemove = (e) => {
+        e.stopPropagation();
+        onRemove(controlId);
+    };
+
     return (
-        <button type="button" className={tagClassNames} variant="secondary" onClick={handleSelect}>
+        <button type="button" className={tagClassNames} onClick={handleSelect}>
             {icon && <div className="c-tag__img">{icon}</div>}
             {text && !path && <span className="c-tag__text">{text}</span>}
             {text && path && <a href={path}>{text}</a>}
             {isRemovable && (
-                <div onClick={() => onRemove(controllId)}>
-                    <XIcon className="c-tag__close" />
-                </div>
+                <button type="button" className="c-tag__close" onClick={handleRemove}>
+                    <XIcon className="c-tag__close__icon" />
+                </button>
             )}
         </button>
     );
@@ -55,7 +61,7 @@ Tag.propTypes = {
     path: PropTypes.string,
     onSelect: PropTypes.func,
     onRemove: PropTypes.func,
-    controllId: PropTypes.string,
+    controlId: PropTypes.string,
 };
 
 Tag.defaultProps = {
@@ -65,7 +71,7 @@ Tag.defaultProps = {
     isRemovable: false,
     size: 'lg',
     className: undefined,
-    controllId: '',
+    controlId: '',
     path: undefined,
     onSelect: undefined,
     onRemove: undefined,
