@@ -11,6 +11,7 @@ import Tooltip from './Tooltip';
 import Tag from './Tag';
 import Badge from './Bagde';
 import MenuItem from './MenuItem';
+import Lozenge from './Lozenge';
 
 import './styles.scss';
 
@@ -28,4 +29,5 @@ export {
     Badge,
     Tag,
     MenuItem,
+    Lozenge,
 };
