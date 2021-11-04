@@ -6,10 +6,28 @@
   border-bottom: none;
 
   &__item, &__item-dropdown {
-    padding-left: $c-nev-item-padding-left;
+    padding-left: $c-nav-item-padding-left;
 
     &:first-child {
       padding-left: 0;
+    }
+  }
+
+  &__item + &__item-dropdown {
+    padding-left: calc(2 * #{$c-nav-item-padding-left});
+  }
+
+  &__item-dropdown {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: $c-nav-item-padding-left;
+      top: $c-nav-item-padding-y;
+      height: calc(100% - 2 * #{$c-nav-item-padding-y});
+      width: 1px;
+      background-color: $c-nav-item-divider-bg-color;
     }
   }
 }

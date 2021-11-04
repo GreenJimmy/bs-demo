@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextArea, InlineEditText, Tooltip, Badge, Lozenge, MenuItem, Navigation } from './ui-components';
+import { TextArea, InlineEditText, Tooltip, Badge, Lozenge, MenuItem, Navigation, Dropdown } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
 
@@ -52,9 +52,31 @@ const App = () => {
             <br />
             <br />
             <Navigation
+                visibleItems={[
+                    { eventKey: 'one', title: 'item one' },
+                    { eventKey: 'two', title: 'item two' },
+                    { eventKey: 'three', title: 'item three' },
+                    { eventKey: 'four', title: 'item four' },
+                ]}
+                hideItems={[
+                    { eventKey: 'five', title: 'item five' },
+                    { eventKey: 'six', title: 'item six' },
+                    { eventKey: 'seven', title: 'item seven' },
+                    { eventKey: 'eight', title: 'item eight' },
+                    { eventKey: 'nine', title: 'item nine' },
+                    { eventKey: 'ten', title: 'item ten' },
+                ]}
+            />
+            <br />
+            <br />
+            <Dropdown
+                title="Primary"
+                id="some-dropdown"
                 items={[
                     { eventKey: 'one', title: 'item one' },
                     { eventKey: 'two', title: 'item two' },
+                    { eventKey: 'three', title: 'item three' },
+                    { eventKey: 'four', title: 'item four' },
                 ]}
             />
         </div>

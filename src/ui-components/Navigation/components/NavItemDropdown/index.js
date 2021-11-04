@@ -1,11 +1,18 @@
+import { forwardRef } from 'react';
 import { NavDropdown } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-const NavItemDropdown = (props) => {
-    const { id, title, disabled, eventKey, items } = props;
+const NavItemDropdown = forwardRef((props, ref) => {
+    const { title, disabled, items, isActive, className } = props;
+
+    const navDropdownClassNames = classNames('c-nav__item-dropdown', {
+        [className]: className,
+        active: isActive,
+    });
 
     return (
-        <NavDropdown className="c-nav__item-dropdown" title={title} id={id} disabled={disabled}>
+        <NavDropdown ref={ref} className={navDropdownClassNames} title={title} disabled={disabled}>
             {!!items?.length &&
                 items.map((item) => {
                     const {
@@ -16,7 +23,7 @@ const NavItemDropdown = (props) => {
                         disabled: iDisabled,
                     } = item;
 
-                    const itemEventKey = `${eventKey}.${iEventKey}`;
+                    const itemEventKey = `${iEventKey}`;
 
                     return (
                         <NavDropdown.Item
@@ -32,13 +39,13 @@ const NavItemDropdown = (props) => {
                 })}
         </NavDropdown>
     );
-};
+});
 
 NavItemDropdown.propTypes = {
-    id: PropTypes.string.isRequired,
+    className: PropTypes.string,
     title: PropTypes.string,
     disabled: PropTypes.bool,
-    eventKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    isActive: PropTypes.bool,
     items: PropTypes.arrayOf(
         PropTypes.shape({
             title: PropTypes.string.isRequired,
@@ -51,9 +58,11 @@ NavItemDropdown.propTypes = {
 };
 
 NavItemDropdown.defaultProps = {
+    className: undefined,
     title: undefined,
     items: null,
     disabled: false,
+    isActive: false,
 };
 
 export default NavItemDropdown;
