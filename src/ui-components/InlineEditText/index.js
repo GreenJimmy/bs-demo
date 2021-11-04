@@ -89,6 +89,7 @@ const InlineEditText = React.forwardRef((props, ref) => {
                     className={classNames({
                         'c-edit-text__input': !isActive,
                         'c-edit-text__input__active': isActive,
+                        'c-edit-text__input__disabled': disabled,
                     })}
                 />
                 {!isActive && (

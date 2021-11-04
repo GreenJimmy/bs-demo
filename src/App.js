@@ -1,14 +1,15 @@
 import { useState } from 'react';
-import { TextArea, InlineEditText, Tooltip, Badge, Lozenge } from './ui-components';
+import { TextArea, InlineEditText, Tooltip, Badge, Lozenge, MenuItem } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
 
 const App = () => {
     const [inlineEditText, setInlineEditText] = useState('Some Text');
     const [inlineInitialEditText, setInlineInitialEditText] = useState('Some Text');
+    const [selectedMenuItems, setSelectedMenuItems] = useState();
 
     return (
-        <div style={{ padding: '50px' }}>
+        <div style={{ padding: '50px', backgroundColor: '#E5E5E5' }}>
             <Button>Clickable</Button>
             <br />
             <TextArea
@@ -35,10 +36,20 @@ const App = () => {
             </Tooltip>
             <br />
             <br />
+            <Badge title="100" size="lg" type="primary" icon={<IconComponent />} />
+            <br />
+            <br />
+            <MenuItem
+                text="Menu item"
+                leadingIcon={<IconComponent />}
+                onSelect={(selectedMenuItem) => setSelectedMenuItems(selectedMenuItem)}
+                controlId="1"
+                path=""
+            />
             <Badge title="100" size="lg" type="primary" icon={<ExclamationFillIcon />} />
             <br />
             <br />
-            <Lozenge text="Default" type="success" variant="bold" icon={<ExclamationFillIcon />} />
+
         </div>
     );
 };
