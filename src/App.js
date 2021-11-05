@@ -36,20 +36,18 @@ const App = () => {
             </Tooltip>
             <br />
             <br />
-            <Badge title="100" size="lg" type="primary" icon={<IconComponent />} />
             <br />
             <br />
             <MenuItem
                 text="Menu item"
-                leadingIcon={<IconComponent />}
                 onSelect={(selectedMenuItem) => setSelectedMenuItems(selectedMenuItem)}
                 controlId="1"
                 path=""
             />
+            <br />
             <Badge title="100" size="lg" type="primary" icon={<ExclamationFillIcon />} />
             <br />
             <br />
-
         </div>
     );
 };
