@@ -1,11 +1,21 @@
 import { useState } from 'react';
-import { TextArea, InlineEditText, Tooltip, Badge, Lozenge, MenuItem, Navigation, Dropdown } from './ui-components';
+import {
+    TextArea,
+    InlineEditText,
+    Tooltip,
+    Badge,
+    Lozenge,
+    MenuItem,
+    Navigation,
+    Dropdown,
+} from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
 
 const App = () => {
     const [inlineEditText, setInlineEditText] = useState('Some Text');
     const [inlineInitialEditText, setInlineInitialEditText] = useState('Some Text');
+    // eslint-disable-next-line no-unused-vars
     const [selectedMenuItems, setSelectedMenuItems] = useState();
 
     return (
@@ -58,7 +68,7 @@ const App = () => {
                     { eventKey: 'three', title: 'item three' },
                     { eventKey: 'four', title: 'item four' },
                 ]}
-                hideItems={[
+                hiddenItems={[
                     { eventKey: 'five', title: 'item five' },
                     { eventKey: 'six', title: 'item six' },
                     { eventKey: 'seven', title: 'item seven' },

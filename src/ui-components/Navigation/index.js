@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
 import { Nav } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import NavItem from './components/NavItem';
 import NavItemDropdown from './components/NavItemDropdown';
+import useAdaptiveNav from './hooks/useAdaptiveNav';
 
 const Navigation = (props) => {
     const {
@@ -12,25 +13,42 @@ const Navigation = (props) => {
         defaultActiveKey,
         onSelect,
         visibleItems,
-        hideItems,
+        hiddenItems,
         dropdownTitle,
+        isAdaptiveWidth,
     } = props;
 
     const navGroupClassNames = classNames('c-nav', {
         [className]: className,
     });
 
+    const navRef = useRef(null);
+    const dropdownRef = useRef(null);
+
     const [isActiveDropdownItem, setIsActiveDropdownItem] = useState(null);
+    const { dropdownItems, toggleVisibleNavItems } = useAdaptiveNav(hiddenItems, visibleItems);
 
     const handleSelect = (value) => {
-        const isActive = hideItems.some((item) => item.eventKey === value);
+        const isActive = dropdownItems.some((item) => item.eventKey === value);
 
         setIsActiveDropdownItem(isActive);
         onSelect?.(value);
     };
 
+    // eslint-disable-next-line consistent-return
+    useLayoutEffect(() => {
+        if (isAdaptiveWidth) {
+            const updateSize = toggleVisibleNavItems(navRef.current, dropdownRef.current);
+
+            window.addEventListener('resize', updateSize);
+            updateSize();
+            return () => window.removeEventListener('resize', updateSize);
+        }
+    }, [isAdaptiveWidth]);
+
     return (
         <Nav
+            ref={navRef}
             className={navGroupClassNames}
             variant="tabs"
             activeKey={activeKey}
@@ -48,6 +66,7 @@ const Navigation = (props) => {
 
                     return (
                         <NavItem
+                            id={itemEventKey}
                             eventKey={itemEventKey}
                             title={itemTitle}
                             disabled={itemDisabled}
@@ -55,11 +74,12 @@ const Navigation = (props) => {
                         />
                     );
                 })}
-            {hideItems.length > 0 && (
+            {dropdownItems.length > 0 && (
                 <NavItemDropdown
+                    ref={dropdownRef}
                     title={dropdownTitle}
                     eventKey="dropdown"
-                    items={hideItems}
+                    items={dropdownItems}
                     isActive={isActiveDropdownItem}
                 />
             )}
@@ -82,8 +102,9 @@ Navigation.propTypes = {
     defaultActiveKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onSelect: Function,
     visibleItems: propItemType,
-    hideItems: propItemType,
+    hiddenItems: propItemType,
     dropdownTitle: PropTypes.string,
+    isAdaptiveWidth: PropTypes.bool,
 };
 
 Navigation.defaultProps = {
@@ -92,8 +113,9 @@ Navigation.defaultProps = {
     defaultActiveKey: undefined,
     onSelect: undefined,
     visibleItems: [],
-    hideItems: [],
+    hiddenItems: [],
     dropdownTitle: 'More',
+    isAdaptiveWidth: false,
 };
 
 export default Navigation;

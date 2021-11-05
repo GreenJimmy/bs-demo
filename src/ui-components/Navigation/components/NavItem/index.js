@@ -5,7 +5,7 @@ const NavItem = (props) => {
     const { eventKey, title, disabled, href } = props;
 
     return (
-        <Nav.Item className="c-nav__item">
+        <Nav.Item className="c-nav__item" data-key={eventKey}>
             <Nav.Link className="c-nav__link" eventKey={eventKey} href={href} disabled={disabled}>
                 {title}
             </Nav.Link>
