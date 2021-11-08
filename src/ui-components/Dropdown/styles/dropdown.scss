@@ -114,7 +114,6 @@
     }
   }
 
-  /* dropdown menu */
   &.show > .dropdown-toggle {
     &::after {
       transform: rotateX(-180deg);
@@ -139,33 +138,22 @@
     }
   }
 
-  .dropdown-menu {
-    border-color: $btn-dropdown-border-color;
-  }
-
-  .dropdown-item {
-    color: $btn-dropdown-text-color;
-
-    &:hover {
-      background-color: $btn-dropdown-hover-color;
-    }
-  }
-
+  /* dropdown menu */
   .btn-lg ~ .dropdown-menu {
-    @include dropdown-menu($btn-border-radius-lg, $btn-font-size-lg, $btn-line-height-lg, $menu-padding-x-lg, $menu-padding-y-lg, $menu-min-width-lg);
+    @include dropdown-menu($menu-border-radius-lg, $menu-font-size-lg, $menu-line-height-lg, $menu-padding-x-lg, $menu-padding-y-lg, $menu-min-width-lg);
 
     .dropdown-item {
       padding: $menu-item-padding-y-lg $menu-item-padding-x-lg;
-      border-radius: $btn-border-radius-lg;
+      border-radius: $menu-border-radius-lg;
     }
   }
 
   .btn-sm ~ .dropdown-menu {
-    @include dropdown-menu($btn-border-radius-sm, $btn-font-size-sm, $btn-line-height-sm, $menu-padding-x-sm, $menu-padding-y-sm, $menu-min-width-sm);
+    @include dropdown-menu($menu-border-radius-sm, $menu-font-size-sm, $menu-line-height-sm, $menu-padding-x-sm, $menu-padding-y-sm, $menu-min-width-sm);
 
     .dropdown-item {
       padding: $menu-item-padding-y-sm $menu-item-padding-x-sm;
-      border-radius: $btn-border-radius-sm;
+      border-radius: $menu-border-radius-sm;
     }
   }
 }
