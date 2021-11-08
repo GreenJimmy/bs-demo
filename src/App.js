@@ -58,7 +58,13 @@ const App = () => {
             <Badge title="100" size="lg" type="primary" icon={<ExclamationFillIcon />} />
             <br />
             <br />
-            <Lozenge text="Default" type="success" variant="bold" icon={<ExclamationFillIcon />} />
+            <Lozenge
+                text="Default"
+                type="warning"
+                variant="subtle"
+                size="lg"
+                icon={<ExclamationFillIcon />}
+            />
             <br />
             <br />
             <Navigation
