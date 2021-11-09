@@ -8,6 +8,7 @@ import {
     MenuItem,
     Navigation,
     Dropdown,
+    Tabs,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -89,6 +90,16 @@ const App = () => {
                 title="Primary"
                 id="some-dropdown"
                 items={[
+                    { eventKey: 'one', title: 'item one' },
+                    { eventKey: 'two', title: 'item two' },
+                    { eventKey: 'three', title: 'item three' },
+                    { eventKey: 'four', title: 'item four' },
+                ]}
+            />
+            <br />
+            <br />
+            <Tabs
+                visibleItems={[
                     { eventKey: 'one', title: 'item one' },
                     { eventKey: 'two', title: 'item two' },
                     { eventKey: 'three', title: 'item three' },
