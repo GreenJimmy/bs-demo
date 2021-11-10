@@ -14,6 +14,7 @@ import MenuItem from './MenuItem';
 import Lozenge from './Lozenge';
 import Navigation from './Navigation';
 import Tabs from './Tabs';
+import Banner from './Banner';
 
 import './styles.scss';
 
@@ -34,4 +35,5 @@ export {
     Lozenge,
     Navigation,
     Tabs,
+    Banner,
 };

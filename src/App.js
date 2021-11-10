@@ -9,6 +9,7 @@ import {
     Navigation,
     Dropdown,
     Tabs,
+    Banner,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -18,6 +19,7 @@ const App = () => {
     const [inlineInitialEditText, setInlineInitialEditText] = useState('Some Text');
     // eslint-disable-next-line no-unused-vars
     const [selectedMenuItems, setSelectedMenuItems] = useState();
+    const [showBanner, setShowBanner] = useState(false);
 
     return (
         <div style={{ padding: '50px', backgroundColor: '#E5E5E5' }}>
@@ -106,6 +108,17 @@ const App = () => {
                     { eventKey: 'four', title: 'item four' },
                 ]}
             />
+            <br />
+            <br />
+            <Button onClick={() => setShowBanner(true)}>Show banner</Button>
+            <div style={{ position: 'relative', height: '100px', marginTop: '10px' }}>
+                <Banner
+                    show={showBanner}
+                    variant="warning"
+                    message="Example of a warning banner message."
+                    onClose={() => setShowBanner(false)}
+                />
+            </div>
         </div>
     );
 };

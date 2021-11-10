@@ -1,5 +1,6 @@
 /* theme colors */
 @import 'theme/colors';
+
 /* components variables */
 @import 'Button/styles/variables';
 @import 'Check/styles/variables';
@@ -14,6 +15,7 @@
 @import 'Lozenge/styles/variables';
 @import 'Navigation/styles/variables';
 @import 'Tabs/styles/variables';
+@import 'Banner/styles/variables';
 
 @import '~bootstrap/scss/bootstrap';
 
@@ -33,3 +35,4 @@
 @import 'Lozenge/styles/lozenge';
 @import 'Navigation/styles/navigation';
 @import 'Tabs/styles/tabs';
+@import 'Banner/styles/banner';
