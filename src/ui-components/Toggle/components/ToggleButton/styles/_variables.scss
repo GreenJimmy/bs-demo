@@ -8,34 +8,34 @@ $toggle-border-color: $secondary;
 
 $toggle-size-lg: 2.25rem;
 $toggle-size-sm: 1.5rem;
-$toggle-icon-size-lg: 0.875rem;
-$toggle-icon-size-sm: 0.75rem;
+$toggle-icon-size-lg: $icon-size-lg;
+$toggle-icon-size-sm: $icon-size-sm;
 $toggle-size-gap: 0.25rem;
 
 $toggle-padding-y-sm: 0.25rem;
 $toggle-padding-x-sm: 0.375rem;
 $toggle-padding-btn-sm: 0.375rem;
 $toggle-border-radius-sm: 0.25rem;
-$toggle-font-size-sm: 0.75rem;
-$toggle-line-height-sm: 1rem;
+$toggle-font-size-sm: $font-size-sm;
+$toggle-line-height-sm: $line-height-sm;
 
 $toggle-padding-y-lg: 0.5rem;
 $toggle-padding-x-lg: 0.75rem;
 $toggle-padding-btn-lg: 0.625rem;
 $toggle-border-radius-lg: 0.375rem;
-$toggle-font-size-lg: 0.875rem;
-$toggle-line-height-lg: 1.25rem;
+$toggle-font-size-lg: $font-size-lg;
+$toggle-line-height-lg: $line-height-lg;
 
 $btn-padding-y: 0.625rem;
 $btn-padding-x: 0.75rem;
-$btn-font-family: Noto Sans;
-$btn-font-size: 0.875rem;
-$btn-line-height: 1.25rem;
-$btn-font-weight: 600;
+$btn-font-family: $font-family;
+$btn-font-size: $font-size-lg;
+$btn-line-height: $line-height-lg;
+$btn-font-weight: $font-weight-600;
 $btn-box-shadow: none;
 $btn-focus-width: 0;
 $btn-focus-box-shadow: none;
 $btn-disabled-opacity: 1;
 $btn-active-box-shadow: none;
-$btn-border-radius: 0.5rem;
+$btn-border-radius: $component-border-radius-lg;
 $btn-border-width: 0;
