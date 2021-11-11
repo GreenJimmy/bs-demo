@@ -1,13 +1,13 @@
-$c-badge-height-sm: 1.25rem;
-$c-badge-font-size-sm: 0.75rem;
-$c-badge-icon-size-sm: 0.625rem;
-$c-badge-line-height-sm: 1rem;
-$c-badge-border-radius-sm: 0.375rem;
+$c-badge-height-sm: $component-height-smaller-sm;
+$c-badge-font-size-sm: $font-size-sm;
+$c-badge-icon-size-sm: $icon-size-smallest-sm;
+$c-badge-line-height-sm: $line-height-sm;
+$c-badge-border-radius-sm: $component-border-radius-sm;
 
-$c-badge-height-lg: 1.5rem;
-$c-badge-font-size-lg: 0.875rem;
-$c-badge-icon-size-lg: 0.75rem;
-$c-badge-line-height-lg: 1.25rem;
+$c-badge-height-lg: $component-height-smaller-lg;
+$c-badge-font-size-lg: $font-size-lg;
+$c-badge-icon-size-lg: $icon-size-smallest-lg;
+$c-badge-line-height-lg: $line-height-lg;
 $c-badge-border-radius-lg: 1.25rem;
 
 $c-badge-font-weight: 400;

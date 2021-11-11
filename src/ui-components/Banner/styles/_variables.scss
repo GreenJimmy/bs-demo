@@ -1,11 +1,11 @@
 $c-banner-max-width: 50rem;
 $c-banner-padding-x: 0;
 $c-banner-padding-y: 0;
-$c-banner-font-size: 0.875rem;
+$c-banner-font-size: $font-size-lg;
 $c-banner-border-width: 1px;
-$c-banner-border-radius: 0.5rem;
+$c-banner-border-radius: $component-border-radius-lg;
 $c-banner-height: 2.75rem;
-$c-banner-icon-size: 0.875rem;
+$c-banner-icon-size: $icon-size-lg;
 $c-icon-wrapper-padding-x: 0.75rem;
 $c-message-padding-x: 0.875rem;
 $c-banner-padding-right-x: 0.25rem;
