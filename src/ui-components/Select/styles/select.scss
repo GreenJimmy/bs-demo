@@ -1,0 +1,94 @@
+.c-select--lg {
+    height: 40px;
+    .c-select__control {
+        min-height: 40px;
+        .c-select__value-container {
+            height: 40px;
+            
+        }
+        .c-select__indicators {
+            height: 40px;
+        }
+    }
+    .c-select__multi-value {
+        height: 24px;
+    }
+}
+.c-select--sm {
+    height: 28px;
+    .c-select__control {
+        min-height: 28px;
+        .c-select__value-container {
+            height: 28px;
+            .c-select__input-container {
+                padding: 0px;
+                margin: 0px;
+            }
+        }
+        .c-select__indicators {
+            height: 28px;
+        }
+    }
+    .c-select__multi-value {
+        height: 20px;
+    }
+}
+
+.c-select--invalid {
+    .c-select__control{
+        border-color: $error!important;
+    }
+}
+
+.c-select {
+    max-width: $tf-max-width;
+    .c-select__control {
+        border: 1px solid $secondary;
+        border-radius: 8px;
+        &:hover {
+            border-color: $primary-700;
+        } 
+    }
+    .c-select__control--is-focused {
+        border: 1px solid $edit-text-blue;
+        box-shadow: none;
+        &:hover {
+            border-color: $edit-text-blue;
+        }
+    }
+    .c-select__option:hover {
+        background-color: $secondary-100;
+        color: black;
+        cursor: pointer;
+    }
+
+    .c-select__option--is-selected {
+        background-color: $secondary-100;
+        color: black;
+    }
+
+    .c-select__indicator-separator {
+        display: none;
+    }
+
+    .c-select__clear-indicator {
+        display: none;
+    }
+
+    .c-select__control--is-focused .c-select__indicator {
+        color: $edit-text-blue;
+        transform: rotate(180deg);
+    }
+
+    .c-select__multi-value {
+        background-color: $secondary-100;
+        border-radius: 6px;
+        align-items: center;
+        .c-select__multi-value__remove{
+            &:hover {
+                background-color: $secondary-100;
+                color: black;
+            }
+        }
+    }
+}

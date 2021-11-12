@@ -8,15 +8,23 @@ import {
     MenuItem,
     Navigation,
     Dropdown,
+    Select,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
+
+const selectOptions = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+];
 
 const App = () => {
     const [inlineEditText, setInlineEditText] = useState('Some Text');
     const [inlineInitialEditText, setInlineInitialEditText] = useState('Some Text');
     // eslint-disable-next-line no-unused-vars
     const [selectedMenuItems, setSelectedMenuItems] = useState();
+    const [selectedOptions, setSelectedOptions] = useState([]);
 
     return (
         <div style={{ padding: '50px', backgroundColor: '#E5E5E5' }}>
@@ -88,6 +96,14 @@ const App = () => {
                     { eventKey: 'three', title: 'item three' },
                     { eventKey: 'four', title: 'item four' },
                 ]}
+            />
+            <br />
+            <Select
+                size="lg"
+                isMulti
+                selectedValues={selectedOptions}
+                onSelect={(options) => setSelectedOptions(options)}
+                options={selectOptions}
             />
         </div>
     );

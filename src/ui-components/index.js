@@ -13,6 +13,7 @@ import Badge from './Bagde';
 import MenuItem from './MenuItem';
 import Lozenge from './Lozenge';
 import Navigation from './Navigation';
+import Select from './Select';
 
 import './styles.scss';
 
@@ -32,4 +33,5 @@ export {
     MenuItem,
     Lozenge,
     Navigation,
+    Select,
 };
