@@ -10,6 +10,7 @@ import {
     Dropdown,
     Tabs,
     Banner,
+    Tag,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -119,6 +120,14 @@ const App = () => {
                     onClose={() => setShowBanner(false)}
                 />
             </div>
+            <br />
+            <Tag
+                text="Removable tag"
+                variant="rounded"
+                icon={<ExclamationFillIcon />}
+                size="lg"
+                isRemovable
+            />
         </div>
     );
 };
