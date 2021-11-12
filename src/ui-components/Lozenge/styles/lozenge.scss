@@ -11,17 +11,29 @@
     align-items: center;
     justify-content: center;
 
-    & > svg {
-      color: $c-lozenge-icon-color;
+    & svg {
+      fill: $c-lozenge-icon-color;
     }
+  }
+
+  &__text {
+    padding: 0 $c-lozenge-text-padding-x;
   }
 
   &--size-lg {
     @include size($c-lozenge-font-size-lg, $c-lozenge-line-height-lg, $c-lozenge-size-lg, $c-lozenge-icon-size-lg, $c-lozenge-border-radius-lg);
+
+    .c-lozenge__icon + .c-lozenge__text {
+      margin-left: 0.25rem;
+    }
   }
 
   &--size-sm {
     @include size($c-lozenge-font-size-sm, $c-lozenge-line-height-sm, $c-lozenge-size-sm, $c-lozenge-icon-size-sm, $c-lozenge-border-radius-sm);
+
+    .c-lozenge__icon + .c-lozenge__text {
+      margin-left: 0.125rem;
+    }
   }
 
   &--variant-bold {

@@ -16,7 +16,8 @@ const Lozenge = (props) => {
 
     return (
         <div className={lozengeClassNames}>
-            {variant === 'icon' ? <span className="c-lozenge__icon">{icon}</span> : text}
+            {icon && <span className="c-lozenge__icon">{icon}</span>}
+            {variant !== 'icon' && <span className="c-lozenge__text">{text}</span>}
         </div>
     );
 };

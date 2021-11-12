@@ -9,6 +9,7 @@ import {
     Navigation,
     Dropdown,
     Select,
+    Tabs,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -66,7 +67,13 @@ const App = () => {
             <Badge title="100" size="lg" type="primary" icon={<ExclamationFillIcon />} />
             <br />
             <br />
-            <Lozenge text="Default" type="success" variant="bold" icon={<ExclamationFillIcon />} />
+            <Lozenge
+                text="Default"
+                type="warning"
+                variant="subtle"
+                size="lg"
+                icon={<ExclamationFillIcon />}
+            />
             <br />
             <br />
             <Navigation
@@ -104,6 +111,14 @@ const App = () => {
                 selectedValues={selectedOptions}
                 onSelect={(options) => setSelectedOptions(options)}
                 options={selectOptions}
+            <br />
+            <Tabs
+                visibleItems={[
+                    { eventKey: 'one', title: 'item one' },
+                    { eventKey: 'two', title: 'item two' },
+                    { eventKey: 'three', title: 'item three' },
+                    { eventKey: 'four', title: 'item four' },
+                ]}
             />
         </div>
     );
