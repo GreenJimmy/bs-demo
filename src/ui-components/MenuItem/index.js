@@ -47,7 +47,7 @@ MenuItem.propTypes = {
     className: PropTypes.string,
     path: PropTypes.string,
     onSelect: PropTypes.func,
-    controlId: PropTypes.string,
+    controlId: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
     leadingIcon: PropTypes.arrayOf(PropTypes.node),
     trailingIcon: PropTypes.arrayOf(PropTypes.node),
@@ -58,7 +58,6 @@ MenuItem.propTypes = {
 MenuItem.defaultProps = {
     text: '',
     className: undefined,
-    controlId: '',
     path: '',
     onSelect: undefined,
     disabled: false,

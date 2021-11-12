@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -29,12 +28,12 @@ const Tag = ({
 
     const handleSelect = () => {
         setSelected((prev) => !prev);
-        onSelect({ [controlId]: !selected });
+        onSelect?.({ [controlId]: !selected });
     };
 
     const handleRemove = (e) => {
         e.stopPropagation();
-        onRemove(controlId);
+        onRemove?.(controlId);
     };
 
     return (
@@ -54,9 +53,9 @@ const Tag = ({
 Tag.propTypes = {
     text: PropTypes.string,
     icon: PropTypes.arrayOf(PropTypes.node),
-    variant: PropTypes.string,
+    variant: PropTypes.oneOf(['default', 'rounded']),
     isRemovable: PropTypes.bool,
-    size: PropTypes.string,
+    size: PropTypes.oneOf(['sm', 'lg']),
     className: PropTypes.string,
     path: PropTypes.string,
     onSelect: PropTypes.func,
@@ -69,7 +68,7 @@ Tag.defaultProps = {
     icon: undefined,
     variant: 'default',
     isRemovable: false,
-    size: 'lg',
+    size: 'sm',
     className: undefined,
     controlId: '',
     path: undefined,

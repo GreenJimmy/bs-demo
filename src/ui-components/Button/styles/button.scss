@@ -58,18 +58,25 @@
 
   /* icon-link */
   &.btn-icon-link {
-    color: $btn-icon-link-text-color;
+    svg {
+      fill: $btn-icon-link-hover-text-color;
+    }
   }
 
   &.btn-icon-link:hover,
   &.btn-icon-link.hover {
     @include bg-color($btn-icon-link-hover-bg-color);
-    color: $btn-icon-link-hover-text-color;
+
+    svg {
+      fill: $btn-icon-link-hover-text-color;
+    }
   }
 
   &.btn-icon-link:disabled,
   &.btn-icon-link.disabled {
-    color: $btn-icon-link-disabled-text-color;
+    svg {
+      fill: $btn-icon-link-disabled-text-color;
+    }
   }
 
   &.btn-lg {
