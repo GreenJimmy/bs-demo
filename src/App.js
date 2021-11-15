@@ -27,11 +27,8 @@ const App = () => {
     const [inlineInitialEditText, setInlineInitialEditText] = useState('Some Text');
     // eslint-disable-next-line no-unused-vars
     const [selectedMenuItems, setSelectedMenuItems] = useState();
-<<<<<<< HEAD
     const [selectedOptions, setSelectedOptions] = useState([]);
-=======
     const [showBanner, setShowBanner] = useState(false);
->>>>>>> main
 
     return (
         <div style={{ padding: '50px', backgroundColor: '#E5E5E5' }}>
