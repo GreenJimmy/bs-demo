@@ -1,5 +1,7 @@
 /* theme colors */
 @import 'theme/colors';
+@import 'theme/sizes';
+
 /* components variables */
 @import 'Button/styles/variables';
 @import 'Check/styles/variables';
@@ -15,6 +17,9 @@
 @import 'Navigation/styles/variables';
 @import 'Tabs/styles/variables';
 @import 'Select/styles/variables';
+@import 'Banner/styles/variables';
+@import 'Tag/styles/variables';
+@import 'MenuItem/styles/variables';
 
 @import '~bootstrap/scss/bootstrap';
 
@@ -35,3 +40,4 @@
 @import 'Navigation/styles/navigation';
 @import 'Select/styles/select.scss';
 @import 'Tabs/styles/tabs';
+@import 'Banner/styles/banner';
