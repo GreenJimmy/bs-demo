@@ -1,36 +1,36 @@
 .c-select--lg {
-    height: 40px;
+    height: $select-height-lg;
     .c-select__control {
-        min-height: 40px;
+        min-height: $select-height-lg;
         .c-select__value-container {
-            height: 40px;
+            height: $select-height-lg;
             
         }
         .c-select__indicators {
-            height: 40px;
+            height: $select-height-lg;
         }
     }
     .c-select__multi-value {
-        height: 24px;
+        height: $select-lg-multi-value-height;
     }
 }
 .c-select--sm {
-    height: 28px;
+    height: $select-height-sm;
     .c-select__control {
-        min-height: 28px;
+        min-height: $select-height-sm;
         .c-select__value-container {
-            height: 28px;
+            height: $select-height-sm;
             .c-select__input-container {
-                padding: 0px;
-                margin: 0px;
+                padding: $select-input-container-padding;
+                margin: $select-input-container-margin;
             }
         }
         .c-select__indicators {
-            height: 28px;
+            height: $select-height-sm;
         }
     }
     .c-select__multi-value {
-        height: 20px;
+        height: $select-sm-multi-value-height;
     }
 }
 
@@ -41,19 +41,19 @@
 }
 
 .c-select {
-    max-width: $tf-max-width;
+    max-width: $select-max-width;
     .c-select__control {
-        border: 1px solid $secondary;
-        border-radius: 8px;
+        border: $select-control-border solid $secondary;
+        border-radius: $select-control-border-radius;
         &:hover {
             border-color: $primary-700;
         } 
     }
     .c-select__control--is-focused {
-        border: 1px solid $edit-text-blue;
+        border: $select-control-border solid $select-control-border-color-focused;
         box-shadow: none;
         &:hover {
-            border-color: $edit-text-blue;
+            border-color: $select-control-border-color-focused;
         }
     }
     .c-select__option:hover {
@@ -76,13 +76,13 @@
     }
 
     .c-select__control--is-focused .c-select__indicator {
-        color: $edit-text-blue;
+        color: $select-control-border-color-focused;
         transform: rotate(180deg);
     }
 
     .c-select__multi-value {
         background-color: $secondary-100;
-        border-radius: 6px;
+        border-radius: $select-multi-value-border-radius;
         align-items: center;
         .c-select__multi-value__remove{
             &:hover {

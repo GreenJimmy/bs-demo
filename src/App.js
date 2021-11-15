@@ -106,11 +106,12 @@ const App = () => {
             />
             <br />
             <Select
-                size="lg"
+                size="sm"
                 isMulti
                 selectedValues={selectedOptions}
                 onSelect={(options) => setSelectedOptions(options)}
                 options={selectOptions}
+            />
             <br />
             <Tabs
                 visibleItems={[
