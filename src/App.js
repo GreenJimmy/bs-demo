@@ -8,6 +8,7 @@ import {
     MenuItem,
     Navigation,
     Dropdown,
+    Select,
     Tabs,
     Banner,
     Tag,
@@ -15,11 +16,18 @@ import {
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
 
+const selectOptions = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+];
+
 const App = () => {
     const [inlineEditText, setInlineEditText] = useState('Some Text');
     const [inlineInitialEditText, setInlineInitialEditText] = useState('Some Text');
     // eslint-disable-next-line no-unused-vars
     const [selectedMenuItems, setSelectedMenuItems] = useState();
+    const [selectedOptions, setSelectedOptions] = useState([]);
     const [showBanner, setShowBanner] = useState(false);
 
     return (
@@ -100,6 +108,13 @@ const App = () => {
                 ]}
             />
             <br />
+            <Select
+                size="sm"
+                isMulti
+                selectedValues={selectedOptions}
+                onSelect={(options) => setSelectedOptions(options)}
+                options={selectOptions}
+            />
             <br />
             <Tabs
                 visibleItems={[

@@ -16,6 +16,7 @@
 @import 'Lozenge/styles/variables';
 @import 'Navigation/styles/variables';
 @import 'Tabs/styles/variables';
+@import 'Select/styles/variables';
 @import 'Banner/styles/variables';
 @import 'Tag/styles/variables';
 @import 'MenuItem/styles/variables';
@@ -30,12 +31,13 @@
 @import 'Toggle/components/ToggleButton/styles/toggleButton';
 @import 'TextField/styles/textField';
 @import 'TextArea/styles/textArea';
-@import 'InlineEditText/styles/inlineEditText.scss';
+@import 'InlineEditText/styles/inlineEditText';
 @import 'Tag/styles/tag.scss';
 @import 'Tooltip/styles/tooltip';
 @import 'Bagde/styles/badge';
-@import 'MenuItem/styles/menuItem.scss';
+@import 'MenuItem/styles/menuItem';
 @import 'Lozenge/styles/lozenge';
 @import 'Navigation/styles/navigation';
+@import 'Select/styles/select.scss';
 @import 'Tabs/styles/tabs';
 @import 'Banner/styles/banner';
