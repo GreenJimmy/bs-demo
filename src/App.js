@@ -11,6 +11,7 @@ import {
     Tabs,
     Banner,
     Tag,
+    Avatar,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -128,6 +129,8 @@ const App = () => {
                 size="lg"
                 isRemovable
             />
+            <br />
+            <Avatar src="https://robohash.org/my-own-slug.png?size=300x300&set=set1" />
         </div>
     );
 };

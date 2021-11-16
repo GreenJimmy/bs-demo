@@ -15,6 +15,7 @@ import Lozenge from './Lozenge';
 import Navigation from './Navigation';
 import Tabs from './Tabs';
 import Banner from './Banner';
+import Avatar from './Avatar';
 
 import './styles.scss';
 
@@ -36,4 +37,5 @@ export {
     Navigation,
     Tabs,
     Banner,
+    Avatar,
 };
