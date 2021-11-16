@@ -13,6 +13,7 @@ import Badge from './Bagde';
 import MenuItem from './MenuItem';
 import Lozenge from './Lozenge';
 import Navigation from './Navigation';
+import Select from './Select';
 import Tabs from './Tabs';
 import Banner from './Banner';
 import Avatar from './Avatar';
@@ -35,6 +36,7 @@ export {
     MenuItem,
     Lozenge,
     Navigation,
+    Select,
     Tabs,
     Banner,
     Avatar,
