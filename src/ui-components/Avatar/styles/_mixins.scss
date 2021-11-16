@@ -1,0 +1,30 @@
+@mixin avatar-size($size, $fontSize, $lineHeight, $svgWidth, $svgHeight) {
+  width: $size;
+  height: $size;
+  svg {
+    width: svg-default($size);
+    height: svg-default($size);
+  }
+  & .c-avatar__initials {
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    max-width: calc(#{$size} * (1 - (2 * .15)));
+  }
+
+  & .c-avatar__img {
+    width: $size;
+    height: $size;
+  }
+
+  & .c-avatar__hover svg {
+    width: $svgWidth;
+    height: $svgHeight;
+  }
+}
+
+@function svg-default($size) {
+  $svg-size: calc(#{$size} / 2.66);
+  @return $svg-size;
+}
+
+

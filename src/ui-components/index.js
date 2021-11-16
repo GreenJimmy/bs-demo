@@ -16,6 +16,7 @@ import Navigation from './Navigation';
 import Select from './Select';
 import Tabs from './Tabs';
 import Banner from './Banner';
+import Avatar from './Avatar';
 
 import './styles.scss';
 
@@ -38,4 +39,5 @@ export {
     Select,
     Tabs,
     Banner,
+    Avatar,
 };
