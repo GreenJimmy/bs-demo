@@ -3,20 +3,18 @@ import classNames from 'classnames';
 import { PersonIcon, CameraFillIcon } from '../../icons';
 import { getInitials } from './utils';
 
-const Avatar = ({ className, size, name, initialsNumber, src }) => {
+const Avatar = ({ className, size, name, initials, src }) => {
     const avatarClassNames = classNames('c-avatar', `c-avatar--size-${size}`, {
         [className]: className,
     });
 
     return (
         <div className={avatarClassNames}>
-            {src && <div className="c-avatar__img" style={{ backgroundImage: `url(${src})` }} />}
-            {!src && name && (
-                <div className="c-avatar__initials">
-                    {getInitials(name, { length: initialsNumber })}{' '}
-                </div>
+            {src && <img className="c-avatar__img" src={src} alt={name || initials || ''} />}
+            {!src && (name || initials) && (
+                <div className="c-avatar__initials">{initials || getInitials(name)}</div>
             )}
-            <PersonIcon className={(name || src) && `c-avatar__icon-decorator`} />
+            <PersonIcon className={(name || src || initials) && `c-avatar__icon-decorator`} />
             <div className="c-avatar__hover">
                 <CameraFillIcon />
             </div>
@@ -26,17 +24,17 @@ const Avatar = ({ className, size, name, initialsNumber, src }) => {
 
 Avatar.propTypes = {
     className: PropTypes.string,
-    size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    name: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
-    initialsNumber: PropTypes.number,
+    size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'xxl']),
+    name: PropTypes.string,
+    initials: PropTypes.string,
     src: PropTypes.string,
 };
 
 Avatar.defaultProps = {
     className: undefined,
-    size: 'xxl',
+    size: 'md',
     name: undefined,
-    initialsNumber: undefined,
+    initials: undefined,
     src: undefined,
 };
 
