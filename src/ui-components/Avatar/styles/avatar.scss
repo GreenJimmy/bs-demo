@@ -1,16 +1,15 @@
 @import 'mixins';
 
 .c-avatar {
-  box-sizing: border-box;
-  border-radius: $c-avatar-border-radius;
-  border: 1px solid $secondary;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  border-radius: $c-avatar-border-radius;
   cursor: pointer;
   color: $secondary-500;
   overflow: hidden;
+  box-shadow:  inset 0 0 0 1px $secondary;
 
   &__img {
     object-fit: cover;
@@ -22,7 +21,7 @@
   }
 
   &:hover {
-    border: none;
+    box-shadow: inset 0 0 0 1px transparent;
   }
 
   &__hover {
