@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import TableCellChild from './TableCellChild';
 
 const TableCell = (props) => {
-    const { children, className, component, variant, align, img, icon, subTitle, title } = props;
+    const { children, className, component, variant, align, width } = props;
 
     const tableClasses = classNames(
         'c-table__cell',
@@ -16,8 +15,7 @@ const TableCell = (props) => {
 
     if (component === 'th' || (component === undefined && variant === 'header')) {
         return (
-            <th className={tableClasses}>
-                <TableCellChild img={img} icon={icon} subTitle={subTitle} title={title} />
+            <th className={tableClasses} style={{ width }}>
                 {children}
             </th>
         );
@@ -25,8 +23,7 @@ const TableCell = (props) => {
 
     return (
         <td className={tableClasses}>
-            <TableCellChild img={img} icon={icon} subTitle={subTitle} title={title} />
-            {children}
+            <div className="cell__container">{children}</div>
         </td>
     );
 };
@@ -37,10 +34,7 @@ TableCell.propTypes = {
     component: PropTypes.oneOf(['td', 'th']),
     variant: PropTypes.oneOf(['body', 'footer', 'header']),
     align: PropTypes.oneOf(['center', 'inherit', 'justify', 'left', 'right']),
-    icon: PropTypes.node,
-    img: PropTypes.node,
-    title: PropTypes.string,
-    subTitle: PropTypes.string,
+    width: PropTypes.string,
 };
 
 TableCell.defaultProps = {
@@ -49,10 +43,7 @@ TableCell.defaultProps = {
     component: undefined,
     variant: undefined,
     align: 'left',
-    icon: undefined,
-    img: undefined,
-    title: undefined,
-    subTitle: undefined,
+    width: 'auto',
 };
 
 export default TableCell;

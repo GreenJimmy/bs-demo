@@ -18,6 +18,7 @@ import Tabs from './Tabs';
 import Banner from './Banner';
 import Avatar from './Avatar';
 import InlineEditSelect from './InlineEditSelect';
+import { Table, TableHead, TableBody, TableRow, TableCell, DataTableCell } from './Table';
 
 import './styles.scss';
 
@@ -41,5 +42,11 @@ export {
     Tabs,
     Banner,
     Avatar,
+    Table,
+    TableHead,
+    TableBody,
+    TableRow,
+    TableCell,
+    DataTableCell,
     InlineEditSelect,
 };

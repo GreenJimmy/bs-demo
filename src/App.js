@@ -14,8 +14,15 @@ import {
     Tag,
     Avatar,
     InlineEditSelect,
+    Table,
+    TableHead,
+    TableBody,
+    TableRow,
+    TableCell,
+    DataTableCell,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
+import { PersonIcon } from './icons';
 import Button from './bs-components/Button';
 
 const selectOptions = [
@@ -147,6 +154,48 @@ const App = () => {
                 selectedOptions={inlineInitialEditSelect}
                 size="lg"
             />
+            <br />
+            <br />
+            <Table hover tableStyle="filled">
+                <TableHead>
+                    <TableRow>
+                        <TableCell align="center">
+                            <ExclamationFillIcon />
+                            Name
+                        </TableCell>
+                        <TableCell align="right">Age</TableCell>
+                        <TableCell align="center" width="15%">
+                            <ExclamationFillIcon />
+                        </TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    <TableRow>
+                        <TableCell>
+                            <Avatar
+                                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                                size="md"
+                            />
+                            Suzi
+                        </TableCell>
+                        <TableCell>27</TableCell>
+                        <TableCell>QA</TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>
+                            <DataTableCell
+                                subTitle="Franchesk"
+                                icon={<PersonIcon />}
+                                iconPosition="end"
+                            >
+                                Alex
+                            </DataTableCell>
+                        </TableCell>
+                        <TableCell>34</TableCell>
+                        <TableCell>Android dev</TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
         </div>
     );
 };
