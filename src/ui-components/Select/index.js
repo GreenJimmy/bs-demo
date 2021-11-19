@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 import { Form } from 'react-bootstrap';
@@ -15,11 +15,9 @@ const CustomSelect = ({
     onSelect,
     options,
 }) => {
-    const [_selectedValues, setSelectedValues] = useState(selectedValues);
-
     useEffect(() => {
-        setSelectedValues(selectedValues);
-    }, [selectedValues]);
+        onSelect(selectedValues);
+    }, [selectedValues, onSelect]);
 
     const selectClassNames = classNames('c-select', {
         [className]: className,
@@ -30,11 +28,9 @@ const CustomSelect = ({
 
     const handleChange = (option) => {
         if (!isMulti) {
-            onSelect([option]);
-            return setSelectedValues([option]);
+            return onSelect([option]);
         }
         onSelect([...option]);
-        return setSelectedValues([...option]);
     };
 
     return (
@@ -47,6 +43,7 @@ const CustomSelect = ({
                 isDisabled={isDisabled}
                 onChange={handleChange}
                 aria-invalid
+                value={selectedValues}
             />
             {isInvalid && !isDisabled && (
                 <Form.Text className="c-text-field__error">{errorMessage}</Form.Text>
