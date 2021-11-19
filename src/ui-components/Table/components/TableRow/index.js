@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const TableRow = (props) => {
-    const { children, className, hover, selected, variant } = props;
+    const { children, className, hover, selected, variant, dataTestId } = props;
 
     const tableClasses = classNames('c-table__row', `c-table__cell--variant-${variant}`, {
         [className]: className,
@@ -17,7 +17,7 @@ const TableRow = (props) => {
         });
     });
 
-    return <tr className={tableClasses}>{rowChildren}</tr>;
+    return <tr className={tableClasses} data-test-id={dataTestId}>{rowChildren}</tr>;
 };
 
 TableRow.propTypes = {
@@ -26,6 +26,7 @@ TableRow.propTypes = {
     variant: PropTypes.oneOf(['body', 'footer', 'header']),
     hover: PropTypes.bool,
     selected: PropTypes.bool,
+    dataTestId: PropTypes.string,
 };
 
 TableRow.defaultProps = {
@@ -34,6 +35,7 @@ TableRow.defaultProps = {
     hover: false,
     selected: false,
     variant: 'body',
+    dataTestId: undefined,
 };
 
 export default TableRow;

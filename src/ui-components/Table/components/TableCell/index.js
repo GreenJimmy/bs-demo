@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const TableCell = (props) => {
-    const { children, className, component, variant, align, width } = props;
+    const { children, className, component, variant, align, width, dataTestId } = props;
 
     const tableClasses = classNames(
         'c-table__cell',
@@ -15,7 +15,7 @@ const TableCell = (props) => {
 
     if (component === 'th' || (component === undefined && variant === 'header')) {
         return (
-            <th className={tableClasses} style={{ width }}>
+            <th className={tableClasses} style={{ width }} data-test-id={dataTestId}>
                 {children}
             </th>
         );
@@ -35,6 +35,7 @@ TableCell.propTypes = {
     variant: PropTypes.oneOf(['body', 'footer', 'header']),
     align: PropTypes.oneOf(['center', 'inherit', 'justify', 'left', 'right']),
     width: PropTypes.string,
+    dataTestId: PropTypes.string,
 };
 
 TableCell.defaultProps = {
@@ -44,6 +45,7 @@ TableCell.defaultProps = {
     variant: undefined,
     align: 'left',
     width: 'auto',
+    dataTestId: undefined,
 };
 
 export default TableCell;

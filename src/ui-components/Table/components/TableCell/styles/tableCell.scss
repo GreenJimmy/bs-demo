@@ -2,8 +2,11 @@
 
 .cell__container {
   display: inline-flex;
-  gap: 2px;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  gap: 2px;
 }
 
 .c-table__cell {

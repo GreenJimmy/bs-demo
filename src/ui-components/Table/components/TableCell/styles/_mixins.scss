@@ -28,6 +28,10 @@
   @each $align in $aligns {
     &.c-table__cell--align-#{$align} {
       text-align: #{$align};
+
+      .cell__container {
+        justify-content: #{$align};
+      }
     }
   }
 }
