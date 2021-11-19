@@ -22,6 +22,7 @@ const InlineEditSelect = ({
     disabled,
     errorMessage,
     className,
+    size,
 }) => {
     const [_selectedOptions, setSelectedOptions] = useState([]);
     const [isActive, setIsActive] = useState(false);
@@ -73,7 +74,7 @@ const InlineEditSelect = ({
                 options={selectOptions}
                 className={inlineEditSelectClassNames}
                 selectedValues={_selectedOptions}
-                size="lg"
+                size={size}
             />
             {isActive && !isInvalid && (
                 <div className="status-buttons">
@@ -108,6 +109,7 @@ InlineEditSelect.propTypes = {
     isInvalid: PropTypes.bool,
     onEditSelect: PropTypes.func,
     controlId: PropTypes.string,
+    size: PropTypes.string,
 };
 
 InlineEditSelect.defaultProps = {
@@ -118,6 +120,7 @@ InlineEditSelect.defaultProps = {
     isInvalid: false,
     onEditSelect: undefined,
     controlId: '',
+    size: 'lg',
 };
 
 export default InlineEditSelect;

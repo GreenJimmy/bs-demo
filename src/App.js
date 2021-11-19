@@ -116,6 +116,7 @@ const App = () => {
             <InlineEditSelect
                 onEditSelect={(options) => setInlineInitialEditSelect(options)}
                 selectedOptions={inlineInitialEditSelect}
+                size="lg"
             />
         </div>
     );
