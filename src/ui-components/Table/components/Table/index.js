@@ -1,6 +1,7 @@
 import { Table } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import uniqueBy from '@popperjs/core/lib/utils/uniqueBy';
 
 const CustomTable = (props) => {
     const {
