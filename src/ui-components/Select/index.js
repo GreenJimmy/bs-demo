@@ -14,6 +14,7 @@ const CustomSelect = ({
     selectedValues,
     onSelect,
     options,
+    dataTestId,
 }) => {
     useEffect(() => {
         onSelect(selectedValues);
@@ -44,6 +45,7 @@ const CustomSelect = ({
                 onChange={handleChange}
                 aria-invalid
                 value={selectedValues}
+                data-test-id={dataTestId}
             />
             {isInvalid && !isDisabled && (
                 <Form.Text className="c-text-field__error">{errorMessage}</Form.Text>
@@ -62,6 +64,7 @@ CustomSelect.propTypes = {
     isDisabled: PropTypes.bool,
     isInvalid: PropTypes.bool,
     onSelect: PropTypes.func,
+    dataTestId: PropTypes.string,
 };
 
 CustomSelect.defaultProps = {
@@ -74,6 +77,7 @@ CustomSelect.defaultProps = {
     isInvalid: false,
     options: [],
     onSelect: undefined,
+    dataTestId: '',
 };
 
 export default CustomSelect;

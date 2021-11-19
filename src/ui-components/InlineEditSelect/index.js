@@ -23,6 +23,7 @@ const InlineEditSelect = ({
     errorMessage,
     className,
     size,
+    dataTestId,
 }) => {
     const [_selectedOptions, setSelectedOptions] = useState([]);
     const [isActive, setIsActive] = useState(false);
@@ -68,6 +69,7 @@ const InlineEditSelect = ({
             controlId={controlId}
             onFocus={onFocus}
             onBlur={onBlur}
+            data-test-id={dataTestId}
         >
             <Select
                 onSelect={handleSelect}
@@ -110,6 +112,7 @@ InlineEditSelect.propTypes = {
     onEditSelect: PropTypes.func,
     controlId: PropTypes.string,
     size: PropTypes.string,
+    dataTestId: PropTypes.string,
 };
 
 InlineEditSelect.defaultProps = {
@@ -121,6 +124,7 @@ InlineEditSelect.defaultProps = {
     onEditSelect: undefined,
     controlId: '',
     size: 'lg',
+    dataTestId: '',
 };
 
 export default InlineEditSelect;
