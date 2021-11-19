@@ -3,13 +3,13 @@ import classNames from 'classnames';
 import { PersonIcon, CameraFillIcon } from '../../icons';
 import { getInitials } from './utils';
 
-const Avatar = ({ className, size, name, initials, src }) => {
+const Avatar = ({ className, size, name, initials, src, dataTestId }) => {
     const avatarClassNames = classNames('c-avatar', `c-avatar--size-${size}`, {
         [className]: className,
     });
 
     return (
-        <div className={avatarClassNames}>
+        <div className={avatarClassNames} data-test-id={dataTestId}>
             {src && <img className="c-avatar__img" src={src} alt={name || initials || ''} />}
             {!src && (name || initials) && (
                 <div className="c-avatar__initials">{initials || getInitials(name)}</div>
@@ -28,6 +28,7 @@ Avatar.propTypes = {
     name: PropTypes.string,
     initials: PropTypes.string,
     src: PropTypes.string,
+    dataTestId: PropTypes.string,
 };
 
 Avatar.defaultProps = {
@@ -36,6 +37,7 @@ Avatar.defaultProps = {
     name: undefined,
     initials: undefined,
     src: undefined,
+    dataTestId: '',
 };
 
 export default Avatar;
