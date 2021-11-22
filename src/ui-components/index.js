@@ -17,6 +17,7 @@ import Select from './Select';
 import Tabs from './Tabs';
 import Banner from './Banner';
 import Avatar from './Avatar';
+import ExpansionPanel from './ExpansionPanel';
 
 import './styles.scss';
 
@@ -40,4 +41,5 @@ export {
     Tabs,
     Banner,
     Avatar,
+    ExpansionPanel,
 };
