@@ -1,0 +1,19 @@
+.inline-edit-select-wrapper {
+  max-width: $inline-edit-select-width;
+  .inline-edit-select {
+    .c-select__control {
+      background-color: white;
+      border: none;
+      .c-select__indicators {
+        display: none;
+      }
+      &:hover {
+        background-color: $inline-edit-select-background-hover;
+        cursor: pointer;
+        .c-select__indicators {
+          display: flex;
+        }
+      }
+    }
+  }
+}
