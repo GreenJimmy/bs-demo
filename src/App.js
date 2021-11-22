@@ -5,7 +5,7 @@ import {
     Navigation,
     Select,
     Tabs,
-    Banner,
+    Toast,
     Tag,
     Avatar,
     InlineEditSelect,
@@ -137,21 +137,14 @@ const DevExamples = () => {
             <br />
             <Button onClick={() => setShowBanner(true)}>Show banner</Button>
             <div style={{ position: 'relative', height: '100px', marginTop: '10px' }}>
-                <Banner
-                    show={showBanner}
-                    variant="warning"
-                    message="Example of a warning banner message."
-                    onClose={() => setShowBanner(false)}
-                />
+                <Toast show={showBanner} variant="warning" onClose={() => setShowBanner(false)}>
+                    Example of a warning toast message.
+                </Toast>
             </div>
             <br />
-            <Tag
-                text="Removable tag"
-                variant="rounded"
-                icon={<ExclamationFillIcon />}
-                size="lg"
-                isRemovable
-            />
+            <Tag variant="rounded" path="#" icon={<ExclamationFillIcon />} size="lg" isRemovable>
+                Removable tag
+            </Tag>
             <br />
             <Avatar>AB</Avatar>
             <br />
