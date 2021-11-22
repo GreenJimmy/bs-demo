@@ -13,6 +13,7 @@ import {
     Banner,
     Tag,
     Avatar,
+    InlineEditSelect,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -30,19 +31,13 @@ const App = () => {
     const [selectedMenuItems, setSelectedMenuItems] = useState();
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [showBanner, setShowBanner] = useState(false);
+    const [inlineInitialEditSelect, setInlineInitialEditSelect] = useState([]);
 
     return (
         <div style={{ padding: '50px', backgroundColor: '#E5E5E5' }}>
             <Button>Clickable</Button>
             <br />
-            <TextArea
-                label="Label"
-                placeholder="Placeholder"
-                size="sm"
-                helpText="Help text"
-                maxNumLength={30}
-                rows={5}
-            />
+
             <br />
             <InlineEditText
                 abel="Label"
@@ -147,6 +142,11 @@ const App = () => {
             <br />
             <Avatar>AB</Avatar>
             <br />
+            <InlineEditSelect
+                onEditSelect={(options) => setInlineInitialEditSelect(options)}
+                selectedOptions={inlineInitialEditSelect}
+                size="lg"
+            />
         </div>
     );
 };
