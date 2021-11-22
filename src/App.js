@@ -145,7 +145,8 @@ const App = () => {
                 isRemovable
             />
             <br />
-            <Avatar src="https://robohash.org/my-own-slug.png?size=300x300&set=set1" />
+            <Avatar>AB</Avatar>
+            <br />
         </div>
     );
 };
