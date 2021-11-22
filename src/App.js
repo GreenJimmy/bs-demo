@@ -13,6 +13,7 @@ import {
     Banner,
     Tag,
     Avatar,
+    InlineEditSelect,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -30,19 +31,13 @@ const App = () => {
     const [selectedMenuItems, setSelectedMenuItems] = useState();
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [showBanner, setShowBanner] = useState(false);
+    const [inlineInitialEditSelect, setInlineInitialEditSelect] = useState([]);
 
     return (
         <div style={{ padding: '50px', backgroundColor: '#E5E5E5' }}>
             <Button>Clickable</Button>
             <br />
-            <TextArea
-                label="Label"
-                placeholder="Placeholder"
-                size="sm"
-                helpText="Help text"
-                maxNumLength={30}
-                rows={5}
-            />
+
             <br />
             <InlineEditText
                 abel="Label"
@@ -61,23 +56,6 @@ const App = () => {
             <br />
             <br />
             <br />
-            <MenuItem
-                text="Menu item"
-                onSelect={(selectedMenuItem) => setSelectedMenuItems(selectedMenuItem)}
-                controlId="1"
-                path=""
-            />
-            <br />
-            <Badge title="100" size="lg" type="primary" icon={<ExclamationFillIcon />} />
-            <br />
-            <br />
-            <Lozenge
-                text="Default"
-                type="warning"
-                variant="subtle"
-                size="lg"
-                icon={<ExclamationFillIcon />}
-            />
             <br />
             <br />
             <Navigation
@@ -94,18 +72,6 @@ const App = () => {
                     { eventKey: 'eight', title: 'item eight' },
                     { eventKey: 'nine', title: 'item nine' },
                     { eventKey: 'ten', title: 'item ten' },
-                ]}
-            />
-            <br />
-            <br />
-            <Dropdown
-                title="Primary"
-                id="some-dropdown"
-                items={[
-                    { eventKey: 'one', title: 'item one' },
-                    { eventKey: 'two', title: 'item two' },
-                    { eventKey: 'three', title: 'item three' },
-                    { eventKey: 'four', title: 'item four' },
                 ]}
             />
             <br />
@@ -146,6 +112,12 @@ const App = () => {
             />
             <br />
             <Avatar src="https://robohash.org/my-own-slug.png?size=300x300&set=set1" />
+            <br />
+            <InlineEditSelect
+                onEditSelect={(options) => setInlineInitialEditSelect(options)}
+                selectedOptions={inlineInitialEditSelect}
+                size="lg"
+            />
         </div>
     );
 };
