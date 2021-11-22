@@ -37,7 +37,7 @@
     background-color: $black-opacity-07;
   }
 
-  &:not(.hover-disabled):hover &__hover {
+  &:hover &__hover {
     opacity: 1;
   }
 
@@ -46,10 +46,6 @@
     font-family: $font-family;
     color: $secondary-500;
     overflow: hidden;
-
-    &:hover {
-      opacity: 0;
-    }
   }
 
   &--size-xs {

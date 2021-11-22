@@ -4,14 +4,10 @@ import { PersonIcon, CameraFillIcon } from '../../icons';
 import { getInitials } from './utils';
 
 const Avatar = ({ className, size, name, children, src, hoverDisabled, dataTestId }) => {
-    const avatarClassNames = classNames(
-        'c-avatar',
-        `c-avatar--size-${size}`,
-        hoverDisabled && 'hover-disabled',
-        {
-            [className]: className,
-        },
-    );
+    const avatarClassNames = classNames('c-avatar', `c-avatar--size-${size}`, {
+        [className]: className,
+        'hover-disabled': hoverDisabled,
+    });
     const childComponent = Array.isArray(children) ? children[0] : children;
 
     return (
@@ -21,9 +17,11 @@ const Avatar = ({ className, size, name, children, src, hoverDisabled, dataTestI
                 <div className="c-avatar__children">{childComponent || getInitials(name)}</div>
             )}
             <PersonIcon className={(name || src || childComponent) && `c-avatar__icon-decorator`} />
-            <div className="c-avatar__hover">
-                <CameraFillIcon />
-            </div>
+            {!hoverDisabled && (
+                <div className="c-avatar__hover">
+                    <CameraFillIcon />
+                </div>
+            )}
         </div>
     );
 };
@@ -40,7 +38,7 @@ Avatar.propTypes = {
 
 Avatar.defaultProps = {
     className: undefined,
-    size: 'md',
+    size: 'xxl',
     name: undefined,
     children: undefined,
     src: undefined,
