@@ -7,9 +7,10 @@ import {
     Lozenge,
     MenuItem,
     Switch,
-    Tag,
-    Tooltip,
-} from '../ui-components';
+    Tag, TextArea,
+    TextField,
+    Tooltip
+} from "../ui-components";
 
 import {
     avatarData,
@@ -23,7 +24,8 @@ import {
     switchData,
     tagData,
     tooltipData,
-} from './data';
+    textFieldData, textAresData
+} from "./data";
 
 import './styles.scss';
 
@@ -39,6 +41,16 @@ const ViewComponentsData = [
     { title: 'Switch', component: (props) => <Switch {...props} />, data: switchData },
     { title: 'Tag', component: (props) => <Tag {...props} />, data: tagData },
     { title: 'Tooltip', component: (props) => <Tooltip {...props} />, data: tooltipData },
+    {
+        title: 'Text field',
+        component: (props) => <TextField {...props} />,
+        data: textFieldData,
+    },
+    {
+        title: 'Textarea',
+        component: (props) => <TextArea {...props} />,
+        data: textAresData,
+    },
 ];
 
 const ViewComponents = () => {
