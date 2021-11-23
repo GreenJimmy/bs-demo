@@ -2,9 +2,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Dropdown } from 'react-bootstrap';
 import CustomBadge from '../Bagde';
+import Avatar from '../Avatar';
 
 const ExpansionPanel = (props) => {
-    const { className, id, title, badge } = props;
+    const { className, id, title, badge, avatar } = props;
 
     const expansionPanelClassNames = classNames('c-expansionPanel', {
         [className]: className,
@@ -13,9 +14,14 @@ const ExpansionPanel = (props) => {
     return (
         <Dropdown id={id} className={expansionPanelClassNames}>
             <Dropdown.Toggle>
+                {avatar && <Avatar size="md"> {avatar} </Avatar>}
                 {title}
                 {badge && <CustomBadge title={badge} size="sm" type="default" />}
             </Dropdown.Toggle>
+            <Dropdown.Menu>
+                <Dropdown.Item>Option 1</Dropdown.Item>
+                <Dropdown.Item>Option 2</Dropdown.Item>
+            </Dropdown.Menu>
         </Dropdown>
     );
 };

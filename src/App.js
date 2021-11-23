@@ -14,6 +14,7 @@ import {
     Tag,
     Avatar,
     InlineEditSelect,
+    ExpansionPanel,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -118,6 +119,8 @@ const App = () => {
                 selectedOptions={inlineInitialEditSelect}
                 size="lg"
             />
+            <br />
+            <ExpansionPanel id="expansion-panel-id" />
         </div>
     );
 };
