@@ -5,7 +5,7 @@
     width: svg-default($size);
     height: svg-default($size);
   }
-  & .c-avatar__initials {
+  & .c-avatar__children {
     font-size: $fontSize;
     line-height: $lineHeight;
     max-width: calc(#{$size} * (1 - (2 * .15)));
@@ -22,6 +22,11 @@
   }
 }
 
+@mixin avatar-layout() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @function svg-default($size) {
   $svg-size: calc(#{$size} / 2.66);
   @return $svg-size;
