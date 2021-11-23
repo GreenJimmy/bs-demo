@@ -1,4 +1,5 @@
 import { PenEditIcon, ErrorFillIcon, ExclamationFillIcon } from '../icons';
+import { Badge } from '../ui-components';
 
 export const avatarData = [
     {
@@ -271,4 +272,64 @@ export const lozengeData = [
     { size: 'lg', variant: 'subtle', type: 'error', text: 'error', icon: <ErrorFillIcon /> },
     { size: 'lg', variant: 'bold', type: 'info', text: 'info', icon: <ErrorFillIcon /> },
     { size: 'lg', variant: 'bold', type: 'default', text: 'default', icon: undefined },
+];
+
+export const menuItemData = [
+    {
+        text: 'Option',
+        path: '',
+        onSelect: undefined,
+        disabled: false,
+        leadingIcon: undefined,
+        trailingIcon: undefined,
+        badge: undefined,
+        unavailable: false,
+    },
+    {
+        text: 'Option',
+        path: '',
+        onSelect: undefined,
+        disabled: false,
+        leadingIcon: <PenEditIcon />,
+        trailingIcon: undefined,
+        badge: undefined,
+        unavailable: false,
+    },
+    {
+        text: 'Option',
+        path: '',
+        onSelect: undefined,
+        disabled: false,
+        leadingIcon: <PenEditIcon />,
+        trailingIcon: <ErrorFillIcon />,
+        badge: undefined,
+        unavailable: false,
+    },
+    {
+        text: 'Option',
+        path: '',
+        onSelect: undefined,
+        disabled: false,
+        leadingIcon: <PenEditIcon />,
+        badge: <Badge type="important">100</Badge>,
+        unavailable: false,
+    },
+];
+
+export const switchData = [
+    {
+        disabled: false,
+        checked: false,
+        label: 'Switch component',
+    },
+    {
+        disabled: false,
+        checked: true,
+        label: 'Switch component',
+    },
+    {
+        disabled: true,
+        checked: true,
+        label: 'Switch component',
+    },
 ];
