@@ -1,6 +1,6 @@
-import { Avatar, Badge, Button } from '../ui-components';
+import { Avatar, Badge, Button, Check } from '../ui-components';
 
-import { avatarData, badgeData, buttonData } from './data';
+import { avatarData, badgeData, buttonData, checkData } from './data';
 
 import './styles.scss';
 
@@ -8,6 +8,7 @@ const ViewComponentsData = [
     { title: 'Avatar', component: (props) => <Avatar {...props} />, data: avatarData },
     { title: 'Badge', component: (props) => <Badge {...props} />, data: badgeData },
     { title: 'Button', component: (props) => <Button {...props} />, data: buttonData },
+    { title: 'Check', component: (props) => <Check {...props} />, data: checkData },
 ];
 
 const ViewComponents = () => {

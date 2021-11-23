@@ -79,7 +79,8 @@ export const buttonData = [
         size: 'lg',
         children: (
             <>
-                <span>Disabled primary</span><PenEditIcon />
+                <span>Disabled primary</span>
+                <PenEditIcon />
             </>
         ),
     },
@@ -126,5 +127,49 @@ export const buttonData = [
         variant: 'icon-link',
         size: 'sm',
         children: <PenEditIcon />,
+    },
+];
+
+export const checkData = [
+    {
+        checked: false,
+        disabled: false,
+        indeterminate: false,
+        size: 'lg',
+        type: 'checkbox',
+    },
+    {
+        checked: true,
+        disabled: false,
+        indeterminate: false,
+        size: 'lg',
+        type: 'checkbox',
+        label: 'Checkbox',
+    },
+    {
+        checked: true,
+        disabled: true,
+        indeterminate: false,
+        size: 'lg',
+        type: 'checkbox',
+        label: 'Checkbox',
+    },
+    {
+        indeterminate: true,
+        size: 'sm',
+        type: 'checkbox',
+    },
+    {
+        checked: true,
+        indeterminate: false,
+        size: 'sm',
+        type: 'checkbox',
+        label: 'Checkbox',
+    },
+    {
+        disabled: true,
+        indeterminate: false,
+        size: 'sm',
+        type: 'checkbox',
     },
 ];
