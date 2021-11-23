@@ -57,6 +57,23 @@ const App = () => {
             <br />
             <br />
             <br />
+            <MenuItem
+                text="Menu item"
+                onSelect={(selectedMenuItem) => setSelectedMenuItems(selectedMenuItem)}
+                controlId="1"
+                path=""
+            />
+            <br />
+            <Badge title="100" size="lg" type="primary" icon={<ExclamationFillIcon />} />
+            <br />
+            <br />
+            <Lozenge
+                text="Default"
+                type="warning"
+                variant="subtle"
+                size="lg"
+                icon={<ExclamationFillIcon />}
+            />
             <br />
             <br />
             <Navigation
@@ -73,6 +90,18 @@ const App = () => {
                     { eventKey: 'eight', title: 'item eight' },
                     { eventKey: 'nine', title: 'item nine' },
                     { eventKey: 'ten', title: 'item ten' },
+                ]}
+            />
+            <br />
+            <br />
+            <Dropdown
+                title="Primary"
+                id="some-dropdown"
+                items={[
+                    { eventKey: 'one', title: 'item one' },
+                    { eventKey: 'two', title: 'item two' },
+                    { eventKey: 'three', title: 'item three' },
+                    { eventKey: 'four', title: 'item four' },
                 ]}
             />
             <br />
@@ -112,7 +141,7 @@ const App = () => {
                 isRemovable
             />
             <br />
-            <Avatar src="https://robohash.org/my-own-slug.png?size=300x300&set=set1" />
+            <Avatar>AB</Avatar>
             <br />
             <InlineEditSelect
                 onEditSelect={(options) => setInlineInitialEditSelect(options)}
