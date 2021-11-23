@@ -251,7 +251,7 @@ const TabItems = [
 ];
 
 const App = () => {
-    const [currentTab, setCurrentTab] = useState('devMode');
+    const [currentTab, setCurrentTab] = useState('designMode');
 
     return (
         <div style={{ padding: '50px' }}>
