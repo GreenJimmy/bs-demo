@@ -1,4 +1,4 @@
-import { PenEditIcon } from '../icons';
+import { PenEditIcon, ErrorFillIcon, ExclamationFillIcon } from '../icons';
 
 export const avatarData = [
     {
@@ -172,4 +172,103 @@ export const checkData = [
         size: 'sm',
         type: 'checkbox',
     },
+];
+
+export const radioData = [
+    {
+        checked: false,
+        disabled: false,
+        indeterminate: false,
+        size: 'lg',
+        type: 'radio',
+    },
+    {
+        checked: true,
+        disabled: false,
+        indeterminate: false,
+        size: 'lg',
+        type: 'radio',
+        label: 'radio',
+    },
+    {
+        checked: true,
+        disabled: true,
+        indeterminate: false,
+        size: 'lg',
+        type: 'radio',
+        label: 'radio',
+    },
+    {
+        indeterminate: true,
+        size: 'sm',
+        type: 'radio',
+    },
+    {
+        checked: true,
+        indeterminate: false,
+        size: 'sm',
+        type: 'radio',
+        label: 'radio',
+    },
+    {
+        disabled: true,
+        indeterminate: false,
+        size: 'sm',
+        type: 'radio',
+    },
+];
+
+const dropdownItems = [
+    { eventKey: 'one', title: 'item one' },
+    { eventKey: 'two', title: 'item two' },
+    { eventKey: 'three', title: 'item three' },
+    { eventKey: 'four', title: 'item four' },
+];
+
+export const dropdownData = [
+    {
+        title: 'Primary',
+        id: 'some-dropdown',
+        items: dropdownItems,
+        size: 'lg',
+    },
+    {
+        title: 'Secondary',
+        id: 'some-dropdown',
+        items: dropdownItems,
+        variant: 'secondary',
+        size: 'sm',
+        align: 'end',
+    },
+    {
+        title: 'Tertiary',
+        id: 'some-dropdown',
+        items: dropdownItems,
+        variant: 'link',
+        size: 'sm',
+    },
+    {
+        title: <PenEditIcon />,
+        id: 'some-dropdown',
+        items: dropdownItems,
+        variant: 'icon-link',
+        size: 'lg',
+        buttonStyle: 'icon',
+        align: 'end',
+    },
+];
+
+export const lozengeData = [
+    { size: 'sm', variant: 'subtle', type: 'info', text: 'info', icon: undefined },
+    { size: 'sm', variant: 'bold', type: 'success', text: 'success', icon: undefined },
+    {
+        size: 'lg',
+        variant: 'icon',
+        type: 'warning',
+        text: 'warning',
+        icon: <ExclamationFillIcon />,
+    },
+    { size: 'lg', variant: 'subtle', type: 'error', text: 'error', icon: <ErrorFillIcon /> },
+    { size: 'lg', variant: 'bold', type: 'info', text: 'info', icon: <ErrorFillIcon /> },
+    { size: 'lg', variant: 'bold', type: 'default', text: 'default', icon: undefined },
 ];
