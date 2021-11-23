@@ -380,3 +380,51 @@ export const tagData = [
         path: '#',
     },
 ];
+
+export const tooltipData = [
+    {
+        children: <Badge type="important">100</Badge>,
+        delay: { show: 250, hide: 300 },
+        show: undefined,
+        placement: 'right',
+        trigger: ['hover', 'focus'],
+        variant: 'default',
+        hasArrow: true,
+    },
+    {
+        children: <Badge type="primary">200</Badge>,
+        delay: { show: 250, hide: 300 },
+        show: undefined,
+        placement: 'top',
+        trigger: ['hover', 'focus'],
+        variant: 'success',
+        hasArrow: true,
+    },
+    {
+        children: <Badge type="primary">200</Badge>,
+        delay: { show: 250, hide: 300 },
+        show: undefined,
+        placement: 'top-end',
+        trigger: ['hover', 'focus'],
+        variant: 'warning',
+        hasArrow: true,
+    },
+    {
+        children: <Badge type="removed">-200</Badge>,
+        delay: { show: 250, hide: 300 },
+        show: undefined,
+        placement: 'bottom',
+        trigger: ['click'],
+        variant: 'error',
+        hasArrow: true,
+    },
+    {
+        children: <Badge type="added">+200</Badge>,
+        delay: { show: 250, hide: 300 },
+        show: undefined,
+        placement: 'left-end',
+        trigger: ['click'],
+        variant: 'info',
+        hasArrow: true,
+    },
+];
