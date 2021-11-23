@@ -333,3 +333,50 @@ export const switchData = [
         label: 'Switch component',
     },
 ];
+
+export const tagData = [
+    {
+        text: 'Some tag',
+        icon: undefined,
+        variant: 'default',
+        isRemovable: false,
+        size: 'lg',
+        controlId: 'first',
+        path: '#',
+    },
+    {
+        text: 'Some tag',
+        icon: <PenEditIcon />,
+        variant: 'default',
+        isRemovable: true,
+        size: 'lg',
+        controlId: 'second',
+        path: undefined,
+    },
+    {
+        text: 'Some tag',
+        variant: 'rounded',
+        isRemovable: true,
+        size: 'lg',
+        controlId: 'second',
+        path: undefined,
+    },
+    {
+        text: 'Some tag',
+        icon: <PenEditIcon />,
+        variant: 'rounded',
+        isRemovable: false,
+        size: 'sm',
+        controlId: 'second',
+        path: undefined,
+    },
+    {
+        text: 'Some tag',
+        icon: <PenEditIcon />,
+        variant: 'default',
+        isRemovable: false,
+        size: 'sm',
+        controlId: 'first',
+        path: '#',
+    },
+];

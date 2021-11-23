@@ -1,4 +1,4 @@
-import { Avatar, Badge, Button, Check, Dropdown, Lozenge, MenuItem, Switch } from '../ui-components';
+import { Avatar, Badge, Button, Check, Dropdown, Lozenge, MenuItem, Switch, Tag } from '../ui-components';
 
 import {
     avatarData,
@@ -10,6 +10,7 @@ import {
     lozengeData,
     menuItemData,
     switchData,
+    tagData,
 } from './data';
 
 import './styles.scss';
@@ -24,6 +25,7 @@ const ViewComponentsData = [
     { title: 'Lozenge', component: (props) => <Lozenge {...props} />, data: lozengeData },
     { title: 'Menu item', component: (props) => <MenuItem {...props} />, data: menuItemData },
     { title: 'Switch', component: (props) => <Switch {...props} />, data: switchData },
+    { title: 'Tag', component: (props) => <Tag {...props} />, data: tagData },
 ];
 
 const ViewComponents = () => {
