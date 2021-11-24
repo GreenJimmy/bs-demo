@@ -17,6 +17,8 @@ import {
     Tabs,
     Navigation,
     Select,
+    InlineEditText,
+    InlineEditSelect,
 } from '../ui-components';
 
 import {
@@ -37,6 +39,9 @@ import {
     tabsData,
     navData,
     selectData,
+    selectOptions,
+    inlineEditTextData,
+    inlineEditSelectData
 } from './data';
 
 import './styles.scss';
@@ -66,13 +71,27 @@ const ViewComponentsData = [
         data: textAresData,
     },
     {
+        title: 'Inline edit text',
+        component: (props) => <InlineEditText {...props} />,
+        data: inlineEditTextData,
+    },
+    {
+        id: 'select',
         title: 'Text fields - Select',
         component: (props) => <Select {...props} />,
         data: selectData,
     },
+    {
+        id: 'inlineSelect',
+        title: 'Inline edit text - Select',
+        component: (props) => <InlineEditSelect {...props} />,
+        data: inlineEditSelectData,
+    },
 ];
 
 const ViewComponents = () => {
+    const [selectedOptions, setSelectedOptions] = useState([]);
+
     return (
         <div className="wrapper">
             {ViewComponentsData.map(({ id, title, component, data }) => {
@@ -83,6 +102,15 @@ const ViewComponents = () => {
                             {data.map(({ id: itemId, ...props }) => {
                                 return component(props);
                             })}
+                            {id === 'select' && (
+                                <Select
+                                    size="sm"
+                                    isMulti
+                                    selectedValues={selectedOptions}
+                                    onSelect={(options) => setSelectedOptions(options)}
+                                    options={selectOptions}
+                                />
+                            )}
                         </div>
                     </>
                 );

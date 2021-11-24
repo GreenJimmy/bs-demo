@@ -710,3 +710,69 @@ export const selectData = [
         dataTestId: 'fgdhId',
     },
 ];
+
+export const inlineEditTextData = [
+    {
+        label: 'Inline edit text',
+        errorMessage: undefined,
+        value: '',
+        placeholder: 'Some text',
+        size: 'sm',
+        controlId: 'id456',
+        readOnly: false,
+        disabled: false,
+        isInvalid: false,
+        required: false,
+    },
+    {
+        label: 'Inline edit text',
+        errorMessage: undefined,
+        value: '',
+        placeholder: 'Some text',
+        size: 'sm',
+        controlId: 'id456',
+        readOnly: false,
+        disabled: true,
+        isInvalid: false,
+        required: false,
+    },
+    {
+        label: 'Inline edit text large',
+        errorMessage: 'Psss, bro, do you want some error?',
+        value: '',
+        placeholder: 'Some text',
+        size: 'lg',
+        controlId: 'id456',
+        readOnly: false,
+        disabled: false,
+        isInvalid: true,
+        required: true,
+    },
+];
+
+export const inlineEditSelectData = [
+    {
+        errorMessage: undefined,
+        selectedOptions: selectOptions,
+        disabled: false,
+        isInvalid: false,
+        controlId: 'thisId',
+        size: 'lg',
+    },
+    {
+        errorMessage: undefined,
+        selectedOptions: selectOptions,
+        disabled: true,
+        isInvalid: false,
+        controlId: 'thisIdty',
+        size: 'lg',
+    },
+    {
+        errorMessage: 'Psss, bro, do you want some error?',
+        selectedOptions: selectOptions,
+        disabled: false,
+        isInvalid: true,
+        controlId: 'thisIdsm',
+        size: 'sm',
+    },
+];
