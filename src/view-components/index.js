@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
     Avatar,
     Badge,
@@ -13,6 +14,9 @@ import {
     Tooltip,
     ToggleButton,
     ToggleButtonGroup,
+    Tabs,
+    Navigation,
+    Select,
 } from '../ui-components';
 
 import {
@@ -30,6 +34,9 @@ import {
     textFieldData,
     textAresData,
     toggleButtonData,
+    tabsData,
+    navData,
+    selectData,
 } from './data';
 
 import './styles.scss';
@@ -46,6 +53,8 @@ const ViewComponentsData = [
     { title: 'Switch', component: (props) => <Switch {...props} />, data: switchData },
     { title: 'Tag', component: (props) => <Tag {...props} />, data: tagData },
     { title: 'Tooltip', component: (props) => <Tooltip {...props} />, data: tooltipData },
+    { title: 'Tabs', component: (props) => <Tabs {...props} />, data: tabsData },
+    { title: 'Navigation', component: (props) => <Navigation {...props} />, data: navData },
     {
         title: 'Text field',
         component: (props) => <TextField {...props} />,
@@ -56,17 +65,22 @@ const ViewComponentsData = [
         component: (props) => <TextArea {...props} />,
         data: textAresData,
     },
+    {
+        title: 'Text fields - Select',
+        component: (props) => <Select {...props} />,
+        data: selectData,
+    },
 ];
 
 const ViewComponents = () => {
     return (
         <div className="wrapper">
-            {ViewComponentsData.map(({ title, component, data }) => {
+            {ViewComponentsData.map(({ id, title, component, data }) => {
                 return (
                     <>
                         <div className="header">{title}</div>
                         <div className="component-block">
-                            {data.map((props) => {
+                            {data.map(({ id: itemId, ...props }) => {
                                 return component(props);
                             })}
                         </div>

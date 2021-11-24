@@ -628,3 +628,85 @@ export const toggleButtonData = [
         items: toggleButtonItems,
     },
 ];
+
+export const tabsVisibleItems = [
+    { eventKey: 'one', title: 'item one' },
+    { eventKey: 'two', title: 'item two' },
+    { eventKey: 'three', title: 'item three' },
+    { eventKey: 'four', title: 'item four' },
+];
+
+export const tabsHiddenItems = [
+    { eventKey: 'five', title: 'item five' },
+    { eventKey: 'six', title: 'item six' },
+    { eventKey: 'seven', title: 'item seven' },
+    { eventKey: 'eight', title: 'item eight' },
+];
+
+export const tabsData = [
+    {
+        size: 'sm',
+        visibleItems: tabsVisibleItems,
+        hiddenItems: tabsHiddenItems,
+    },
+    {
+        size: 'lg',
+        visibleItems: tabsVisibleItems,
+    },
+];
+
+export const navData = [
+    {
+        visibleItems: tabsVisibleItems,
+        hiddenItems: tabsHiddenItems,
+    },
+];
+
+export const selectOptions = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+];
+
+export const selectData = [
+    {
+        errorMessage: undefined,
+        selectedValues: [],
+        size: 'sm',
+        isMulti: false,
+        isDisabled: false,
+        isInvalid: false,
+        options: selectOptions,
+        dataTestId: 'rtyId',
+    },
+    {
+        errorMessage: undefined,
+        selectedValues: [selectOptions[0]],
+        size: 'sm',
+        isMulti: false,
+        isDisabled: true,
+        isInvalid: false,
+        options: selectOptions,
+        dataTestId: 'tyrueId',
+    },
+    {
+        errorMessage: undefined,
+        selectedValues: [],
+        size: 'lg',
+        isMulti: true,
+        isDisabled: false,
+        isInvalid: false,
+        options: selectOptions,
+        dataTestId: 'tyueId',
+    },
+    {
+        errorMessage: 'sorry, error message, bro',
+        selectedValues: [],
+        size: 'lg',
+        isMulti: true,
+        isDisabled: false,
+        isInvalid: true,
+        options: selectOptions,
+        dataTestId: 'fgdhId',
+    },
+];
