@@ -576,3 +576,55 @@ export const textAresData = [
         rows: 5,
     },
 ];
+
+export const toggleButtonItems = [
+    {
+        id: 'one',
+        name: 'one',
+        title: 'One',
+        icon: <PenEditIcon />,
+    },
+    {
+        id: 'two',
+        name: 'two',
+        title: 'Two',
+        icon: <PenEditIcon />,
+    },
+    {
+        id: 'three',
+        name: 'three',
+        title: 'Three',
+        icon: <PenEditIcon />,
+    },
+];
+
+export const toggleButtonData = [
+    {
+        variant: 'tab',
+        size: 'sm',
+        name: 'tab-sm',
+        typeContent: 'title',
+        items: toggleButtonItems,
+    },
+    {
+        variant: 'tab',
+        size: 'lg',
+        name: 'tab-lg',
+        typeContent: 'title',
+        items: toggleButtonItems,
+    },
+    {
+        variant: 'button',
+        size: 'sm',
+        name: 'button-sm',
+        typeContent: 'icon',
+        items: toggleButtonItems,
+    },
+    {
+        variant: 'button',
+        size: 'lg',
+        name: 'button-lg',
+        typeContent: 'icon',
+        items: toggleButtonItems,
+    },
+];

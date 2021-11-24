@@ -7,10 +7,13 @@ import {
     Lozenge,
     MenuItem,
     Switch,
-    Tag, TextArea,
+    Tag,
+    TextArea,
     TextField,
-    Tooltip
-} from "../ui-components";
+    Tooltip,
+    ToggleButton,
+    ToggleButtonGroup,
+} from '../ui-components';
 
 import {
     avatarData,
@@ -24,8 +27,10 @@ import {
     switchData,
     tagData,
     tooltipData,
-    textFieldData, textAresData
-} from "./data";
+    textFieldData,
+    textAresData,
+    toggleButtonData,
+} from './data';
 
 import './styles.scss';
 
@@ -68,6 +73,18 @@ const ViewComponents = () => {
                     </>
                 );
             })}
+            <div className="header">Toggle button</div>
+            <div className="component-block">
+                {toggleButtonData.map(({ name, variant, typeContent, size, items }) => (
+                    <ToggleButtonGroup name={name} variant={variant} size={size}>
+                        {items.map(({ id, name: itemName, ...content }) => (
+                            <ToggleButton id={id} name={itemName}>
+                                {content[typeContent]}
+                            </ToggleButton>
+                        ))}
+                    </ToggleButtonGroup>
+                ))}
+            </div>
         </div>
     );
 };
