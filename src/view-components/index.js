@@ -27,6 +27,7 @@ import {
     TableBody,
     DataTableCell,
     Table,
+    Banner,
 } from '../ui-components';
 
 import {
@@ -50,6 +51,7 @@ import {
     selectOptions,
     inlineEditTextData,
     inlineEditSelectData,
+    toastData,
 } from './data';
 
 import './styles.scss';
@@ -67,6 +69,15 @@ const ViewComponentsData = [
     { title: 'Switch', component: (props) => <Switch {...props} />, data: switchData },
     { title: 'Tag', component: (props) => <Tag {...props} />, data: tagData },
     { title: 'Tooltip', component: (props) => <Tooltip {...props} />, data: tooltipData },
+    {
+        title: 'Banner',
+        component: (props) => (
+            <div className="banner_wrap">
+                <Banner {...props} />
+            </div>
+        ),
+        data: toastData,
+    },
     { title: 'Tabs', component: (props) => <Tabs {...props} />, data: tabsData },
     { title: 'Navigation', component: (props) => <Navigation {...props} />, data: navData },
     {

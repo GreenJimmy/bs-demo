@@ -776,3 +776,39 @@ export const inlineEditSelectData = [
         size: 'sm',
     },
 ];
+
+export const toastData = [
+    {
+        autohide: false,
+        variant: 'info',
+        delay: 5000,
+        show: true,
+        closeButton: true,
+        position: 'top-start',
+        icon: undefined,
+        showDefaultIcon: true,
+        message: 'Some message, bro',
+    },
+    {
+        autohide: false,
+        variant: 'success',
+        delay: 5000,
+        show: true,
+        closeButton: true,
+        position: 'top-center',
+        icon: <ErrorFillIcon />,
+        showDefaultIcon: false,
+        message: 'Some message, bro',
+    },
+    {
+        autohide: false,
+        variant: 'warning',
+        delay: 5000,
+        show: true,
+        closeButton: true,
+        position: 'top-end',
+        icon: <ErrorFillIcon />,
+        showDefaultIcon: false,
+        message: 'Some message, bro',
+    },
+];
