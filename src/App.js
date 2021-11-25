@@ -122,6 +122,22 @@ const App = () => {
                 ]}
             />
             <br />
+            <ExpansionPanel
+                id="expansion-panel-id"
+                toggle={{
+                    badge: '200',
+                    avatar: 'KK',
+                    disabled: false,
+                }}
+                items={[
+                    { eventKey: 'opt1', title: 'Option 1' },
+                    { eventKey: 'opt2', title: 'Option 2', disabled: true },
+                    { eventKey: 'opt3', title: 'Option 3' },
+                    { eventKey: 'opt4', title: 'Option 4' },
+                ]}
+            >
+                Title
+            </ExpansionPanel>
             <br />
             <Button onClick={() => setShowBanner(true)}>Show banner</Button>
             <div style={{ position: 'relative', height: '100px', marginTop: '10px' }}>
@@ -148,8 +164,6 @@ const App = () => {
                 selectedOptions={inlineInitialEditSelect}
                 size="lg"
             />
-            <br />
-            <ExpansionPanel id="expansion-panel-id" />
         </div>
     );
 };

@@ -1,0 +1,60 @@
+.c-expansionPanel__item {
+  &__icon {
+    display: flex;
+    align-items: center;
+    width: $menu-item-icon-size;
+    height: $menu-item-icon-size;
+
+    &.leading__icon {
+      margin-right: $menu-item-icon-margin-x;
+    }
+
+    &.trailing__icon {
+      position: absolute;
+      right: 0.875rem;
+    }
+  }
+
+  &:active {
+    color: $menu-item-active-color;
+    font-weight: $menu-item-font-weight;
+
+    &.isLeadingIcon {
+      color: $menu-item-with-icon-active-color;
+    }
+
+    &.isLeadingIcon.isTrailingIcon {
+      color: $menu-item-with-icon-active-color;
+    }
+
+    &.isTrailingIcon {
+      color: $menu-item-active-color;
+    }
+  }
+
+  &.unavailable {
+    color: $menu-item-disabled-color;
+
+    &.isTrailingIcon {
+      .trailing__icon {
+        color: $menu-item-with-icon-active-color;
+      }
+    }
+
+    &.isLeadingIcon {
+      .leading__icon {
+        color: $menu-item-with-icon-active-color;
+      }
+    }
+
+    &.isLeadingIcon.isTrailingIcon {
+      .leading__icon {
+        color: $menu-item-disabled-color;
+      }
+
+      .trailing__icon {
+        color: $menu-item-with-icon-active-color;
+      }
+    }
+  }
+}
