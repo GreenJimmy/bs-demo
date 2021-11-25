@@ -6,7 +6,7 @@ import ExpansionPanelToggle from './components/ExpansionPanelToggle';
 import ExpansionPanelItem from './components/ExpansionPanelItem';
 
 const ExpansionPanel = (props) => {
-    const { className, id, children, onSelect, toggle, items } = props;
+    const { className, id, children, onSelect, dataTestId, toggle, items } = props;
 
     const expansionPanelClassNames = classNames('c-expansionPanel', {
         [className]: className,
@@ -22,7 +22,7 @@ const ExpansionPanel = (props) => {
     };
 
     return (
-        <Dropdown className={expansionPanelClassNames}>
+        <Dropdown className={expansionPanelClassNames} data-test-id={dataTestId}>
             <Dropdown.Toggle
                 id={id}
                 as={ExpansionPanelToggle}
@@ -97,6 +97,7 @@ ExpansionPanel.propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
     onSelect: Function,
+    dataTestId: PropTypes.string,
     toggle: propToggleType,
     items: PropTypes.arrayOf(propItemType),
 };
@@ -105,6 +106,7 @@ ExpansionPanel.defaultProps = {
     className: undefined,
     children: undefined,
     onSelect: undefined,
+    dataTestId: '',
     toggle: {
         badge: undefined,
         avatar: undefined,
