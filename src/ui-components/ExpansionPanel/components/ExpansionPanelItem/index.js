@@ -15,9 +15,9 @@ const ExpansionPanelItem = ({
 }) => {
     const expansionPanelItemClassNames = classNames('c-expansionPanel__item', {
         [className]: className,
-        isLeadingIcon: leadingIcon,
-        isTrailingIcon: trailingIcon,
-        unavailable,
+        'c-expansionPanel-item--leading-icon': leadingIcon,
+        'c-expansionPanel-item--trailing-icon': trailingIcon,
+        'c-expansionPanel-item--unavailable': unavailable,
     });
 
     return (
@@ -25,15 +25,19 @@ const ExpansionPanelItem = ({
             className={expansionPanelItemClassNames}
             eventKey={eventKey}
             active={active}
-            disabled={disabled || unavailable}
+            disabled={disabled}
             href={href}
         >
             {leadingIcon && (
-                <div className="c-expansionPanel__item__icon leading__icon">{leadingIcon}</div>
+                <div className="c-expansionPanel-item__icon c-expansionPanel-item__icon__leading">
+                    {leadingIcon}
+                </div>
             )}
             <div>{children}</div>
             {trailingIcon && (
-                <div className="c-expansionPanel__item__icon trailing__icon">{trailingIcon}</div>
+                <div className="c-expansionPanel-item__icon c-expansionPanel-item__icon__trailing">
+                    {trailingIcon}
+                </div>
             )}
         </Dropdown.Item>
     );

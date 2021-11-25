@@ -1,10 +1,10 @@
 .c-expansionPanel {
-  &.show &__toggle__icon {
+  &.show &-toggle__icon {
     transform: rotateX(-180deg);
     transition: transform ease-in-out 0.15s;
   }
 
-  &__toggle {
+  &-toggle {
     &__children {
       display: flex;
       justify-content: center;

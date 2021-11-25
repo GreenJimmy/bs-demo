@@ -1,15 +1,16 @@
-.c-expansionPanel__item {
+.c-expansionPanel-item {
+
   &__icon {
     display: flex;
     align-items: center;
     width: $menu-item-icon-size;
     height: $menu-item-icon-size;
 
-    &.leading__icon {
+    &__leading {
       margin-right: $menu-item-icon-margin-x;
     }
 
-    &.trailing__icon {
+    &__trailing {
       position: absolute;
       right: 0.875rem;
     }
@@ -18,43 +19,61 @@
   &:active {
     color: $menu-item-active-color;
     font-weight: $menu-item-font-weight;
+  }
 
-    &.isLeadingIcon {
-      color: $menu-item-with-icon-active-color;
+  &--trailing-icon:active {
+    color: $menu-item-active-color;
+  }
+
+  &--leading-icon:active {
+    color: $menu-item-with-icon-active-color;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $menu-item-hover-bg-color;
+  }
+
+  &:disabled {
+    color: $menu-item-disabled-color;
+  }
+
+  &--unavailable {
+    color: $menu-item-disabled-color;
+
+    &:hover,
+    &:focus {
+      background-color: $menu-item-unavailable-bg-color;
+      color: $menu-item-disabled-color;
+      cursor: initial;
     }
 
-    &.isLeadingIcon.isTrailingIcon {
-      color: $menu-item-with-icon-active-color;
-    }
-
-    &.isTrailingIcon {
-      color: $menu-item-active-color;
+    &:active {
+      pointer-events: none;
+      color: $menu-item-disabled-color;
+      font-weight: $menu-item-unavailable-font-weight;
     }
   }
 
-  &.unavailable {
-    color: $menu-item-disabled-color;
-
-    &.isTrailingIcon {
-      .trailing__icon {
-        color: $menu-item-with-icon-active-color;
-      }
+  &--unavailable.c-expansionPanel-item--leading-icon.c-expansionPanel-item--trailing-icon {
+    .c-expansionPanel-item__icon__leading {
+      color: $menu-item-disabled-color;
     }
 
-    &.isLeadingIcon {
-      .leading__icon {
-        color: $menu-item-with-icon-active-color;
-      }
+    .c-expansionPanel-item__icon__trailing {
+      color: $menu-item-with-icon-active-color;
     }
+  }
 
-    &.isLeadingIcon.isTrailingIcon {
-      .leading__icon {
-        color: $menu-item-disabled-color;
-      }
+  &--unavailable.c-expansionPanel-item--leading-icon {
+    .c-expansionPanel-item__icon__leading {
+      color: $menu-item-with-icon-active-color;
+    }
+  }
 
-      .trailing__icon {
-        color: $menu-item-with-icon-active-color;
-      }
+  &--unavailable.c-expansionPanel-item--trailing-icon {
+    .c-expansionPanel-item__icon__trailing {
+      color: $menu-item-with-icon-active-color;
     }
   }
 }

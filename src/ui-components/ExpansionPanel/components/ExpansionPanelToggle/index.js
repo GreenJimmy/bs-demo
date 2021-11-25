@@ -10,7 +10,7 @@ const ExpansionPanelToggle = React.forwardRef((props, ref) => {
 
     return (
         <Button
-            className="c-expansionPanel__toggle"
+            className="c-expansionPanel-toggle"
             disabled={disabled}
             ref={ref}
             onClick={(e) => {
@@ -18,20 +18,20 @@ const ExpansionPanelToggle = React.forwardRef((props, ref) => {
                 onClick(e);
             }}
         >
-            <div className="c-expansionPanel__toggle__children">
+            <div className="c-expansionPanel-toggle__children">
                 {avatar && (
                     <Avatar hoverDisabled size="md">
                         {avatar}
                     </Avatar>
                 )}
-                <div className="c-expansionPanel__toggle__title">{children}</div>
+                <div className="c-expansionPanel-toggle__title">{children}</div>
                 {badge && (
                     <Badge size="sm" type="default">
                         {badge}
                     </Badge>
                 )}
             </div>
-            <ChevronDownIcon className="c-expansionPanel__toggle__icon" />
+            <ChevronDownIcon className="c-expansionPanel-toggle__icon" />
         </Button>
     );
 });

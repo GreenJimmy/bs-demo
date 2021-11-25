@@ -15,7 +15,9 @@ const ExpansionPanel = (props) => {
     const [isActive, setIsActive] = useState(null);
 
     const handleSelect = (value) => {
-        const isActiveItem = items.some((item) => item.eventKey === value);
+        const isActiveItem = items.some(
+            (item) => item.eventKey === value && !item.disabled && !item.unavailable,
+        );
 
         setIsActive(isActiveItem);
         onSelect?.(value);
@@ -36,7 +38,7 @@ const ExpansionPanel = (props) => {
                 renderOnMount
                 flip={false}
                 onSelect={handleSelect}
-                className="c-expansionPanel__menu"
+                className="c-expansionPanel-menu"
             >
                 {!!items?.length &&
                     items.map((item) => {

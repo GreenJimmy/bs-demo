@@ -39,7 +39,7 @@
     }
   }
 
-  &__menu {
+  &-menu {
     padding: 0;
     border-top: none;
     border-radius: 0 0 $menu-border-radius $menu-border-radius;
@@ -54,15 +54,6 @@
       align-items: center;
       position: relative;
       padding: $menu-item-padding-x $menu-item-padding-y;
-
-      &:hover,
-      &:focus {
-        background-color: $menu-item-hover-bg-color;
-      }
-
-      &:disabled {
-        color: $menu-item-disabled-color;
-      }
     }
   }
 }
