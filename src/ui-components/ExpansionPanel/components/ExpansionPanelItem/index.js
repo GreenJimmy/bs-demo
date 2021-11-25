@@ -13,11 +13,11 @@ const ExpansionPanelItem = ({
     trailingIcon,
     className,
 }) => {
-    const expansionPanelItemClassNames = classNames('c-expansionPanel__item', {
+    const expansionPanelItemClassNames = classNames('c-expansionPanel-item', {
         [className]: className,
-        'c-expansionPanel-item--leading-icon': leadingIcon,
-        'c-expansionPanel-item--trailing-icon': trailingIcon,
         'c-expansionPanel-item--unavailable': unavailable,
+        'c-expansionPanel-item--leading-icon': leadingIcon,
+        'c-expansionPanel-item--icons': leadingIcon && trailingIcon,
     });
 
     return (
