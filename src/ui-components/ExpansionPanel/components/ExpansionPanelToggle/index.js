@@ -25,7 +25,11 @@ const ExpansionPanelToggle = React.forwardRef((props, ref) => {
                     </Avatar>
                 )}
                 <div className="c-expansionPanel__toggle__title">{children}</div>
-                {badge && <Badge title={badge} size="sm" type="default" />}
+                {badge && (
+                    <Badge size="sm" type="default">
+                        {badge}
+                    </Badge>
+                )}
             </div>
             <ChevronDownIcon className="c-expansionPanel__toggle__icon" />
         </Button>

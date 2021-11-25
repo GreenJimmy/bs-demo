@@ -45,7 +45,7 @@ const App = () => {
     const [inlineInitialEditSelect, setInlineInitialEditSelect] = useState([]);
 
     return (
-        <div style={{ padding: '50px', backgroundColor: '#E5E5E5' }}>
+        <div style={{ padding: '50px', backgroundColor: '#f4f8fc' }}>
             <Button>Clickable</Button>
             <br />
 
@@ -159,6 +159,22 @@ const App = () => {
                 size="lg"
             />
             <br />
+            <br />
+            <ExpansionPanel
+                id="exp-panel-id"
+                toggle={{
+                    badge: '100',
+                    avatar: 'KK',
+                }}
+                items={[
+                    { eventKey: 'opt1', title: 'Option 1' },
+                    { eventKey: 'opt2', title: 'Option 2' },
+                    { eventKey: 'opt3', title: 'Option 3', disabled: true },
+                    { eventKey: 'opt4', title: 'Option 4', unavailable: true },
+                ]}
+            >
+                Title
+            </ExpansionPanel>
             <br />
             <Table
                 hover

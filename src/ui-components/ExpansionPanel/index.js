@@ -44,6 +44,7 @@ const ExpansionPanel = (props) => {
                             title,
                             hasDividerAfter,
                             disabled: itemDisabled,
+                            unavailable,
                             eventKey,
                             href,
                             leadingIcon,
@@ -57,6 +58,7 @@ const ExpansionPanel = (props) => {
                                     active={isActive}
                                     eventKey={eventKey}
                                     disabled={itemDisabled}
+                                    unavailable={unavailable}
                                     leadingIcon={leadingIcon}
                                     trailingIcon={trailingIcon}
                                 >
@@ -83,6 +85,7 @@ const propItemType = PropTypes.shape({
     title: PropTypes.node,
     hasDividerAfter: PropTypes.bool,
     disabled: PropTypes.bool,
+    unavailable: PropTypes.bool,
     eventKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     href: PropTypes.string,
     leadingIcon: PropTypes.node,
@@ -103,8 +106,8 @@ ExpansionPanel.defaultProps = {
     children: undefined,
     onSelect: undefined,
     toggle: {
-        badge: '500',
-        avatar: 'JT',
+        badge: undefined,
+        avatar: undefined,
         disabled: false,
     },
     items: [],
