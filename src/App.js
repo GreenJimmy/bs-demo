@@ -14,6 +14,16 @@ import {
     Tag,
     Avatar,
     InlineEditSelect,
+    Table,
+    TableHead,
+    TableBody,
+    TableRow,
+    TableCell,
+    DataTableCell,
+    TextField,
+    TableControl,
+    Check,
+    TableName,
     ExpansionPanel,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
@@ -122,22 +132,6 @@ const App = () => {
                 ]}
             />
             <br />
-            <ExpansionPanel
-                id="expansion-panel-id"
-                toggle={{
-                    badge: '200',
-                    avatar: 'KK',
-                    disabled: false,
-                }}
-                items={[
-                    { eventKey: 'opt1', title: 'Option 1' },
-                    { eventKey: 'opt2', title: 'Option 2', disabled: true },
-                    { eventKey: 'opt3', title: 'Option 3' },
-                    { eventKey: 'opt4', title: 'Option 4' },
-                ]}
-            >
-                Title
-            </ExpansionPanel>
             <br />
             <Button onClick={() => setShowBanner(true)}>Show banner</Button>
             <div style={{ position: 'relative', height: '100px', marginTop: '10px' }}>
@@ -164,6 +158,82 @@ const App = () => {
                 selectedOptions={inlineInitialEditSelect}
                 size="lg"
             />
+            <br />
+            <br />
+            <Table
+                hover
+                tableControlComponent={
+                    <TableControl>
+                        <TableName badgeNumber="100">Test table</TableName>
+                        <TextField controlId="search" placeholder="search" showDefaultIcon />
+                    </TableControl>
+                }
+            >
+                <TableHead>
+                    <TableRow>
+                        <TableCell align="center" width="60px">
+                            <Check id="header-check" size="sm" />
+                        </TableCell>
+                        <TableCell width="50%">Study name</TableCell>
+                        <TableCell>Study short name</TableCell>
+                        <TableCell>Phase</TableCell>
+                        <TableCell align="center" width="60px">
+                            <ExclamationFillIcon />
+                        </TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    <TableRow>
+                        <TableCell align="center">
+                            <Check id="check-1" size="sm" />
+                        </TableCell>
+                        <TableCell>
+                            <Avatar
+                                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                                size="md"
+                            />
+                            Clinical and Radiological Evaluation of Patients With Vertebrobasilar
+                            Insufficiency
+                        </TableCell>
+                        <TableCell>Sinus pressure study</TableCell>
+                        <TableCell>
+                            <Badge size="sm" type="default">
+                                19
+                            </Badge>
+                        </TableCell>
+                        <TableCell align="center">
+                            <ExclamationFillIcon />
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell align="center">
+                            <Check id="check-2" size="sm" />
+                        </TableCell>
+                        <TableCell>
+                            <DataTableCell
+                                img={
+                                    <Avatar
+                                        src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                                        size="md"
+                                    />
+                                }
+                                subTitle="Vertebrobasilar Insufficiency"
+                            >
+                                Clinical and Radiological Evaluation of Patients With
+                            </DataTableCell>
+                        </TableCell>
+                        <TableCell>Sinus pressure study</TableCell>
+                        <TableCell>
+                            <Badge size="sm" type="default">
+                                8
+                            </Badge>
+                        </TableCell>
+                        <TableCell align="center">
+                            <ExclamationFillIcon />
+                        </TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
         </div>
     );
 };
