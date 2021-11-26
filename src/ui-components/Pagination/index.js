@@ -13,16 +13,16 @@ const CustomPagination = ({ size, className, onSetPage, dataTestId, items }) => 
     });
 
     const handleClick = (page) => {
-        onSetPage(page);
+        onSetPage?.(page);
         setActive(page);
     };
     const handleNext = () => {
         setActive((prev) => prev + 1);
-        onSetPage(active + 1);
+        onSetPage?.(active + 1);
     };
     const handlePrev = () => {
         setActive((prev) => prev - 1);
-        onSetPage(active - 1);
+        onSetPage?.(active - 1);
     };
 
     return (

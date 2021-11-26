@@ -9,21 +9,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: black;
+      color: $black;
       border-radius: $pagination-item-border-radius;
       transition: none;
       &:hover {
         background-color: $pagination-item-hover-background;
-        color: white;
+        color: $white;
         
       }
     }
   }
   .pagination_arrow .page-link {
-    background-color: white;
+    background-color: $white;
     &:hover {
-      background-color: white;
-      color: black;
+      background-color:$white;
+      color: $black;
     }
   }
 }
@@ -31,7 +31,7 @@
 .pagination .active{
   border-radius: $pagination-item-border-radius;
   .page-link {
-    color: white;
+    color:$white;
     &:hover {
       background-color: $pagination-active-item-hover-background;
     }
