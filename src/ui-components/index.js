@@ -19,6 +19,16 @@ import Banner from './Banner';
 import Avatar from './Avatar';
 import InlineEditSelect from './InlineEditSelect';
 import Pagination from './Pagination';
+import {
+    Table,
+    TableHead,
+    TableBody,
+    TableRow,
+    TableCell,
+    DataTableCell,
+    TableControl,
+    TableName,
+} from './Table';
 
 import './styles.scss';
 
@@ -42,6 +52,14 @@ export {
     Tabs,
     Banner,
     Avatar,
+    Table,
+    TableHead,
+    TableBody,
+    TableRow,
+    TableCell,
+    DataTableCell,
+    TableControl,
+    TableName,
     InlineEditSelect,
     Pagination,
 };

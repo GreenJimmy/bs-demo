@@ -10,6 +10,16 @@ import {
     Avatar,
     InlineEditSelect,
     Pagination,
+    Table,
+    TableHead,
+    TableBody,
+    TableRow,
+    TableCell,
+    DataTableCell,
+    TextField,
+    TableControl,
+    Check,
+    TableName,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -32,6 +42,7 @@ const App = () => {
 
     return (
         <div style={{ padding: '50px' }}>
+        <div style={{ padding: '50px', backgroundColor: '#f4f8fc' }}>
             <Button>Clickable</Button>
             <br />
 
@@ -53,6 +64,23 @@ const App = () => {
             <br />
             <br />
             <br />
+            <MenuItem
+                text="Menu item"
+                onSelect={(selectedMenuItem) => setSelectedMenuItems(selectedMenuItem)}
+                controlId="1"
+                path=""
+            />
+            <br />
+            <Badge title="100" size="lg" type="primary" icon={<ExclamationFillIcon />} />
+            <br />
+            <br />
+            <Lozenge
+                text="Default"
+                type="warning"
+                variant="subtle"
+                size="lg"
+                icon={<ExclamationFillIcon />}
+            />
             <br />
             <br />
             <Navigation
@@ -69,6 +97,18 @@ const App = () => {
                     { eventKey: 'eight', title: 'item eight' },
                     { eventKey: 'nine', title: 'item nine' },
                     { eventKey: 'ten', title: 'item ten' },
+                ]}
+            />
+            <br />
+            <br />
+            <Dropdown
+                title="Primary"
+                id="some-dropdown"
+                items={[
+                    { eventKey: 'one', title: 'item one' },
+                    { eventKey: 'two', title: 'item two' },
+                    { eventKey: 'three', title: 'item three' },
+                    { eventKey: 'four', title: 'item four' },
                 ]}
             />
             <br />
@@ -108,7 +148,7 @@ const App = () => {
                 isRemovable
             />
             <br />
-            <Avatar src="https://robohash.org/my-own-slug.png?size=300x300&set=set1" />
+            <Avatar>AB</Avatar>
             <br />
             <InlineEditSelect
                 onEditSelect={(options) => setInlineInitialEditSelect(options)}
@@ -117,6 +157,81 @@ const App = () => {
             />
             <br />
             <Pagination size="lg" onSetPage={(activePage) => setPage(activePage)} />
+            <br />
+            <Table
+                hover
+                tableControlComponent={
+                    <TableControl>
+                        <TableName badgeNumber="100">Test table</TableName>
+                        <TextField controlId="search" placeholder="search" showDefaultIcon />
+                    </TableControl>
+                }
+            >
+                <TableHead>
+                    <TableRow>
+                        <TableCell align="center" width="60px">
+                            <Check id="header-check" size="sm" />
+                        </TableCell>
+                        <TableCell width="50%">Study name</TableCell>
+                        <TableCell>Study short name</TableCell>
+                        <TableCell>Phase</TableCell>
+                        <TableCell align="center" width="60px">
+                            <ExclamationFillIcon />
+                        </TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    <TableRow>
+                        <TableCell align="center">
+                            <Check id="check-1" size="sm" />
+                        </TableCell>
+                        <TableCell>
+                            <Avatar
+                                src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                                size="md"
+                            />
+                            Clinical and Radiological Evaluation of Patients With Vertebrobasilar
+                            Insufficiency
+                        </TableCell>
+                        <TableCell>Sinus pressure study</TableCell>
+                        <TableCell>
+                            <Badge size="sm" type="default">
+                                19
+                            </Badge>
+                        </TableCell>
+                        <TableCell align="center">
+                            <ExclamationFillIcon />
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell align="center">
+                            <Check id="check-2" size="sm" />
+                        </TableCell>
+                        <TableCell>
+                            <DataTableCell
+                                img={
+                                    <Avatar
+                                        src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                                        size="md"
+                                    />
+                                }
+                                subTitle="Vertebrobasilar Insufficiency"
+                            >
+                                Clinical and Radiological Evaluation of Patients With
+                            </DataTableCell>
+                        </TableCell>
+                        <TableCell>Sinus pressure study</TableCell>
+                        <TableCell>
+                            <Badge size="sm" type="default">
+                                8
+                            </Badge>
+                        </TableCell>
+                        <TableCell align="center">
+                            <ExclamationFillIcon />
+                        </TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
         </div>
     );
 };
