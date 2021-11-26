@@ -1,19 +1,15 @@
 import { useState } from 'react';
 import {
-    TextArea,
     InlineEditText,
     Tooltip,
-    Badge,
-    Lozenge,
-    MenuItem,
     Navigation,
-    Dropdown,
     Select,
     Tabs,
     Banner,
     Tag,
     Avatar,
     InlineEditSelect,
+    Pagination,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -32,9 +28,10 @@ const App = () => {
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [showBanner, setShowBanner] = useState(false);
     const [inlineInitialEditSelect, setInlineInitialEditSelect] = useState([]);
+    const [page, setPage] = useState(1);
 
     return (
-        <div style={{ padding: '50px', backgroundColor: '#E5E5E5' }}>
+        <div style={{ padding: '50px' }}>
             <Button>Clickable</Button>
             <br />
 
@@ -118,6 +115,8 @@ const App = () => {
                 selectedOptions={inlineInitialEditSelect}
                 size="lg"
             />
+            <br />
+            <Pagination size="lg" onSetPage={(activePage) => setPage(activePage)} />
         </div>
     );
 };

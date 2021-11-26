@@ -18,6 +18,7 @@ import Tabs from './Tabs';
 import Banner from './Banner';
 import Avatar from './Avatar';
 import InlineEditSelect from './InlineEditSelect';
+import Pagination from './Pagination';
 
 import './styles.scss';
 
@@ -42,4 +43,5 @@ export {
     Banner,
     Avatar,
     InlineEditSelect,
+    Pagination,
 };

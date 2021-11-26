@@ -22,6 +22,7 @@
 @import 'MenuItem/styles/variables';
 @import 'Avatar/styles/variables';
 @import 'InlineEditSelect/styles/variables';
+@import 'Pagination/styles/variables';
 
 @import '~bootstrap/scss/bootstrap';
 
@@ -44,4 +45,5 @@
 @import 'Tabs/styles/tabs';
 @import 'Banner/styles/banner';
 @import 'Avatar/styles/avatar';
-@import 'InlineEditSelect/styles/inlineEditSelect'
+@import 'InlineEditSelect/styles/inlineEditSelect';
+@import 'Pagination/styles/pagination';
