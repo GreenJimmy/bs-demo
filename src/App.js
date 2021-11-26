@@ -20,6 +20,10 @@ import {
     TableControl,
     Check,
     TableName,
+    MenuItem,
+    Badge,
+    Lozenge,
+    Dropdown,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -42,7 +46,6 @@ const App = () => {
 
     return (
         <div style={{ padding: '50px' }}>
-        <div style={{ padding: '50px', backgroundColor: '#f4f8fc' }}>
             <Button>Clickable</Button>
             <br />
 
@@ -156,7 +159,11 @@ const App = () => {
                 size="lg"
             />
             <br />
-            <Pagination size="lg" onSetPage={(activePage) => setPage(activePage)} />
+            <Pagination
+                size="lg"
+                onSetPage={(activePage) => setPage(activePage)}
+                items={[1, 2, 3, 4, 5]}
+            />
             <br />
             <Table
                 hover

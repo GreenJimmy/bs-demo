@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import { Pagination } from 'react-bootstrap';
 import classNames from 'classnames';
 
-const CustomPagination = ({ size, className, onSetPage, dataTestId }) => {
+const CustomPagination = ({ size, className, onSetPage, dataTestId, items }) => {
     const [active, setActive] = useState(1);
-    const items = [1, 2, 3, 4, 5];
 
     const paginationClassNames = classNames('c-select', {
         [className]: className,
