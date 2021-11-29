@@ -14,6 +14,7 @@ import {
     Tag,
     Avatar,
     InlineEditSelect,
+    Pagination,
     Table,
     TableHead,
     TableBody,
@@ -43,6 +44,7 @@ const App = () => {
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [showBanner, setShowBanner] = useState(false);
     const [inlineInitialEditSelect, setInlineInitialEditSelect] = useState([]);
+    const [page, setPage] = useState(1);
 
     return (
         <div style={{ padding: '50px', backgroundColor: '#f4f8fc' }}>
@@ -159,6 +161,11 @@ const App = () => {
                 size="lg"
             />
             <br />
+            <Pagination
+                size="lg"
+                onSetPage={(activePage) => setPage(activePage)}
+                items={[1, 2, 3, 4, 5]}
+            />
             <br />
             <ExpansionPanel
                 id="exp-panel-id"
@@ -175,7 +182,7 @@ const App = () => {
             >
                 Title
             </ExpansionPanel>
-            <br />
+            <br/>
             <Table
                 hover
                 tableControlComponent={
