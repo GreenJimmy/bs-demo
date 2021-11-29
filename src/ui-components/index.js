@@ -28,6 +28,7 @@ import {
     TableControl,
     TableName,
 } from './Table';
+import Typography from './Typography';
 
 import './styles.scss';
 
@@ -60,4 +61,5 @@ export {
     TableControl,
     TableName,
     InlineEditSelect,
+    Typography,
 };

@@ -24,6 +24,7 @@ import {
     TableControl,
     Check,
     TableName,
+    Typography,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -158,6 +159,13 @@ const App = () => {
                 size="lg"
             />
             <br />
+            <div>
+                <Typography variant="h1">Headline 1</Typography>
+                <Typography variant="h2">Headline 2</Typography>
+                <Typography variant="h3">Headline 3</Typography>
+                <Typography variant="h4">Headline 4</Typography>
+                <Typography variant="h5">Headline 5</Typography>
+            </div>
             <br />
             <Table
                 hover

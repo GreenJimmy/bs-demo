@@ -1,0 +1,8 @@
+@mixin font-style($font-size, $line-height) {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin headings() {
+    font-weight: $c-typography-heading-font-weight;
+}

@@ -1,0 +1,41 @@
+@import '_mixins';
+
+.c-typography {
+  font-family: $font-family;
+  margin: 0;
+
+  &--gutter_bottom {
+    margin-bottom: 0.5rem;
+  }
+
+  &--title {
+    @include font-style($c-typography-title-font-size, $c-typography-title-line-height);
+    @include headings();
+  }
+
+  &--h1 {
+    @include font-style($c-typography-h1-font-size, $c-typography-h1-line-height);
+    @include headings();
+  }
+
+  &--h2 {
+    @include font-style($c-typography-h2-font-size, $c-typography-h2-line-height);
+    @include headings();
+  }
+
+  &--h3 {
+    @include font-style($c-typography-h3-font-size, $c-typography-h3-line-height);
+    @include headings();
+  }
+
+  &--h4 {
+    @include font-style($c-typography-h4-font-size, $c-typography-h4-line-height);
+    @include headings();
+  }
+
+  &--h5 {
+    @include font-style($c-typography-h5-font-size, $c-typography-h5-line-height);
+    @include headings();
+  }
+
+}
