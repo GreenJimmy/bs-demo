@@ -18,6 +18,7 @@ import Tabs from './Tabs';
 import Banner from './Banner';
 import Avatar from './Avatar';
 import InlineEditSelect from './InlineEditSelect';
+import Pagination from './Pagination';
 import {
     Table,
     TableHead,
@@ -60,4 +61,5 @@ export {
     TableControl,
     TableName,
     InlineEditSelect,
+    Pagination,
 };

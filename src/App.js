@@ -1,19 +1,15 @@
 import { useState } from 'react';
 import {
-    TextArea,
     InlineEditText,
     Tooltip,
-    Badge,
-    Lozenge,
-    MenuItem,
     Navigation,
-    Dropdown,
     Select,
     Tabs,
     Banner,
     Tag,
     Avatar,
     InlineEditSelect,
+    Pagination,
     Table,
     TableHead,
     TableBody,
@@ -24,6 +20,10 @@ import {
     TableControl,
     Check,
     TableName,
+    MenuItem,
+    Badge,
+    Lozenge,
+    Dropdown,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -42,9 +42,10 @@ const App = () => {
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [showBanner, setShowBanner] = useState(false);
     const [inlineInitialEditSelect, setInlineInitialEditSelect] = useState([]);
+    const [page, setPage] = useState(1);
 
     return (
-        <div style={{ padding: '50px', backgroundColor: '#f4f8fc' }}>
+        <div style={{ padding: '50px' }}>
             <Button>Clickable</Button>
             <br />
 
@@ -158,6 +159,11 @@ const App = () => {
                 size="lg"
             />
             <br />
+            <Pagination
+                size="lg"
+                onSetPage={(activePage) => setPage(activePage)}
+                items={[1, 2, 3, 4, 5]}
+            />
             <br />
             <Table
                 hover
