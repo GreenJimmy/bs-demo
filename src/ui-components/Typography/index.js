@@ -1,7 +1,17 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Typography = ({ className, children, variant, gutterBottom }) => {
+const Typography = ({
+    className,
+    children,
+    align,
+    variant,
+    size,
+    marginBottom,
+    noWrap,
+    link,
+    paragraph,
+}) => {
     const defaultVariantMapping = {
         title: 'h1',
         h1: 'h1',
@@ -9,14 +19,23 @@ const Typography = ({ className, children, variant, gutterBottom }) => {
         h3: 'h3',
         h4: 'h4',
         h5: 'h5',
+        body: 'p',
     };
 
-    const typographyClassNames = classNames('c-typography', `c-typography--${variant}`, {
-        [className]: className,
-        'c-typography--gutter_bottom': gutterBottom,
-    });
+    const typographyClassNames = classNames(
+        'c-typography',
+        `c-typography--align-${align}`,
+        `c-typography--${variant}`,
+        `c-typography--${size}`,
+        {
+            [className]: className,
+            'c-typography--margin-bottom': marginBottom,
+            'c-typography--no-wrap': noWrap,
+            'c-typography--link': link,
+        },
+    );
 
-    const Component = defaultVariantMapping[variant] || 'span';
+    const Component = (paragraph ? 'p' : defaultVariantMapping[variant]) || 'span';
 
     return <Component className={typographyClassNames}>{children}</Component>;
 };
@@ -24,15 +43,25 @@ const Typography = ({ className, children, variant, gutterBottom }) => {
 Typography.propTypes = {
     className: PropTypes.string,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
-    variant: PropTypes.oneOf(['title','h1', 'h2', 'h3', 'h4', 'h5']),
-    gutterBottom: PropTypes.bool,
+    align: PropTypes.oneOf(['center', 'inherit', 'justify', 'left', 'right']),
+    variant: PropTypes.oneOf(['title', 'h1', 'h2', 'h3', 'h4', 'h5', 'body', 'button', 'caption']),
+    size: PropTypes.oneOf(['sm', 'lg']),
+    marginBottom: PropTypes.bool,
+    noWrap: PropTypes.bool,
+    link: PropTypes.bool,
+    paragraph: PropTypes.bool,
 };
 
 Typography.defaultProps = {
     className: undefined,
     children: undefined,
+    align: 'inherit',
     variant: 'h1',
-    gutterBottom: true,
+    size: 'lg',
+    marginBottom: false,
+    noWrap: false,
+    link: false,
+    paragraph: false,
 };
 
 export default Typography;

@@ -166,13 +166,58 @@ const App = () => {
                 onSetPage={(activePage) => setPage(activePage)}
                 items={[1, 2, 3, 4, 5]}
             />
-            <br/>
+            <br />
             <div>
-                <Typography variant="h1">Headline 1</Typography>
-                <Typography variant="h2">Headline 2</Typography>
-                <Typography variant="h3">Headline 3</Typography>
-                <Typography variant="h4">Headline 4</Typography>
-                <Typography variant="h5">Headline 5</Typography>
+                <Typography variant="title" marginBottom>
+                    Title
+                </Typography>
+                <Typography variant="h1" marginBottom>
+                    Headline 1
+                </Typography>
+                <Typography variant="h2" marginBottom>
+                    Headline 2
+                </Typography>
+                <Typography variant="h3" marginBottom>
+                    Headline 3
+                </Typography>
+                <Typography variant="h4" marginBottom>
+                    Headline 4
+                </Typography>
+                <Typography variant="h5" marginBottom>
+                    Headline 5
+                </Typography>
+                <Typography variant="body" marginBottom noWrap>
+                    Body Regular Something has always existed. According to physics, there can never
+                    be true physical nothingness—though there can be times when existence resembles
+                    such as a vacuum (the state of minimum possible energy)
+                </Typography>
+                <Typography variant="body" marginBottom link>
+                    Body Regular Link
+                </Typography>
+                <Typography variant="body" marginBottom size="sm">
+                    Body Small
+                </Typography>
+                <Typography variant="body" marginBottom size="sm" link>
+                    Body Small Link
+                </Typography>
+                <Typography variant="button" marginBottom>
+                    Button Regular
+                </Typography>
+                <Typography variant="button" marginBottom size="sm">
+                    Button small
+                </Typography>
+                <Typography variant="caption" marginBottom>
+                    Caption Regular
+                </Typography>
+                <Typography variant="caption" marginBottom link>
+                    Caption Regular Link
+                </Typography>
+                <Typography variant="caption" marginBottom size="sm">
+                    Caption Small
+                </Typography>
+                <Typography variant="caption" marginBottom size="sm" link>
+                    Caption Small Link
+                </Typography>
             </div>
             <br />
             <Table

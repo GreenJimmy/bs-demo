@@ -3,6 +3,20 @@
   line-height: $line-height;
 }
 
-@mixin headings() {
-    font-weight: $c-typography-heading-font-weight;
+@mixin text-align() {
+  $aligns: 'center', 'inherit', 'justify', 'left', 'right';
+
+  @each $align in $aligns {
+    &.c-typography--align-#{$align} {
+      text-align: #{$align};
+    }
+  }
+}
+
+@mixin text-link() {
+  &.c-typography--body,
+  &.c-typography--caption {
+    text-decoration-line: underline;
+    color: $primary;
+  }
 }
