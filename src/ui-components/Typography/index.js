@@ -1,6 +1,16 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+const defaultVariantMapping = {
+    title: 'h1',
+    h1: 'h1',
+    h2: 'h2',
+    h3: 'h3',
+    h4: 'h4',
+    h5: 'h5',
+    body: 'p',
+};
+
 const Typography = ({
     className,
     children,
@@ -12,16 +22,6 @@ const Typography = ({
     link,
     paragraph,
 }) => {
-    const defaultVariantMapping = {
-        title: 'h1',
-        h1: 'h1',
-        h2: 'h2',
-        h3: 'h3',
-        h4: 'h4',
-        h5: 'h5',
-        body: 'p',
-    };
-
     const typographyClassNames = classNames(
         'c-typography',
         `c-typography--align-${align}`,
@@ -35,9 +35,9 @@ const Typography = ({
         },
     );
 
-    const Component = (paragraph ? 'p' : defaultVariantMapping[variant]) || 'span';
+    const TypographyComponent = (paragraph ? 'p' : defaultVariantMapping[variant]) || 'span';
 
-    return <Component className={typographyClassNames}>{children}</Component>;
+    return <TypographyComponent className={typographyClassNames}>{children}</TypographyComponent>;
 };
 
 Typography.propTypes = {
