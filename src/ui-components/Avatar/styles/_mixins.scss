@@ -1,6 +1,8 @@
 @mixin avatar-size($size, $fontSize, $lineHeight, $svgWidth, $svgHeight) {
   width: $size;
   height: $size;
+  min-width: $size;
+  min-height: $size;
   svg {
     width: svg-default($size);
     height: svg-default($size);

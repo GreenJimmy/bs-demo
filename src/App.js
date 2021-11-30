@@ -1,13 +1,8 @@
 import { useState } from 'react';
 import {
-    TextArea,
     InlineEditText,
     Tooltip,
-    Badge,
-    Lozenge,
-    MenuItem,
     Navigation,
-    Dropdown,
     Select,
     Tabs,
     Banner,
@@ -25,7 +20,10 @@ import {
     TableControl,
     Check,
     TableName,
-    ExpansionPanel,
+    MenuItem,
+    Badge,
+    Lozenge,
+    Dropdown,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -47,7 +45,7 @@ const App = () => {
     const [page, setPage] = useState(1);
 
     return (
-        <div style={{ padding: '50px', backgroundColor: '#f4f8fc' }}>
+        <div style={{ padding: '50px' }}>
             <Button>Clickable</Button>
             <br />
 
@@ -167,22 +165,6 @@ const App = () => {
                 items={[1, 2, 3, 4, 5]}
             />
             <br />
-            <ExpansionPanel
-                id="exp-panel-id"
-                toggle={{
-                    badge: '100',
-                    avatar: 'KK',
-                }}
-                items={[
-                    { eventKey: 'opt1', title: 'Option 1' },
-                    { eventKey: 'opt2', title: 'Option 2' },
-                    { eventKey: 'opt3', title: 'Option 3', disabled: true },
-                    { eventKey: 'opt4', title: 'Option 4', unavailable: true },
-                ]}
-            >
-                Title
-            </ExpansionPanel>
-            <br/>
             <Table
                 hover
                 tableControlComponent={
