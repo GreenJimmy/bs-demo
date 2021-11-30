@@ -29,9 +29,7 @@ const CustomPagination = ({ size, className, onSetPage, dataTestId, items }) => 
         <div>
             <Pagination data-test-id={dataTestId} className={paginationClassNames}>
                 <Pagination.Prev
-                    className={`pagination_arrow ${
-                        active === 1 ? `pagination_item_diasabled` : null
-                    }`}
+                    className={`pagination_arrow ${active === 1 && `pagination_item_diasabled`}`}
                     onClick={handlePrev}
                 />
                 {items.map((item) => (
