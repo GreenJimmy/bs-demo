@@ -4,7 +4,18 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const Check = React.forwardRef((props, ref) => {
-    const { id, className, checked, disabled, indeterminate, size, label, type, onChange } = props;
+    const {
+        id,
+        className,
+        checked,
+        defaultChecked,
+        disabled,
+        indeterminate,
+        size,
+        label,
+        type,
+        onChange,
+    } = props;
     const checkboxRef = useRef();
     const formGroupClassNames = classNames('с-check', `c-check--size-${size}`, {
         [className]: className,
@@ -23,6 +34,7 @@ const Check = React.forwardRef((props, ref) => {
                 id={id}
                 disabled={disabled}
                 checked={checked}
+                defaultChecked={defaultChecked}
                 onChange={onChange}
             />
             {label && <Form.Check.Label>{label}</Form.Check.Label>}
@@ -32,6 +44,7 @@ const Check = React.forwardRef((props, ref) => {
 
 Check.propTypes = {
     className: PropTypes.string,
+    defaultChecked: PropTypes.bool,
     checked: PropTypes.bool,
     disabled: PropTypes.bool,
     indeterminate: PropTypes.bool,
@@ -44,6 +57,7 @@ Check.propTypes = {
 
 Check.defaultProps = {
     className: undefined,
+    defaultChecked: false,
     checked: false,
     disabled: false,
     indeterminate: false,

@@ -13,6 +13,9 @@
     padding-right: $c-banner-padding-right-x;
 
     .c-banner__btn-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       min-width: $c-btn-close-size;
       height: $c-btn-close-size;
       border-radius: 100%;
