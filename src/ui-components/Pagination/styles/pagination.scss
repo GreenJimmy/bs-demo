@@ -21,10 +21,14 @@
   }
   .pagination_arrow .page-link {
     background-color: $white;
+    color: $pagination-arrow-color;
     &:hover {
       background-color:$white;
       color: $black;
     }
+  }
+  .pagination_arrow--diasabled .page-link {
+    color: $pagination-arrow-color-disabled;
   }
 }
 
