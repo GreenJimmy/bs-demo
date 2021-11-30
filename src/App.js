@@ -14,6 +14,7 @@ import {
     Tag,
     Avatar,
     InlineEditSelect,
+    Pagination,
     Table,
     TableHead,
     TableBody,
@@ -43,6 +44,7 @@ const App = () => {
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [showBanner, setShowBanner] = useState(false);
     const [inlineInitialEditSelect, setInlineInitialEditSelect] = useState([]);
+    const [page, setPage] = useState(1);
 
     return (
         <div style={{ padding: '50px', backgroundColor: '#f4f8fc' }}>
@@ -159,6 +161,12 @@ const App = () => {
                 size="lg"
             />
             <br />
+            <Pagination
+                size="lg"
+                onSetPage={(activePage) => setPage(activePage)}
+                items={[1, 2, 3, 4, 5]}
+            />
+            <br/>
             <div>
                 <Typography variant="h1">Headline 1</Typography>
                 <Typography variant="h2">Headline 2</Typography>

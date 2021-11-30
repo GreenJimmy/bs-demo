@@ -13,8 +13,9 @@ const MenuItem = ({
     trailingIcon,
     badge,
     unavailable,
+    isSelected,
 }) => {
-    const [selected, setSelected] = useState(false);
+    const [selected, setSelected] = useState(isSelected);
     const menuItemClassNames = classNames('c-menuItem', {
         [className]: className,
         'c-menuItem--disabled': disabled,
@@ -53,6 +54,7 @@ MenuItem.propTypes = {
     trailingIcon: PropTypes.arrayOf(PropTypes.node),
     badge: PropTypes.arrayOf(PropTypes.node),
     unavailable: PropTypes.bool,
+    isSelected: PropTypes.bool,
 };
 
 MenuItem.defaultProps = {
@@ -65,6 +67,7 @@ MenuItem.defaultProps = {
     trailingIcon: undefined,
     badge: undefined,
     unavailable: false,
+    isSelected: false,
 };
 
 export default MenuItem;
