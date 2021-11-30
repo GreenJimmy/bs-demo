@@ -28,13 +28,15 @@ import {
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
 
+import ViewComponents from './view-components';
+
 const selectOptions = [
     { value: 'chocolate', label: 'Chocolate' },
     { value: 'strawberry', label: 'Strawberry' },
     { value: 'vanilla', label: 'Vanilla' },
 ];
 
-const App = () => {
+const DevExamples = () => {
     const [inlineEditText, setInlineEditText] = useState('Some Text');
     const [inlineInitialEditText, setInlineInitialEditText] = useState('Some Text');
     // eslint-disable-next-line no-unused-vars
@@ -45,7 +47,7 @@ const App = () => {
     const [page, setPage] = useState(1);
 
     return (
-        <div style={{ padding: '50px' }}>
+        <div style={{ padding: '20px', backgroundColor: '#f4f8fc', marginTop: '10px' }}>
             <Button>Clickable</Button>
             <br />
 
@@ -239,6 +241,28 @@ const App = () => {
                     </TableRow>
                 </TableBody>
             </Table>
+        </div>
+    );
+};
+
+const TabItems = [
+    { title: 'Dev mode', eventKey: 'devMode' },
+    { title: 'Design view mode', eventKey: 'designMode' },
+];
+
+const App = () => {
+    const [currentTab, setCurrentTab] = useState('designMode');
+
+    return (
+        <div style={{ padding: '50px' }}>
+            <Tabs
+                size="lg"
+                visibleItems={TabItems}
+                onSelect={setCurrentTab}
+                activeKey={currentTab}
+            />
+            {currentTab === 'devMode' && <DevExamples />}
+            {currentTab === 'designMode' && <ViewComponents />}
         </div>
     );
 };

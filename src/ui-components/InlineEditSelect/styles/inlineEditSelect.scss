@@ -1,5 +1,6 @@
 .inline-edit-select-wrapper {
   max-width: $inline-edit-select-width;
+  min-width: $inline-edit-select-min-width;
   .inline-edit-select {
     .c-select__control {
       background-color: white;

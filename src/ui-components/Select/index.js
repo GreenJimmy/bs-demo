@@ -17,7 +17,7 @@ const CustomSelect = ({
     dataTestId,
 }) => {
     useEffect(() => {
-        onSelect(selectedValues);
+        onSelect?.(selectedValues);
     }, [selectedValues, onSelect]);
 
     const selectClassNames = classNames('c-select', {
@@ -29,9 +29,9 @@ const CustomSelect = ({
 
     const handleChange = (option) => {
         if (!isMulti) {
-            return onSelect([option]);
+            onSelect([option]);
         }
-        onSelect([...option]);
+        onSelect?.([...option]);
     };
 
     return (
@@ -54,11 +54,16 @@ const CustomSelect = ({
     );
 };
 
+const optionType = PropTypes.shape({
+    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+    label: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+});
+
 CustomSelect.propTypes = {
     className: PropTypes.string,
     errorMessage: PropTypes.string,
-    selectedValues: PropTypes.arrayOf(PropTypes.oneOfType(PropTypes.string)),
-    options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])),
+    selectedValues: PropTypes.arrayOf(optionType),
+    options: PropTypes.arrayOf(optionType),
     size: PropTypes.oneOf(['lg', 'sm']),
     isMulti: PropTypes.bool,
     isDisabled: PropTypes.bool,
