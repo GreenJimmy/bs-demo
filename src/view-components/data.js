@@ -260,23 +260,23 @@ export const dropdownData = [
 ];
 
 export const lozengeData = [
-    { size: 'sm', variant: 'subtle', type: 'info', text: 'info', icon: undefined },
-    { size: 'sm', variant: 'bold', type: 'success', text: 'success', icon: undefined },
+    { size: 'sm', variant: 'subtle', type: 'info', children: 'info', icon: undefined },
+    { size: 'sm', variant: 'bold', type: 'success', children: 'success', icon: undefined },
     {
         size: 'lg',
         variant: 'icon',
         type: 'warning',
-        text: 'warning',
+        children: 'warning',
         icon: <ExclamationFillIcon />,
     },
-    { size: 'lg', variant: 'subtle', type: 'error', text: 'error', icon: <ErrorFillIcon /> },
-    { size: 'lg', variant: 'bold', type: 'info', text: 'info', icon: <ErrorFillIcon /> },
-    { size: 'lg', variant: 'bold', type: 'default', text: 'default', icon: undefined },
+    { size: 'lg', variant: 'subtle', type: 'error', children: 'error', icon: <ErrorFillIcon /> },
+    { size: 'lg', variant: 'bold', type: 'info', children: 'info', icon: <ErrorFillIcon /> },
+    { size: 'lg', variant: 'bold', type: 'default', children: 'default', icon: undefined },
 ];
 
 export const menuItemData = [
     {
-        text: 'Option',
+        children: 'Option',
         path: '',
         onSelect: undefined,
         disabled: false,
@@ -286,7 +286,7 @@ export const menuItemData = [
         unavailable: false,
     },
     {
-        text: 'Option',
+        children: 'Option',
         path: '',
         onSelect: undefined,
         disabled: false,
@@ -296,7 +296,7 @@ export const menuItemData = [
         unavailable: false,
     },
     {
-        text: 'Option',
+        children: 'Option',
         path: '',
         onSelect: undefined,
         disabled: false,
@@ -306,7 +306,7 @@ export const menuItemData = [
         unavailable: false,
     },
     {
-        text: 'Option',
+        children: 'Option',
         path: '',
         onSelect: undefined,
         disabled: false,
@@ -336,7 +336,7 @@ export const switchData = [
 
 export const tagData = [
     {
-        text: 'Some tag',
+        children: 'Some tag',
         icon: undefined,
         variant: 'default',
         isRemovable: false,
@@ -345,7 +345,7 @@ export const tagData = [
         path: '#',
     },
     {
-        text: 'Some tag',
+        children: 'Some tag',
         icon: <PenEditIcon />,
         variant: 'default',
         isRemovable: true,
@@ -354,7 +354,7 @@ export const tagData = [
         path: undefined,
     },
     {
-        text: 'Some tag',
+        children: 'Some tag',
         variant: 'rounded',
         isRemovable: true,
         size: 'lg',
@@ -362,7 +362,7 @@ export const tagData = [
         path: undefined,
     },
     {
-        text: 'Some tag',
+        children: 'Some tag',
         icon: <PenEditIcon />,
         variant: 'rounded',
         isRemovable: false,
@@ -371,7 +371,7 @@ export const tagData = [
         path: undefined,
     },
     {
-        text: 'Some tag',
+        children: 'Some tag',
         icon: <PenEditIcon />,
         variant: 'default',
         isRemovable: false,
@@ -581,19 +581,19 @@ export const toggleButtonItems = [
     {
         id: 'one',
         name: 'one',
-        title: 'One',
+        children: 'One',
         icon: <PenEditIcon />,
     },
     {
         id: 'two',
         name: 'two',
-        title: 'Two',
+        children: 'Two',
         icon: <PenEditIcon />,
     },
     {
         id: 'three',
         name: 'three',
-        title: 'Three',
+        children: 'Three',
         icon: <PenEditIcon />,
     },
 ];
@@ -787,7 +787,7 @@ export const toastData = [
         position: 'top-start',
         icon: undefined,
         showDefaultIcon: true,
-        message: 'Some message, bro',
+        children: 'Some message, bro',
     },
     {
         autohide: false,
@@ -798,7 +798,7 @@ export const toastData = [
         position: 'top-center',
         icon: <ErrorFillIcon />,
         showDefaultIcon: false,
-        message: 'Some message, bro',
+        children: 'Some message, bro',
     },
     {
         autohide: false,
@@ -809,6 +809,6 @@ export const toastData = [
         position: 'top-end',
         icon: <ErrorFillIcon />,
         showDefaultIcon: false,
-        message: 'Some message, bro',
+        children: 'Some message, bro',
     },
 ];

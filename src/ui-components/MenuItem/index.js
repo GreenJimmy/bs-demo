@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const MenuItem = ({
-    text,
     className,
     path,
     onSelect,
