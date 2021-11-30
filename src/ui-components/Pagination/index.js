@@ -29,8 +29,9 @@ const CustomPagination = ({ size, className, onSetPage, dataTestId, items }) => 
         <div>
             <Pagination data-test-id={dataTestId} className={paginationClassNames}>
                 <Pagination.Prev
-                    className={`pagination_arrow ${active === 1 && `pagination_item_diasabled`}`}
+                    className={`pagination_arrow ${active === 1 && `pagination_arrow--diasabled`}`}
                     onClick={handlePrev}
+                    disabled={active === 1}
                 />
                 {items.map((item) => (
                     <Pagination.Item
@@ -43,9 +44,10 @@ const CustomPagination = ({ size, className, onSetPage, dataTestId, items }) => 
                 ))}
                 <Pagination.Next
                     className={`pagination_arrow ${
-                        items.indexOf(active) === items.length - 1 && `pagination_item_diasabled`
+                        items.indexOf(active) === items.length - 1 && `pagination_arrow--diasabled`
                     }`}
                     onClick={handleNext}
+                    disabled={items.indexOf(active) === items.length - 1}
                 />
             </Pagination>
         </div>
