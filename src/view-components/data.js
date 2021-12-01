@@ -259,6 +259,42 @@ export const dropdownData = [
     },
 ];
 
+const expansionItems = [
+    {
+        eventKey: 'opt1',
+        title: 'Option 1',
+        leadingIcon: <PenEditIcon />,
+    },
+    {
+        eventKey: 'opt2',
+        title: 'Option 2',
+        trailingIcon: <PenEditIcon />,
+    },
+    {
+        eventKey: 'opt3',
+        title: 'Option 3',
+        disabled: true,
+    },
+    {
+        eventKey: 'opt4',
+        title: 'Option 4',
+        unavailable: true,
+        leadingIcon: <PenEditIcon />,
+        trailingIcon: <PenEditIcon />,
+    },
+];
+
+export const expansionPanelData = [
+    {
+        id: 'exp-panel-id',
+        toggle: {
+            badge: '100',
+            avatar: 'KK',
+        },
+        items: expansionItems,
+    },
+];
+
 export const lozengeData = [
     { size: 'sm', variant: 'subtle', type: 'info', text: 'info', icon: undefined },
     { size: 'sm', variant: 'bold', type: 'success', text: 'success', icon: undefined },

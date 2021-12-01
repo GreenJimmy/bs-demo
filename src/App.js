@@ -24,6 +24,7 @@ import {
     Badge,
     Lozenge,
     Dropdown,
+    ExpansionPanel,
 } from './ui-components';
 import ExclamationFillIcon from './icons/ExclamationFillIcon';
 import Button from './bs-components/Button';
@@ -166,6 +167,23 @@ const DevExamples = () => {
                 onSetPage={(activePage) => setPage(activePage)}
                 items={[1, 2, 3, 4, 5]}
             />
+            <br />
+            <ExpansionPanel
+                id="exp-panel-id"
+                toggle={{
+                    badge: '100',
+                    avatar: 'KK',
+                }}
+                items={[
+                    { eventKey: 'opt1', title: 'Option 1' },
+                    { eventKey: 'opt2', title: 'Option 2' },
+                    { eventKey: 'opt3', title: 'Option 3', disabled: true },
+                    { eventKey: 'opt4', title: 'Option 4', unavailable: true },
+                ]}
+            >
+                Title
+            </ExpansionPanel>
+
             <br />
             <Table
                 hover
