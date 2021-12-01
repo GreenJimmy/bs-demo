@@ -29,6 +29,7 @@ import {
     Table,
     Banner,
     ExpansionPanel,
+    Pagination,
 } from '../ui-components';
 
 import {
@@ -118,6 +119,7 @@ const ViewComponentsData = [
 
 const ViewComponents = () => {
     const [selectedOptions, setSelectedOptions] = useState([]);
+    const [page, setPage] = useState(1);
 
     return (
         <div className="wrapper">
@@ -153,6 +155,19 @@ const ViewComponents = () => {
                         ))}
                     </ToggleButtonGroup>
                 ))}
+            </div>
+            <div className="header">Pagination</div>
+            <div className="component-block">
+                <Pagination
+                    size="lg"
+                    onSetPage={(activePage) => setPage(activePage)}
+                    items={[1, 2, 3, 4, 5]}
+                />
+                <Pagination
+                    size="sm"
+                    onSetPage={(activePage) => setPage(activePage)}
+                    items={[1, 2, 3, 4, 5]}
+                />
             </div>
             <div className="header">Table</div>
             <div className="component-block">
