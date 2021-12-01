@@ -28,6 +28,7 @@ import {
     DataTableCell,
     Table,
     Banner,
+    ExpansionPanel,
     Typography,
 } from '../ui-components';
 
@@ -38,6 +39,7 @@ import {
     checkData,
     radioData,
     dropdownData,
+    expansionPanelData,
     lozengeData,
     menuItemData,
     switchData,
@@ -66,6 +68,11 @@ const ViewComponentsData = [
     { title: 'Check', component: (props) => <Check {...props} />, data: checkData },
     { title: 'Radio', component: (props) => <Check {...props} />, data: radioData },
     { title: 'Dropdown', component: (props) => <Dropdown {...props} />, data: dropdownData },
+    {
+        title: 'Expansion Panel',
+        component: (props) => <ExpansionPanel {...props} />,
+        data: expansionPanelData,
+    },
     { title: 'Lozenge', component: (props) => <Lozenge {...props} />, data: lozengeData },
     { title: 'Menu item', component: (props) => <MenuItem {...props} />, data: menuItemData },
     { title: 'Switch', component: (props) => <Switch {...props} />, data: switchData },
