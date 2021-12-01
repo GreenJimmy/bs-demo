@@ -21,6 +21,7 @@ const Typography = ({
     noWrap,
     link,
     paragraph,
+    dataTestId,
 }) => {
     const typographyClassNames = classNames(
         'c-typography',
@@ -37,7 +38,11 @@ const Typography = ({
 
     const TypographyComponent = (paragraph ? 'p' : defaultVariantMapping[variant]) || 'span';
 
-    return <TypographyComponent className={typographyClassNames}>{children}</TypographyComponent>;
+    return (
+        <TypographyComponent data-test-id={dataTestId} className={typographyClassNames}>
+            {children}
+        </TypographyComponent>
+    );
 };
 
 Typography.propTypes = {
@@ -50,6 +55,7 @@ Typography.propTypes = {
     noWrap: PropTypes.bool,
     link: PropTypes.bool,
     paragraph: PropTypes.bool,
+    dataTestId: PropTypes.string,
 };
 
 Typography.defaultProps = {
@@ -62,6 +68,7 @@ Typography.defaultProps = {
     noWrap: false,
     link: false,
     paragraph: false,
+    dataTestId: '',
 };
 
 export default Typography;
