@@ -1,5 +1,5 @@
 import { PenEditIcon, ErrorFillIcon, ExclamationFillIcon } from '../icons';
-import { Badge } from '../ui-components';
+import { Badge, Avatar } from '../ui-components';
 
 export const avatarData = [
     {
@@ -256,6 +256,51 @@ export const dropdownData = [
         size: 'lg',
         buttonStyle: 'icon',
         align: 'end',
+    },
+];
+
+const expansionItems = [
+    {
+        eventKey: 'opt1',
+        title: 'Option 1',
+        leadingIcon: <PenEditIcon />,
+    },
+    {
+        eventKey: 'opt2',
+        title: 'Option 2',
+        trailingIcon: <PenEditIcon />,
+    },
+    {
+        eventKey: 'opt3',
+        title: 'Option 3',
+        disabled: true,
+    },
+    {
+        eventKey: 'opt4',
+        title: 'Option 4',
+        unavailable: true,
+        leadingIcon: <ErrorFillIcon />,
+        trailingIcon: <PenEditIcon />,
+    },
+];
+
+export const expansionPanelData = [
+    {
+        id: 'exp-panel-id',
+        toggle: {
+            badge: '100',
+            avatar: (
+                <Avatar
+                    src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                    size="md"
+                    hoverDisabled
+                >
+                    AV
+                </Avatar>
+            ),
+        },
+        children: 'Title',
+        items: expansionItems,
     },
 ];
 
@@ -810,5 +855,98 @@ export const toastData = [
         icon: <ErrorFillIcon />,
         showDefaultIcon: false,
         children: 'Some message, bro',
+    },
+];
+
+export const typographyData = [
+    {
+        variant: 'title',
+        marginBottom: true,
+        children: 'Title',
+    },
+    {
+        variant: 'h1',
+        marginBottom: true,
+        children: 'Headline 1',
+    },
+    {
+        variant: 'h2',
+        marginBottom: true,
+        children: 'Headline 2',
+    },
+    {
+        variant: 'h3',
+        marginBottom: true,
+        children: 'Headline 3',
+    },
+    {
+        variant: 'h4',
+        marginBottom: true,
+        children: 'Headline 4',
+    },
+    {
+        variant: 'h5',
+        marginBottom: true,
+        children: 'Headline 5',
+    },
+    {
+        variant: 'body',
+        marginBottom: true,
+        noWrap: true,
+        children: `Body Regular`,
+    },
+    {
+        variant: 'body',
+        marginBottom: true,
+        link: true,
+        children: 'Body Regular Link',
+    },
+    {
+        variant: 'body',
+        marginBottom: true,
+        size: 'sm',
+        children: 'Body Small',
+    },
+    {
+        variant: 'body',
+        marginBottom: true,
+        size: 'sm',
+        link: true,
+        children: 'Body Small Link',
+    },
+    {
+        variant: 'button',
+        marginBottom: true,
+        children: 'Button Regular',
+    },
+    {
+        variant: 'button',
+        marginBottom: true,
+        size: 'sm',
+        children: 'Button small',
+    },
+    {
+        variant: 'caption',
+        marginBottom: true,
+        paragraph: true,
+        children: 'Caption Regular',
+    },
+    {
+        variant: 'caption',
+        marginBottom: true,
+        link: true,
+        children: 'Caption Regular Link',
+    },
+    {
+        variant: 'caption',
+        marginBottom: true,
+        size: 'sm',
+        children: 'Caption Small',
+    },
+    {
+        variant: 'caption',
+        link: true,
+        size: 'sm',
+        children: 'Caption Small Link',
     },
 ];

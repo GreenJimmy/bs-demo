@@ -29,6 +29,8 @@ import {
     TableControl,
     TableName,
 } from './Table';
+import ExpansionPanel from './ExpansionPanel';
+import Typography from './Typography';
 
 import './styles.scss';
 
@@ -62,4 +64,6 @@ export {
     TableName,
     InlineEditSelect,
     Pagination,
+    ExpansionPanel,
+    Typography,
 };

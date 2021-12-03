@@ -28,6 +28,10 @@ import {
     DataTableCell,
     Table,
     Toast,
+    Banner,
+    ExpansionPanel,
+    Typography,
+    Pagination,
 } from '../ui-components';
 
 import {
@@ -37,6 +41,7 @@ import {
     checkData,
     radioData,
     dropdownData,
+    expansionPanelData,
     lozengeData,
     menuItemData,
     switchData,
@@ -52,6 +57,7 @@ import {
     inlineEditTextData,
     inlineEditSelectData,
     toastData,
+    typographyData,
 } from './data';
 
 import './styles.scss';
@@ -64,6 +70,11 @@ const ViewComponentsData = [
     { title: 'Check', component: (props) => <Check {...props} />, data: checkData },
     { title: 'Radio', component: (props) => <Check {...props} />, data: radioData },
     { title: 'Dropdown', component: (props) => <Dropdown {...props} />, data: dropdownData },
+    {
+        title: 'Expansion Panel',
+        component: (props) => <ExpansionPanel {...props} />,
+        data: expansionPanelData,
+    },
     { title: 'Lozenge', component: (props) => <Lozenge {...props} />, data: lozengeData },
     { title: 'Menu item', component: (props) => <MenuItem {...props} />, data: menuItemData },
     { title: 'Switch', component: (props) => <Switch {...props} />, data: switchData },
@@ -107,10 +118,16 @@ const ViewComponentsData = [
         component: (props) => <InlineEditSelect {...props} />,
         data: inlineEditSelectData,
     },
+    {
+        title: 'Typography',
+        component: (props) => <Typography {...props} />,
+        data: typographyData,
+    },
 ];
 
 const ViewComponents = () => {
     const [selectedOptions, setSelectedOptions] = useState([]);
+    const [page, setPage] = useState(1);
 
     return (
         <div className="wrapper">
@@ -146,6 +163,19 @@ const ViewComponents = () => {
                         ))}
                     </ToggleButtonGroup>
                 ))}
+            </div>
+            <div className="header">Pagination</div>
+            <div className="component-block">
+                <Pagination
+                    size="lg"
+                    onSetPage={(activePage) => setPage(activePage)}
+                    items={[1, 2, 3, 4, 5]}
+                />
+                <Pagination
+                    size="sm"
+                    onSetPage={(activePage) => setPage(activePage)}
+                    items={[1, 2, 3, 4, 5]}
+                />
             </div>
             <div className="header">Table</div>
             <div className="component-block">

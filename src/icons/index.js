@@ -12,6 +12,7 @@ import WarningTriangleFillIcon from './WarningTriangleFillIcon';
 import XIcon from './XIcon';
 import PersonIcon from './PersonIcon';
 import CameraFillIcon from './CameraFillIcon';
+import ChevronDownIcon from './ChevronDownIcon';
 
 export {
     CheckIcon,
@@ -28,4 +29,5 @@ export {
     XIcon,
     PersonIcon,
     CameraFillIcon,
+    ChevronDownIcon,
 };
