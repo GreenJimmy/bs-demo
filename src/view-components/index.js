@@ -29,6 +29,7 @@ import {
     Table,
     Banner,
     ExpansionPanel,
+    Typography,
     Pagination,
 } from '../ui-components';
 
@@ -55,6 +56,7 @@ import {
     inlineEditTextData,
     inlineEditSelectData,
     toastData,
+    typographyData,
 } from './data';
 
 import './styles.scss';
@@ -114,6 +116,11 @@ const ViewComponentsData = [
         title: 'Inline edit text - Select',
         component: (props) => <InlineEditSelect {...props} />,
         data: inlineEditSelectData,
+    },
+    {
+        title: 'Typography',
+        component: (props) => <Typography {...props} />,
+        data: typographyData,
     },
 ];
 
