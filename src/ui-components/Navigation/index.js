@@ -16,6 +16,8 @@ const Navigation = (props) => {
         hiddenItems,
         dropdownTitle,
         isAdaptiveWidth,
+        dataTestId,
+        dataTestIdDropdown,
     } = props;
 
     const navGroupClassNames = classNames('c-nav', {
@@ -54,6 +56,7 @@ const Navigation = (props) => {
             activeKey={activeKey}
             defaultActiveKey={defaultActiveKey}
             onSelect={handleSelect}
+            data-test-id={dataTestId}
         >
             {!!visibleItems?.length &&
                 visibleItems.map((item) => {
@@ -62,16 +65,19 @@ const Navigation = (props) => {
                         href,
                         eventKey: itemEventKey,
                         disabled: itemDisabled,
+                        dataTestId: itemDataTestId,
                     } = item;
 
                     return (
                         <NavItem
                             id={itemEventKey}
                             eventKey={itemEventKey}
-                            title={itemTitle}
                             disabled={itemDisabled}
                             href={href}
-                        />
+                            dataTestId={itemDataTestId}
+                        >
+                            {itemTitle}
+                        </NavItem>
                     );
                 })}
             {dropdownItems.length > 0 && (
@@ -81,6 +87,7 @@ const Navigation = (props) => {
                     eventKey="dropdown"
                     items={dropdownItems}
                     isActive={isActiveDropdownItem}
+                    dataTestId={dataTestIdDropdown}
                 />
             )}
         </Nav>
@@ -93,6 +100,7 @@ const propItemType = PropTypes.arrayOf(
         disabled: PropTypes.bool,
         href: PropTypes.string,
         eventKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+        dataTestId: PropTypes.string,
     }),
 );
 
@@ -105,6 +113,8 @@ Navigation.propTypes = {
     hiddenItems: propItemType,
     dropdownTitle: PropTypes.string,
     isAdaptiveWidth: PropTypes.bool,
+    dataTestIdDropdown: PropTypes.string,
+    dataTestId: PropTypes.string,
 };
 
 Navigation.defaultProps = {
@@ -116,6 +126,8 @@ Navigation.defaultProps = {
     hiddenItems: [],
     dropdownTitle: 'More',
     isAdaptiveWidth: false,
+    dataTestIdDropdown: undefined,
+    dataTestId: undefined,
 };
 
 export default Navigation;

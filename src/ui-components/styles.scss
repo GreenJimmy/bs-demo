@@ -17,7 +17,7 @@
 @import 'Navigation/styles/variables';
 @import 'Tabs/styles/variables';
 @import 'Select/styles/variables';
-@import 'Banner/styles/variables';
+@import 'Toast/styles/variables';
 @import 'Tag/styles/variables';
 @import 'MenuItem/styles/variables';
 @import 'Avatar/styles/variables';
@@ -47,9 +47,10 @@
 @import 'Navigation/styles/navigation';
 @import 'Select/styles/select.scss';
 @import 'Tabs/styles/tabs';
-@import 'Banner/styles/banner';
+@import 'Toast/styles/toast';
 @import 'Avatar/styles/avatar';
 @import 'Pagination/styles/pagination';
+@import 'InlineEditSelect/styles/inlineEditSelect';
 @import 'InlineEditSelect/styles/inlineEditSelect';
 @import 'Table/styles/index';
 @import 'ExpansionPanel/styles/expansionPanel';

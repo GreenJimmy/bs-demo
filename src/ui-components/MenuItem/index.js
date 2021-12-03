@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const MenuItem = ({
-    text,
     className,
     path,
     onSelect,
@@ -13,6 +12,8 @@ const MenuItem = ({
     trailingIcon,
     badge,
     unavailable,
+    dataTestId,
+    children,
     isSelected,
 }) => {
     const [selected, setSelected] = useState(isSelected);
@@ -31,11 +32,11 @@ const MenuItem = ({
         }
     };
     return (
-        <div className={menuItemClassNames}>
+        <div className={menuItemClassNames} data-test-id={dataTestId}>
             {selected && <span className="c-menuItem--selected__indicator" />}
             <a href={path} onClick={handleSelect}>
                 {leadingIcon && <div className="c-menuItem__icon__leading">{leadingIcon}</div>}
-                <span>{text}</span>
+                <span>{children}</span>
                 {trailingIcon && <div className="c-menuItem__icon__trailing">{trailingIcon}</div>}
                 {badge && <div className="c-menuItem__badge">{badge}</div>}
             </a>
@@ -44,7 +45,6 @@ const MenuItem = ({
 };
 
 MenuItem.propTypes = {
-    text: PropTypes.string,
     className: PropTypes.string,
     path: PropTypes.string,
     onSelect: PropTypes.func,
@@ -55,10 +55,11 @@ MenuItem.propTypes = {
     badge: PropTypes.arrayOf(PropTypes.node),
     unavailable: PropTypes.bool,
     isSelected: PropTypes.bool,
+    dataTestId: PropTypes.string,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 MenuItem.defaultProps = {
-    text: '',
     className: undefined,
     path: '',
     onSelect: undefined,
@@ -67,6 +68,8 @@ MenuItem.defaultProps = {
     trailingIcon: undefined,
     badge: undefined,
     unavailable: false,
+    dataTestId: undefined,
+    children: '',
     isSelected: false,
 };
 

@@ -12,8 +12,9 @@ const Check = React.forwardRef((props, ref) => {
         disabled,
         indeterminate,
         size,
-        label,
         type,
+        dataTestId,
+        children,
         onChange,
     } = props;
     const checkboxRef = useRef();
@@ -27,7 +28,12 @@ const Check = React.forwardRef((props, ref) => {
     }, [indeterminate]);
 
     return (
-        <Form.Group controlId={id} className={formGroupClassNames} ref={ref}>
+        <Form.Group
+            controlId={id}
+            className={formGroupClassNames}
+            ref={ref}
+            data-test-id={dataTestId}
+        >
             <Form.Check.Input
                 ref={checkboxRef}
                 type={type}
@@ -37,7 +43,7 @@ const Check = React.forwardRef((props, ref) => {
                 defaultChecked={defaultChecked}
                 onChange={onChange}
             />
-            {label && <Form.Check.Label>{label}</Form.Check.Label>}
+            {children && <Form.Check.Label>{children}</Form.Check.Label>}
         </Form.Group>
     );
 });
@@ -50,9 +56,10 @@ Check.propTypes = {
     indeterminate: PropTypes.bool,
     size: PropTypes.oneOf(['lg', 'sm']),
     type: PropTypes.oneOf(['checkbox', 'radio']),
-    label: PropTypes.string,
+    dataTestId: PropTypes.string,
     id: PropTypes.string.isRequired,
     onChange: PropTypes.func,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 Check.defaultProps = {
@@ -63,8 +70,9 @@ Check.defaultProps = {
     indeterminate: false,
     size: 'sm',
     type: 'checkbox',
-    label: undefined,
+    dataTestId: undefined,
     onChange: undefined,
+    children: undefined,
 };
 
 export default Check;

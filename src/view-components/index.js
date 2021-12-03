@@ -27,6 +27,7 @@ import {
     TableBody,
     DataTableCell,
     Table,
+    Toast,
     Banner,
     ExpansionPanel,
     Typography,
@@ -80,10 +81,10 @@ const ViewComponentsData = [
     { title: 'Tag', component: (props) => <Tag {...props} />, data: tagData },
     { title: 'Tooltip', component: (props) => <Tooltip {...props} />, data: tooltipData },
     {
-        title: 'Banner',
+        title: 'Toast',
         component: (props) => (
             <div className="banner_wrap">
-                <Banner {...props} />
+                <Toast {...props} />
             </div>
         ),
         data: toastData,

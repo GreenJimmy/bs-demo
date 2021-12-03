@@ -96,6 +96,10 @@
 }
 
 .c-tag--link {
+  .c-tag__close__icon {
+    fill: $primary;
+  }
+
   .c-tag__img svg path {
     fill: $primary;
   }
@@ -107,10 +111,10 @@
     & .c-tag__img svg path {
       fill: $primary;
     }
-  }
 
-  &:hover .c-tag__close {
-    fill: black;
+    .c-tag__close__icon {
+      fill: $primary;
+    }
   }
 
   &:hover a {

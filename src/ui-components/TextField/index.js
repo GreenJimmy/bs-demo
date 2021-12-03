@@ -22,6 +22,7 @@ const TextField = React.forwardRef((props, ref) => {
         icon,
         showClearBtn,
         showDefaultIcon,
+        dataTestId,
     } = props;
 
     const inputClassNames = classNames('c-text-field', {
@@ -53,7 +54,7 @@ const TextField = React.forwardRef((props, ref) => {
     }, [value]);
 
     return (
-        <Form.Group className={inputClassNames} controlId={controlId}>
+        <Form.Group className={inputClassNames} controlId={controlId} data-test-id={dataTestId}>
             {label && size === 'lg' && <Form.Label>{label}</Form.Label>}
             <div className="c-text-field__input">
                 <Form.Control
@@ -108,6 +109,7 @@ TextField.propTypes = {
     onChange: PropTypes.func,
     showClearBtn: PropTypes.bool,
     showDefaultIcon: PropTypes.bool,
+    dataTestId: PropTypes.string,
 };
 
 TextField.defaultProps = {
@@ -126,6 +128,7 @@ TextField.defaultProps = {
     showDefaultIcon: false,
     icon: undefined,
     onChange: undefined,
+    dataTestId: undefined,
 };
 
 export default TextField;
