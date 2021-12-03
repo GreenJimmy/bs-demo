@@ -1,5 +1,5 @@
 import { PenEditIcon, ErrorFillIcon, ExclamationFillIcon } from '../icons';
-import { Badge } from '../ui-components';
+import { Badge, Avatar } from '../ui-components';
 
 export const avatarData = [
     {
@@ -279,7 +279,7 @@ const expansionItems = [
         eventKey: 'opt4',
         title: 'Option 4',
         unavailable: true,
-        leadingIcon: <PenEditIcon />,
+        leadingIcon: <ErrorFillIcon />,
         trailingIcon: <PenEditIcon />,
     },
 ];
@@ -289,8 +289,17 @@ export const expansionPanelData = [
         id: 'exp-panel-id',
         toggle: {
             badge: '100',
-            avatar: 'KK',
+            avatar: (
+                <Avatar
+                    src="https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+                    size="md"
+                    hoverDisabled
+                >
+                    AV
+                </Avatar>
+            ),
         },
+        children: 'Title',
         items: expansionItems,
     },
 ];
